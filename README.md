@@ -36,9 +36,26 @@ The jigsaw style edges allows for the tiles to easily interlock with eachother a
 
 All tiles must inherit from the base "Tiles::Tile" class, and pass along some basic information such as location and colour.
 
-In the future, I hope to be able to load basic tile information from a text file, because the constructor is getting clunky (7 arguments!)
+Each tile type also has a respective .tile (custom file type) in Res/Data/Tiles/ which allows much easier changes for tile types, eg their friction or viscosity values. The format is as follows, as shown by the Grass.tile file as an example:
 
-So far, thanks to the "Component::Steps_On_Tiles" class and the "steppedOn()" method of tiles, it is possible to trigger events when walking on tiles. For example, here a screenshot of water turning into ice when stepped on, simply by adding that logic to the Tiles::Water_Tile class, and then adding the "Steps_On_Tiles" component to the Player class.
+Viscosity
+0
+
+Friction
+0.76
+
+Swimmable
+false
+
+Walkable
+true
+
+Colour
+0 255 50
+
+The information can go in any order, except the RGBA colour values must go at the bottom due to a possible alpha value at the end, and the current way of detection for that is checking for the EOF.
+
+Thanks to the "Component::Steps_On_Tiles" class and the "steppedOn()" method of tiles, it is also possible to trigger events when walking on tiles. For example, here a screenshot of water turning into ice when stepped on, simply by adding that logic to the Tiles::Water_Tile class, and then adding the "Steps_On_Tiles" component to the Player class.
 
 ![alt text](http://puu.sh/oaC00/1ebc3d575f.png "Frozone!")
 
