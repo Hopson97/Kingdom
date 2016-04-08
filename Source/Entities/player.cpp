@@ -27,7 +27,7 @@ Player :: Player ( Game* game, Tile_Map* tiles )
                   ( m_tileMap, this ) );
 
     addComponent( std::make_unique<Component::Swimmable>
-                  ( m_tileMap, this, true ) );
+                  ( m_tileMap, this, true, *game ) );
 
     addComponent( std::make_unique<Component::Tile_Collidable>
                   ( m_tileMap, this ) );

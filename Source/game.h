@@ -18,10 +18,10 @@ class Game
         const  sf::Texture&
         getTexture                  ( const Texture_Name name ) const;
 
-        inline  State::Handler&
+        State::Handler&
         states                      ()                          { return m_states; }
 
-        inline  Window&
+        Window&
         getWindow                   ()                          { return m_window; }
 
 

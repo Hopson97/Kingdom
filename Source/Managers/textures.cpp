@@ -6,6 +6,7 @@ Textures :: Textures()
 {
     loadTileTextures();
     loadEntityTextures();
+    loadEffectTextures();
 }
 
 void
@@ -28,11 +29,18 @@ Textures :: loadEntityTextures  ()
     loadTexture( TXR_ENT_WHALE,  entityPath + "Whale.png" );
 }
 
+void
+Textures :: loadEffectTextures  ()
+{
+    const std::string effectPath = "Res/Effects/";
+
+    loadTexture( TXR_EFF_SPLASH, effectPath + "Water Splash.png");
+}
+
 const sf::Texture&
 Textures :: getTexture( const Texture_Name name ) const
-{                            //Causes crash
-    if ( m_textureMap.empty() ) throw std::runtime_error ( "Texture map empty" );       //m_textureMap.empty() causes crash
-    return m_textureMap.at( name );                                                     //Causes crash
+{
+    return m_textureMap.at( name );
 }
 
 
@@ -45,5 +53,6 @@ Textures :: loadTexture ( const Texture_Name name, const std::string& path )
     }
 
     m_textureMap[ name ].setSmooth( true );
+    std::cout << "Texture loaded at " << path << std::endl;
 
 }

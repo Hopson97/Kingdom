@@ -13,6 +13,8 @@ enum Texture_Name
     ,   TXR_ENT_PLAYER
     ,   TXR_ENT_ZOMBIE
     ,   TXR_ENT_WHALE
+
+    ,   TXR_EFF_SPLASH
 };
 
 class Textures
@@ -29,6 +31,9 @@ class Textures
 
         void
         loadEntityTextures  ();
+
+        void
+        loadEffectTextures  ();
 
 
         void

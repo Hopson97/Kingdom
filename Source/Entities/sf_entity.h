@@ -9,41 +9,44 @@
 class Sf_Entity
 {
     public:
-        Sf_Entity                   ( const sf::Texture& t );
+        Sf_Entity           ( const sf::Texture& t );
 
-        inline
         void
-        setRotation ( const double rot )        { m_sprite.setRotation( rot ); }
+        setRotation         ( const double rot )                { m_sprite.setRotation( rot ); }
 
-        inline
-        void
-        setPosition ( const sf::Vector2f& pos ) { m_sprite.setPosition( pos ); }
+        float
+        getRotation         () const                            { return m_sprite.getRotation(); }
 
-        inline
         const sf::Vector2f&
-        getPosition (   )                       { return m_sprite.getPosition(); }
+        getOrigin           () const                            { return m_sprite.getOrigin(); }
+
+        void
+        setPosition         ( const sf::Vector2f& pos )         { m_sprite.setPosition( pos ); }
+
+        const sf::Vector2f&
+        getPosition         ()                                  { return m_sprite.getPosition(); }
+
+        const sf::Vector2u
+        getSpriteSize       ()                                  { return m_sprite.getTexture()->getSize(); }
+
+        void
+        setVelocity         ( const sf::Vector2f& velocity )    { m_velocity = velocity; }
+
+        void
+        changeVelocity      ( const sf::Vector2f& velocity )    { m_velocity += velocity; }
+
+        const sf::Vector2f
+        getVelocity         () const                            { return m_velocity; }
+
 
         virtual void
-        draw                        ( sf::RenderWindow& window );
-
-    public: //Fundamental getters and setters
-        inline
-        void
-        setVelocity             ( const sf::Vector2f& velocity )        { m_velocity = velocity; }
-
-        inline
-        void
-        changeVelocity          ( const sf::Vector2f& velocity )        { m_velocity += velocity; }
-
-        inline
-        const sf::Vector2f
-        getVelocity             ( ) const                               { return m_velocity; }
+        draw                ( sf::RenderWindow& window );
 
     protected:
         sf::Sprite m_sprite;
 
         void
-        centerSpriteOrigin      ();
+        centerSpriteOrigin  ();
 
         const bool
         inWindowBounds          ( const sf::RenderWindow& window ) const;

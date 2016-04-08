@@ -22,9 +22,9 @@ namespace Info
 
     namespace Colours
     {
-        const static sf::Color grass   = { 0,   255, 50,   };
-        const static sf::Color sea     = { 58,  80,  230,  };
-        const static sf::Color cliff   = { 255, 255, 255,  };
+        const static sf::Color grass   = { 0,   255, 50    };
+        const static sf::Color sea     = { 58,  80,  230, 200    };
+        const static sf::Color cliff   = { 255, 255, 255   };
         const static sf::Color ice     = { 50 , 229, 255   };
     }
 }
@@ -45,23 +45,18 @@ class Tile : public Sf_Entity
         const bool
         isWalkable          ()              { return m_isWalkable; }
 
-        inline
         const bool
         isSwimmable          ()             { return m_isSwimmable; }
 
-        inline
         const sf::Vector2i
         getTileMapPos       () const        { return m_tilePos; }
 
-        inline
         const double
         getFriction         () const        { return m_friction; }
 
-        inline
         const double
         getViscosity       () const         { return m_viscosity; }
 
-        inline
         const Ecosystem
         getEcosystem        () const        { return m_ecosystem; }
 
@@ -79,7 +74,6 @@ class Tile : public Sf_Entity
         const sf::Texture&
         getTexture          ( const Game& game, const unsigned id );
 
-        inline
         const unsigned
         getTxrId            () const     { return m_txrId; }
 

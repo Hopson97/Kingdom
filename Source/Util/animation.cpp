@@ -9,7 +9,7 @@
 void
 Animation::addFrame(const Frame& frame)
 {
-    mFrames.emplace_back(frame);
+    m_frames.emplace_back(frame);
 }
 
 /*****************************************************************************************************************************************************************
@@ -19,20 +19,25 @@ Animation::addFrame(const Frame& frame)
 const sf::IntRect&
 Animation::currentFrame( const float dt )
 {
-    if ( mFrames.size() == 0 ) {
+    if ( m_frames.empty() )
+    {
         throw std::runtime_error ( "Animation not set up before used! ");
     }
-    mTime += dt;
+    m_time += dt;
+    std::cout << "dt: " << dt << " mtime " << m_time << std::endl;
 
-    if ( mTime > mFrames[mCurrFrame].timeToNextFrame ) {
+    if ( m_time > m_frames.at( m_currFrame ).timeToNextFrame )
+    {
 
-        mTime = 0;
-        mCurrFrame++;
-        if ( mCurrFrame > (mFrames.size() - 1) ) {
-            mCurrFrame = 0;
+        m_time = 0;
+        m_currFrame++;
+        std::cout << "next frame " << std::endl;
+        if ( m_currFrame > ( m_frames.size() - 1 ) )
+        {
+            m_currFrame = 0;
         }
     }
-   return mFrames[mCurrFrame].frameRectangle;
+    return m_frames.at( m_currFrame ).frameRectangle;
 }
 
 /*****************************************************************************************************************************************************************
@@ -41,5 +46,5 @@ Animation::currentFrame( const float dt )
 const unsigned
 Animation::getCurrentFrameNumber() const
 {
-    return mCurrFrame;
+    return m_currFrame;
 }

@@ -20,8 +20,6 @@ Water :: update ( const float dt )
 {
     if ( !inWindowBounds( m_game->getWindow().get() ) ) return;
 
-
-
     if ( m_txrClock.getElapsedTime().asSeconds() > (float)random::num( 5, 10 ) / 10.0f  )
     {
         unsigned newId = getTxrId();

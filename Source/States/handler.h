@@ -29,11 +29,9 @@ class Handler
         State_Base*
         peekState       ();
 
-        inline
         const unsigned
         size            () const  { return states.size(); }
 
-        inline
         const bool
         empty           () const { return states.empty(); }
 

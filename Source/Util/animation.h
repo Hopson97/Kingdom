@@ -23,10 +23,10 @@ class Animation
         getCurrentFrameNumber   () const;
 
     private:
-        std::vector<Frame> mFrames;
+        std::vector<Frame> m_frames;
 
-        float           mTime       { 0 };
-        unsigned        mCurrFrame  { 0 };
+        float           m_time       { 0 };
+        unsigned        m_currFrame  { 0 };
 
 
 

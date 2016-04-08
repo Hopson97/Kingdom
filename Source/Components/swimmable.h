@@ -4,6 +4,7 @@
 #include "tilemap.h"
 #include "mob.h"
 #include "component.h"
+#include "particle_system.h"
 
 namespace Component
 {
@@ -11,16 +12,24 @@ namespace Component
 class Swimmable : public Component_Base
 {
     public:
-        Swimmable ( Tile_Map* map, Mob* mob, const bool canLand );
+        Swimmable ( Tile_Map* map, Mob* mob, const bool canLand, Game& game );
 
         void
         logic   ( const float dt ) override;
 
     private:
-        Tile_Map*   m_tileMap;
-        Mob*        m_mob;
+        Tile_Map*           m_tileMap;
+        Mob*                m_mob;
 
-        const bool  m_canLand;
+        const bool          m_canLand;
+
+        sf::RenderWindow*   m_window;
+
+        Particle_System     m_splash;
+
+        sf::Vector2f        m_prevMobPos;
+
+
 };
 
 }

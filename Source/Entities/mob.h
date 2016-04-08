@@ -30,19 +30,15 @@ class Mob : public Sf_Entity
         void
         update              ( const float dt );
 
-        inline
         const bool
         isAlive             ( )                         { return m_isLiving; }
 
-        inline
         void
         setAlive            ( const bool alive )        { m_isLiving = alive; }
 
-        inline
         void
         setMobState         ( const Mob_State state )   { m_mobState = state; }
 
-        inline
         const Mob_State
         getMobState         ( )                          { return m_mobState; }
 

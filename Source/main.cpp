@@ -8,6 +8,7 @@
         *   Create a shark texture
         *   Combine spawns_ground and spawns_sea somehow
         *   Improve level gen
+        *   Animation for the "swimmable" class ( Res/Effects/Water Splash.png") or make the particle system look good
 */
 
 int main()
