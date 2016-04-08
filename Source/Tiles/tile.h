@@ -4,6 +4,7 @@
 #include "sf_entity.h"
 #include "game.h"
 #include "ecosystems.h"
+#include "tile_info.h"
 
 /*
     Represents a single tile in the world.
@@ -32,30 +33,27 @@ namespace Info
 
 class Tile : public Sf_Entity
 {
-    friend class Tile_Loader;
-
     public:
-        Tile (  const Game& game, const sf::Vector2i& pos, const sf::Color colour,
-                const Ecosystem ecosystem, const bool walkable,
-                const bool swimmable, const double friction, const double viscosity );
+        Tile (  const Game& game, const sf::Vector2i& pos, const Ecosystem ecosystem );
+
         void
         draw                ( sf::RenderWindow& window) override;
 
         inline
         const bool
-        isWalkable          ()              { return m_isWalkable; }
+        isWalkable          ()              { return m_info.isWalkable; }
 
         const bool
-        isSwimmable          ()             { return m_isSwimmable; }
+        isSwimmable          ()             { return m_info.isSwimmable; }
 
         const sf::Vector2i
         getTileMapPos       () const        { return m_tilePos; }
 
         const double
-        getFriction         () const        { return m_friction; }
+        getFriction         () const        { return m_info.friction; }
 
         const double
-        getViscosity       () const         { return m_viscosity; }
+        getViscosity       () const         { return m_info.viscosity; }
 
         const Ecosystem
         getEcosystem        () const        { return m_ecosystem; }
@@ -77,17 +75,17 @@ class Tile : public Sf_Entity
         const unsigned
         getTxrId            () const     { return m_txrId; }
 
+        void
+        setInfo             ( const Tile_Info& info );
+
     private:
-        bool                m_isWalkable;
-        bool                m_isSwimmable;
+        Tile_Info     m_info;
 
         sf::Vector2i        m_tilePos;
-
-        unsigned            m_txrId;
-        const double        m_friction       { 1 };
-        const double        m_viscosity      { 1 };
-
         Ecosystem           m_ecosystem;
+        unsigned            m_txrId;
+
+
 };
 
 } //namespace Tiles

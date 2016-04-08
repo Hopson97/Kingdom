@@ -14,7 +14,7 @@ enum Texture_Name
     ,   TXR_ENT_ZOMBIE
     ,   TXR_ENT_WHALE
 
-    ,   TXR_EFF_SPLASH
+    ,   TXR_TREE_REG
 };
 
 class Textures
@@ -33,7 +33,9 @@ class Textures
         loadEntityTextures  ();
 
         void
-        loadEffectTextures  ();
+        loadTreeTextures    ();
+
+
 
 
         void

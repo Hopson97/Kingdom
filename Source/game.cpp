@@ -58,3 +58,9 @@ Game :: getTexture ( const Texture_Name name )  const
     return m_textures.getTexture( name );
 }
 
+const  Tile_Info&
+Game :: getTileInfo ( const Tile_Type name ) const
+{
+    return m_tileInfo.getTileInfo ( name );
+}
+

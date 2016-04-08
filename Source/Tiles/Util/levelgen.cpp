@@ -24,7 +24,7 @@ Level_Generator :: Level_Generator  ( Tile_Map& tiles, Game& game, const int see
     {
         for ( int currXTile = 0; currXTile < MAP_SIZE ; currXTile++  )
         {
-             m_tileMap->at( currXTile, currYTile) = addWaterTile( currXTile, currYTile );
+            m_tileMap->at( currXTile, currYTile) = addWaterTile( currXTile, currYTile );
         }
     }
 
@@ -76,65 +76,20 @@ Level_Generator :: createIsland( const int x, const int y )
     }
 }
 
-
-void
-Level_Generator :: chooseEcosystem ()
-{
-    int numEcosystems  = Ecosystem::NUM_ECOSYSTEMS - 1;
-
-    m_currEcosystem = static_cast<Ecosystem>(random::num(0, numEcosystems ));
-}
-
-const int
-Level_Generator :: ecosystemAt         ( const int x, const int y )
-{
-    return m_ecosystemMap.at( y * MAP_SIZE) + x;
-}
-
-void
-Level_Generator :: genGrassEcosystem   ( const int currX, const int currY )
-{
-    addGrassTile    ( currX, currY );
-}
-
-void
-Level_Generator :: genRockyEcosystem   ( const int currX, const int currY )
-{
-    addCliffTile    ( currX, currY );
-}
-
-void
-Level_Generator :: genOceonEcosystem   ( const int currX, const int currY )
-{
-    addWaterTile    ( currX, currY );
-}
-
-void
-Level_Generator :: genSnowyEcosystem   ( const int currX, const int currY )
-{
-    addIceTile      ( currX, currY );
-}
-
-void
-Level_Generator :: testForNewEcosystem ( const int currX, const int currY )
-{
-    chooseEcosystem();
-}
-
 TilePtr
 Level_Generator :: addGrassTile ( const int x, const int y )
 {
     return std::make_unique<Tiles::Grass>
-           ( *m_game, sf::Vector2i { x, y }, m_currEcosystem );
+            ( *m_game, sf::Vector2i ( x, y ), m_currEcosystem );
 }
 
 TilePtr
 Level_Generator :: addWaterTile    ( const int x, const int y )
 {
     return std::make_unique<Tiles::Water>
-           ( *m_game, sf::Vector2i { x, y }, *m_tileMap, m_currEcosystem );
+            ( *m_game, sf::Vector2i ( x, y ), *m_tileMap, m_currEcosystem );
 }
-
+/*
 TilePtr
 Level_Generator :: addIceTile      ( const int x, const int y )
 {
@@ -149,3 +104,4 @@ Level_Generator :: addCliffTile      ( const int x, const int y )
             ( *m_game, sf::Vector2i { x, y }, m_currEcosystem );
 }
 
+*/

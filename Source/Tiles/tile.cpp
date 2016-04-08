@@ -7,19 +7,12 @@
 namespace Tiles
 {
 
-Tile :: Tile (  const Game& game, const sf::Vector2i& pos, const sf::Color colour,
-                const Ecosystem ecosystem, const bool walkable,
-                const bool swimmable, const double friction, const double viscosity )
+Tile :: Tile (  const Game& game, const sf::Vector2i& pos, const Ecosystem ecosystem )
 :   Sf_Entity       ( randomTexture( game ) )
-,   m_isWalkable    ( walkable )
-,   m_isSwimmable   ( swimmable )
 ,   m_tilePos       ( pos )
-,   m_friction      ( friction )
-,   m_viscosity     ( viscosity )
 ,   m_ecosystem     ( ecosystem )
 {
     m_sprite.setPosition    ( pos.x * Info::SIZE, pos.y * Info::SIZE );
-    m_sprite.setColor       ( colour );
 }
 
 void
@@ -55,6 +48,13 @@ Tile :: getTexture ( const Game& game, const unsigned id )
     default:
         throw std::runtime_error ( "Unable to get texture ");
     }
+}
+
+void
+Tile :: setInfo ( const Tile_Info& info)
+{
+    m_info = info;
+    m_sprite.setColor( info.colour );
 }
 
 } //namespace Tiles

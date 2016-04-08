@@ -4,9 +4,18 @@ namespace Tiles
 {
 
 Grass :: Grass ( const Game& game, const sf::Vector2i& pos, const Ecosystem ecosystem )
-:   Tile ( game, pos, Info::Colours::grass, ecosystem,  true, false, 0.759, 0)
+:   Tile    ( game, pos, ecosystem )
 {
-
+    setInfo( game.getTileInfo( TILE_GRASS ) );
 }
 
+
 } //namespace Tiles
+
+/**
+
+                const bool walkable,
+                const bool swimmable,
+                const double friction,
+                const double viscosity );
+*/

@@ -4,9 +4,9 @@
 
 Textures :: Textures()
 {
-    loadTileTextures();
-    loadEntityTextures();
-    loadEffectTextures();
+    loadTileTextures    ();
+    loadEntityTextures  ();
+    loadTreeTextures    ();
 }
 
 void
@@ -30,11 +30,11 @@ Textures :: loadEntityTextures  ()
 }
 
 void
-Textures :: loadEffectTextures  ()
+Textures :: loadTreeTextures  ()
 {
-    const std::string effectPath = "Res/Effects/";
+    const std::string effectPath = "Res/Trees/";
 
-    loadTexture( TXR_EFF_SPLASH, effectPath + "Water Splash.png");
+    //loadTexture( TXR_TREE_REG, effectPath + "Tree1.png");
 }
 
 const sf::Texture&

@@ -5,6 +5,7 @@
 
 #include "States/handler.h"
 #include "Managers/textures.h"
+#include "Managers/tiles_m.h"
 #include "fps_counter.h"
 
 class Game
@@ -17,6 +18,9 @@ class Game
 
         const  sf::Texture&
         getTexture                  ( const Texture_Name name ) const;
+
+        const  Tile_Info&
+        getTileInfo                 ( const Tile_Type name ) const;
 
         State::Handler&
         states                      ()                          { return m_states; }
@@ -32,7 +36,8 @@ class Game
 
         const   double              calculateDeltaTime          ( sf::Clock& c, sf::Time& t );
 
-        Textures m_textures;
+        Textures    m_textures;
+        Tiles_M     m_tileInfo;
 
         FPS_Counter fps;
 };
