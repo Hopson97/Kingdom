@@ -1,0 +1,23 @@
+##################
+### CodeBlocks ###
+##################
+*.cbp
+*.layout
+*.depend
+
+bin/
+obj/
+
+#############################################
+### Custom Files (does not effect program)###
+#############################################
+game/
+_old/
+_unused/
+Old Versions/
+loc/
+
+*.txt
+
+
+
