@@ -36,30 +36,34 @@ class Tile : public Sf_Entity
 
     public:
         Tile (  const Game& game, const sf::Vector2i& pos, const sf::Color colour,
-                const Ecosystem ecosytem, const bool walkable,
-                const bool swimmable, const double friction = 1 );
+                const Ecosystem ecosystem, const bool walkable,
+                const bool swimmable, const double friction, const double viscosity );
         void
         draw                ( sf::RenderWindow& window) override;
 
         inline
         const bool
-        isWalkable          ()          { return m_isWalkable; }
+        isWalkable          ()              { return m_isWalkable; }
 
         inline
         const bool
-        isSwimmable          ()          { return m_isSwimmable; }
+        isSwimmable          ()             { return m_isSwimmable; }
 
         inline
         const sf::Vector2i
-        getTileMapPos       () const    { return m_tilePos; }
+        getTileMapPos       () const        { return m_tilePos; }
 
         inline
         const double
-        getFriction         ( ) const   { return m_friction; }
+        getFriction         () const        { return m_friction; }
+
+        inline
+        const double
+        getViscosity       () const         { return m_viscosity; }
 
         inline
         const Ecosystem
-        getEcosystem        () const    { return m_ecosystem; }
+        getEcosystem        () const        { return m_ecosystem; }
 
         //Virtual members
         virtual void
@@ -86,7 +90,8 @@ class Tile : public Sf_Entity
         sf::Vector2i        m_tilePos;
 
         unsigned            m_txrId;
-        const double        m_friction;
+        const double        m_friction       { 1 };
+        const double        m_viscosity      { 1 };
 
         Ecosystem           m_ecosystem;
 };

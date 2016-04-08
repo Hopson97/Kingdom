@@ -96,24 +96,3 @@ Player :: setUpAnimation ()
     m_walkAnim.addFrame( { standing,  time } );
     m_walkAnim.addFrame( { walk2,     time } );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

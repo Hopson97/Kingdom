@@ -9,12 +9,13 @@ namespace Tiles
 
 Tile :: Tile (  const Game& game, const sf::Vector2i& pos, const sf::Color colour,
                 const Ecosystem ecosystem, const bool walkable,
-                const bool swimmable, const double friction )
+                const bool swimmable, const double friction, const double viscosity )
 :   Sf_Entity       ( randomTexture( game ) )
 ,   m_isWalkable    ( walkable )
 ,   m_isSwimmable   ( swimmable )
 ,   m_tilePos       ( pos )
 ,   m_friction      ( friction )
+,   m_viscosity     ( viscosity )
 ,   m_ecosystem     ( ecosystem )
 {
     m_sprite.setPosition    ( pos.x * Info::SIZE, pos.y * Info::SIZE );

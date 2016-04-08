@@ -16,7 +16,13 @@ Swimmable :: logic   ( const float dt )
 {
     sf::Vector2i pos = m_mob->getTileMapPosition();
 
-    if ( m_tileMap->at( pos )->isSwimmable() ) m_mob->setMobState( MOB_STATE_WATER );
+    if ( m_tileMap->at( pos )->isSwimmable() )
+    {
+        m_mob->setMobState( MOB_STATE_WATER );
+        m_mob->setVelocity( { (float)m_mob->getVelocity().x * (float)m_tileMap->getViscosityAt( pos ),
+                              (float)m_mob->getVelocity().y * (float)m_tileMap->getViscosityAt( pos )
+                            } );
+    }
     else
     {
         if ( m_canLand) m_mob->setMobState( MOB_STATE_GROUND );

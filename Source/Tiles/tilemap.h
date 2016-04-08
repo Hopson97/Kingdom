@@ -19,31 +19,34 @@ class Tile_Map
         Tile_Map();
 
         TilePtr&
-        operator () ( const int x, const int y);
+        operator ()     ( const int x, const int y);
 
         TilePtr&
-        at          ( const int x, const int y );
+        at              ( const int x, const int y );
 
         TilePtr&
-        operator () ( const sf::Vector2i& pos );
+        operator ()     ( const sf::Vector2i& pos );
 
         TilePtr&
-        at          ( const sf::Vector2i& pos );
+        at              ( const sf::Vector2i& pos );
 
         const double
-        getFriction ( const sf::Vector2i& pos );
+        getFrictionAt   ( const sf::Vector2i& pos );
+
+        const double
+        getViscosityAt  ( const sf::Vector2i& pos );
 
         void
-        addTile     ( TilePtr tile );
+        addTile         ( TilePtr tile );
 
         void
-        update      ( const float dt, const sf::Vector2i& playerPos );
+        update          ( const float dt, const sf::Vector2i& playerPos );
 
         void
-        draw        ( sf::RenderWindow& window, const sf::Vector2i& playerPos );
+        draw            ( sf::RenderWindow& window, const sf::Vector2i& playerPos );
 
         void
-        changeTile  ( TilePtr tile );
+        changeTile      ( TilePtr tile );
 
     private:
         TileVec m_tiles { Tiles::Info::MAP_SIZE * Tiles::Info::MAP_SIZE };

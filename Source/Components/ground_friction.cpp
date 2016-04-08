@@ -16,8 +16,8 @@ Ground_Friction :: logic   ( const float dt )
 
     if ( m_tileMap->at( pos )->isWalkable() )
     {
-        m_mob->setVelocity( { (float)m_mob->getVelocity().x * (float)m_tileMap->getFriction( pos ),
-                              (float)m_mob->getVelocity().y * (float)m_tileMap->getFriction( pos )
+        m_mob->setVelocity( { (float)m_mob->getVelocity().x * (float)m_tileMap->getFrictionAt ( pos ),
+                              (float)m_mob->getVelocity().y * (float)m_tileMap->getFrictionAt ( pos )
                             } );
     }
 }

@@ -17,7 +17,6 @@ Level_Generator :: Level_Generator  ( Tile_Map& tiles, Game& game, const int see
     m_tileMap = &tiles;
     m_game = &game;
 
-
     //srand( seed );
 
     //Fill map with water

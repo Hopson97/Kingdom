@@ -36,9 +36,15 @@ Tile_Map :: at ( const sf::Vector2i& pos )
 }
 
 const double
-Tile_Map :: getFriction ( const sf::Vector2i& pos )
+Tile_Map :: getFrictionAt ( const sf::Vector2i& pos )
 {
     return at( pos )->getFriction();
+}
+
+const double
+Tile_Map :: getViscosityAt ( const sf::Vector2i& pos )
+{
+    return at( pos )->getViscosity();
 }
 
 

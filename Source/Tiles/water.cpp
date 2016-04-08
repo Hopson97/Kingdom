@@ -8,7 +8,7 @@ namespace Tiles
 {
 
 Water :: Water ( Game& game, const sf::Vector2i& pos,  Tile_Map& tileMap, const Ecosystem ecosystem  )
-:   Tile        ( game, pos, Info::Colours::sea, ecosystem, false, true )
+:   Tile        ( game, pos, Info::Colours::sea, ecosystem, false, true, 1, 0.7 )
 ,   m_game      ( &game )
 ,   m_tileMap   ( &tileMap )
 {

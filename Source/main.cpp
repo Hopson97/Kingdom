@@ -7,7 +7,7 @@
         *   Do something about the repeated code in the "Tile_Collidable" class
         *   Create a shark texture
         *   Combine spawns_ground and spawns_sea somehow
-        *   Why does it lag spike when a mob spawns?
+        *   Improve level gen
 */
 
 int main()

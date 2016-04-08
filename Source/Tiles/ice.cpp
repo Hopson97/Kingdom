@@ -7,7 +7,7 @@ namespace Tiles
 {
 
 Ice :: Ice ( Game& game, const sf::Vector2i& pos, Tile_Map* tileMap, const Ecosystem ecosystem )
-:   Tile        ( game, pos, Info::Colours::ice, ecosystem, true, false, 0.95 )
+:   Tile        ( game, pos, Info::Colours::ice, ecosystem, true, false, 0.91, 0 )
 ,   m_tileMap   ( tileMap )
 ,   m_game      ( &game )
 {
