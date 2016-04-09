@@ -32,10 +32,8 @@ Spawns_Ground :: spawn ( const int maxDistFromPlayer )
     if ( xBound >= Tiles::Info::MAP_SIZE ) xBound = Tiles::Info::MAP_SIZE - 1;
     if ( yBound >= Tiles::Info::MAP_SIZE ) yBound = Tiles::Info::MAP_SIZE - 1;
 
-    int area = (x + xBound ) * ( x + yBound );
-
     m_hasSpawned = false;
-    for ( int i = 0; i < area ; i++ )
+    for ( int i = 0; i < 10 ; i++ )
     {
         int xPos = random::num( x, xBound );
         int yPos = random::num( y, yBound );

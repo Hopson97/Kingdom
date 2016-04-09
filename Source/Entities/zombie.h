@@ -1,20 +1,20 @@
 #ifndef ZOMBIE_H
 #define ZOMBIE_H
 
-#include "mob.h"
+#include "enemy_mob.h"
 #include "player.h"
 
-class Zombie : public Mob
+typedef std::unique_ptr<Mob> MobPtr;
+typedef std::vector<MobPtr> MobPtrVec;
+
+class Zombie : public Enemy_Mob
 {
     public:
-        Zombie( Game* game, Tile_Map* tiles, Player& player );
-
-    protected:
-        void
-        uniqueLogic         ( const float dt ) override;
+        Zombie( Game* game, Tile_Map* tiles, Player* player, MobPtrVec* mobVec );
 
     private:
-        Player* m_player;
+        void
+        uniqueLogic         ( const float dt ) override;
 };
 
 #endif // ZOMBIE_H

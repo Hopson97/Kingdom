@@ -24,10 +24,10 @@ class Sf_Entity
         setPosition         ( const sf::Vector2f& pos )         { m_sprite.setPosition( pos ); }
 
         const sf::Vector2f&
-        getPosition         ()                                  { return m_sprite.getPosition(); }
+        getPosition         () const                            { return m_sprite.getPosition(); }
 
         const sf::Vector2u
-        getSpriteSize       ()                                  { return m_sprite.getTexture()->getSize(); }
+        getSpriteSize       () const                            { return m_sprite.getTexture()->getSize(); }
 
         void
         setVelocity         ( const sf::Vector2f& velocity )    { m_velocity = velocity; }

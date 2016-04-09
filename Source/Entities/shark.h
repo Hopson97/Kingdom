@@ -1,18 +1,16 @@
 #ifndef SHARK_H
 #define SHARK_H
 
-#include "mob.h"
+#include "enemy_mob.h"
 #include "player.h"
 
-class Shark : public Mob
+class Shark : public Enemy_Mob
 {
     public:
-        Shark( Game* game, Tile_Map* tiles, Player& player );
+        Shark( Game* game, Tile_Map* tiles, Player* player );
 
         void
         uniqueLogic( const float dt ) override;
-
-    protected:
 
     private:
 };

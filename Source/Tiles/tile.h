@@ -17,17 +17,9 @@ namespace Info
 {
     constexpr static
     int     SIZE        { 42 },     //The size of a single tile in pixels ( squared )
-            MAP_SIZE    { 1500 };    //How size of the map in tiles ( squared )
+            MAP_SIZE    { 1400 };    //How size of the map in tiles ( squared )
 
     const unsigned TEXTURE_VARIANTS = 3;
-
-    namespace Colours
-    {
-        const static sf::Color grass   = { 0,   255, 50    };
-        const static sf::Color sea     = { 58,  80,  230, 200    };
-        const static sf::Color cliff   = { 255, 255, 255   };
-        const static sf::Color ice     = { 50 , 229, 255   };
-    }
 }
 
 

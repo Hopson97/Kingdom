@@ -8,7 +8,7 @@ Swimmable :: Swimmable ( Tile_Map* map, Mob* mob, const bool canLand, Game& game
 ,   m_mob       ( mob )
 ,   m_canLand   ( canLand )
 ,   m_window    ( &game.getWindow().get() )
-,   m_splash    ( 500, sf::seconds( 2 ), sf::Color::White )
+,   m_splash    ( 100, sf::seconds( 1 ), sf::Color::White )
 {
 
 }
@@ -30,7 +30,7 @@ Swimmable :: logic   ( const float dt )
                             } );
 
         //Draws the splash particles only if the player has moved
-        if ( m_prevMobPos != m_mob->getPosition() )
+        //if ( m_prevMobPos != m_mob->getPosition() )
         {
             m_splash.setEmitter( m_mob->getPosition() );
             m_splash.setUpdate( true );

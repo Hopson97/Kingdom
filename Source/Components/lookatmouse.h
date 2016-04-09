@@ -4,6 +4,7 @@
 #include "component.h"
 
 #include <SFML/Graphics.hpp>
+#include <sim_ptr.h>
 
 /*
     Makes a sprite always look at the mouse.

@@ -25,7 +25,7 @@ class Swimmable : public Component_Base
 
         sf::RenderWindow*   m_window;
 
-        Particle_System     m_splash;
+        Particle_System     m_splash    { 100, sf::seconds( 1 ), sf::Color::White  };
 
         sf::Vector2f        m_prevMobPos;
 

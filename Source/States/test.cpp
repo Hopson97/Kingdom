@@ -72,9 +72,9 @@ Test :: sfDraw( const double dt )
 void
 Test :: addMobs ()
 {
-    if ( timer.getElapsedTime().asSeconds() > 5.0f )
+    if ( timer.getElapsedTime().asSeconds() > 1.0f )
     {
-        if ( random::num( 1, 10) == 1)
+        //if ( random::num( 1, 10) == 1)
         {
             addZombie   ();
             addShark    ();
@@ -87,13 +87,13 @@ Test :: addMobs ()
 void
 Test :: addZombie ()
 {
-    m_mobs.emplace_back( std::make_unique<Zombie>(&getGame(), &m_tileMap, m_player ));
+    m_mobs.emplace_back( std::make_unique<Zombie>( &getGame(), &m_tileMap, &m_player, &m_mobs ));
 }
 
 void
 Test :: addShark ()
 {
-    m_mobs.emplace_back( std::make_unique<Shark>(&getGame(), &m_tileMap, m_player ));
+    m_mobs.emplace_back( std::make_unique<Shark>( &getGame(), &m_tileMap, &m_player ));
 }
 
 
