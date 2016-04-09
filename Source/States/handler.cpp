@@ -7,6 +7,47 @@
 namespace State
 {
 
+typedef std::unique_ptr<State_Base> StatePtr;
+
+Handler :: ~Handler ()
+{
+    while ( !states.empty() )
+    {
+        popState();
+    }
+}
+
+void
+Handler :: changeState ( StatePtr state)
+{
+    popState();
+    states.emplace ( std::move ( state ) );
+}
+
+
+void
+Handler :: pushState ( StatePtr state )
+{
+    states.emplace ( std::move ( state ) );
+}
+
+void
+Handler :: popState ()
+{
+    if( !states.empty() )
+    {
+        states.pop();
+    }
+}
+
+State_Base*
+Handler :: peekState ()
+{
+    return states.top().get();
+}
+
+}
+/*old
 
 Handler :: ~Handler ()
 {
@@ -46,4 +87,4 @@ Handler :: peekState ()
     return states.top() ;
 }
 
-}
+*/

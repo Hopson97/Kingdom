@@ -17,14 +17,14 @@ Window :: Window()
     m_window.setPosition( { 0, 0 } );
 
     //GLEW set up
-    glewExperimental = GL_TRUE;
-    glewInit();
+    //glewExperimental = GL_TRUE;
+    //glewInit();
 
     //OpenGL set up
     glViewport  (0, 0, Win_Info::WIDTH, Win_Info::HEIGHT);
-    glEnable    (GL_DEPTH_TEST);
-    glEnable    (GL_CULL_FACE);
-    glCullFace  (GL_BACK);
+    //glEnable    (GL_DEPTH_TEST);
+    //glEnable    (GL_CULL_FACE);
+    //glCullFace  (GL_BACK);
 
 
 }

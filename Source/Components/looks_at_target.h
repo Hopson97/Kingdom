@@ -14,6 +14,7 @@ namespace Component
 class Looks_At_Target : public Component_Base
 {
     public:
+        explicit
         Looks_At_Target   ( Enemy_Mob* mob );
 
         void

@@ -17,7 +17,7 @@ namespace Info
 {
     constexpr static
     int     SIZE        { 42 },     //The size of a single tile in pixels ( squared )
-            MAP_SIZE    { 1400 };    //How size of the map in tiles ( squared )
+            MAP_SIZE    { 100 };    //How size of the map in tiles ( squared )
 
     const unsigned TEXTURE_VARIANTS = 3;
 }

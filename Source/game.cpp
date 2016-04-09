@@ -4,7 +4,7 @@
 
 Game :: Game ()
 {
-    m_states.changeState( new State::Test ( this ) );
+    m_states.changeState( std::make_unique< State::Test > ( this ) );
 }
 
 

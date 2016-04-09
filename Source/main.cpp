@@ -1,4 +1,7 @@
 #include "game.h"
+#include <iostream>
+
+#include "swimmable.h"
 
 /*
     To do:
@@ -17,6 +20,7 @@
 int main()
 {
     srand(time(NULL));
+    std::cout << "vertex size: " << sizeof(Component::Swimmable) << std::endl;
 
     Game game;
     game.runLoop();

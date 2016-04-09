@@ -74,7 +74,7 @@ Test :: addMobs ()
 {
     if ( timer.getElapsedTime().asSeconds() > 1.0f )
     {
-        //if ( random::num( 1, 10) == 1)
+        if ( random::num( 1, 10) == 1)
         {
             addZombie   ();
             addShark    ();

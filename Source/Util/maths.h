@@ -14,10 +14,16 @@ namespace Math
         return degrees * ( PI / 180 );
     }
 
+    template < typename T >
+    T toDeg ( const T degrees )
+    {
+        return degrees * ( 180 / PI );
+    }
+
     template <typename T>
     float getRot ( T dx, T dy )
     {
-        return (atan2 ( dy,dx ) ) * 180 / PI + 180;
+        return toDeg ( atan2 ( dy,dx ) ) + 180;
     }
 
 } //Namespace Math

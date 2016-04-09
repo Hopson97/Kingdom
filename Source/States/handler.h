@@ -2,6 +2,7 @@
 #define HANDLER_H
 
 #include <stack>
+#include <memory>
 
 #include "state_base.h"
 
@@ -14,6 +15,44 @@ namespace State
 
 class Handler
 {
+    typedef std::unique_ptr<State_Base> StatePtr;
+
+    public:
+        ~Handler();
+
+        void
+        changeState     ( StatePtr state);
+
+        void
+        pushState       ( StatePtr state );
+
+        void
+        popState        ();
+
+        State_Base*
+        peekState       ();
+
+        const unsigned
+        size            () const  { return states.size(); }
+
+        const bool
+        empty           () const { return states.empty(); }
+
+    private:
+        std::stack<StatePtr> states;
+};
+
+}
+
+#endif // HANDLER_H
+
+/* old
+
+
+class Handler
+{
+    typedef std::unique_ptr<State_Base> StatePtr;
+
     public:
         ~Handler();
 
@@ -39,6 +78,5 @@ class Handler
         std::stack<State_Base*> states;
 };
 
-}
 
-#endif // HANDLER_H
+*/
