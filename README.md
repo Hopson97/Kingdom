@@ -38,20 +38,29 @@ All tiles must inherit from the base "Tiles::Tile" class, and pass along some ba
 
 Each tile type also has a respective .tile (custom file type) in Res/Data/Tiles/ which allows much easier changes for tile types, eg their friction or viscosity values. The format is as follows, as shown by the Grass.tile file as an example:
 
+...........
+
 Viscosity
+
 0
 
 Friction
+
 0.76
 
 Swimmable
+
 false
 
 Walkable
+
 true
 
 Colour
+
 0 255 50
+
+..................
 
 The information can go in any order, except the RGBA colour values must go at the bottom due to a possible alpha value at the end, and the current way of detection for that is checking for the EOF.
 
