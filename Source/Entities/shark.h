@@ -10,9 +10,11 @@ class Shark : public Enemy_Mob
         Shark( Game* game, Tile_Map* tiles, Player* player );
 
         void
-        uniqueLogic( const float dt ) override;
+        attack() override { }
 
     private:
+        void
+        uniqueLogic( const float dt ) override;
 };
 
 #endif // SHARK_H

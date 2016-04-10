@@ -21,14 +21,14 @@ void
 Handler :: changeState ( StatePtr state)
 {
     popState();
-    states.emplace ( std::move ( state ) );
+    states.push ( std::move ( state ) );
 }
 
 
 void
 Handler :: pushState ( StatePtr state )
 {
-    states.emplace ( std::move ( state ) );
+    states.push ( std::move ( state ) );
 }
 
 void

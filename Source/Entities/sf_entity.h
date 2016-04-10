@@ -12,31 +12,31 @@ class Sf_Entity
         Sf_Entity           ( const sf::Texture& t );
 
         void
-        setRotation         ( const double rot )                { m_sprite.setRotation( rot ); }
+        setRotation         ( const double rot );
 
         float
-        getRotation         () const                            { return m_sprite.getRotation(); }
+        getRotation         () const;
 
         const sf::Vector2f&
-        getOrigin           () const                            { return m_sprite.getOrigin(); }
+        getOrigin           () const;
 
         void
-        setPosition         ( const sf::Vector2f& pos )         { m_sprite.setPosition( pos ); }
+        setPosition         ( const sf::Vector2f& pos );
 
         const sf::Vector2f&
-        getPosition         () const                            { return m_sprite.getPosition(); }
+        getPosition         () const;
 
         const sf::Vector2u
-        getSpriteSize       () const                            { return m_sprite.getTexture()->getSize(); }
+        getSpriteSize       () const;
 
         void
-        setVelocity         ( const sf::Vector2f& velocity )    { m_velocity = velocity; }
+        setVelocity         ( const sf::Vector2f& velocity );
 
         void
-        changeVelocity      ( const sf::Vector2f& velocity )    { m_velocity += velocity; }
+        changeVelocity      ( const sf::Vector2f& velocity );
 
         const sf::Vector2f
-        getVelocity         () const                            { return m_velocity; }
+        getVelocity         () const;
 
 
         virtual void

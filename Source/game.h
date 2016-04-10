@@ -23,10 +23,10 @@ class Game
         getTileInfo                 ( const Tile_Type name ) const;
 
         State::Handler&
-        states                      ()                          { return m_states; }
+        states                      ();
 
         Window&
-        getWindow                   ()                          { return m_window; }
+        getWindow                   ();
 
 
 
@@ -34,7 +34,8 @@ class Game
         Window m_window;
         State::Handler m_states;
 
-        const   double              calculateDeltaTime          ( sf::Clock& c, sf::Time& t );
+        const double
+        calculateDeltaTime          ( sf::Clock& c, sf::Time& t );
 
         Textures    m_textures;
         Tiles_M     m_tileInfo;

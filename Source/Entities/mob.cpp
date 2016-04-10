@@ -136,3 +136,28 @@ Mob :: setPosAtSolidTile ()
     }
 }
 
+void
+Mob :: setTarget   ( Mob* mob )
+{
+    m_target = mob;
+}
+
+
+const Mob*
+Mob :: getTarget    () const
+{
+    return ( m_target ) ? m_target : nullptr;
+}
+
+const sf::Vector2i
+Mob :: getTargetTilePosition    ()
+{
+    return ( m_target ) ? m_target->getTileMapPosition() : sf::Vector2i( 0, 0 );
+}
+
+const bool
+Mob :: hasTarget () const
+{
+    return ( m_target ) ? true : false;
+}
+

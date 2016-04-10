@@ -15,8 +15,9 @@
         *   Combine spawns_ground and spawns_sea somehow
         *   Improve level gen
         *   Animation for the "swimmable" class ( Res/Effects/Water Splash.png") or make the particle system look good
-        *   Why does it use so much memory ( should be around 750mb right now)
+        *   Zombies get stuck on edge of tiles. (eg, grass to water), why?
         *   Enemy AI component
+        *   Comments
 */
 
 

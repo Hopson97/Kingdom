@@ -1,8 +1,11 @@
-Viscosity
+#grass
+
+
+Viscosity Multiplier
 0
 
-Friction
-0.76
+Friction Multiplier
+0.7
 
 Swimmable
 false

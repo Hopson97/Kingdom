@@ -35,7 +35,7 @@ Player :: Player ( Game* game, Tile_Map* tiles )
     addComponent( std::make_unique<Component::Tile_Collidable>
                   ( m_tileMap, this ) );
 
-    setUpAnimation();
+    //setUpAnimation();
 
     setPosAtSolidTile   ( );
 }
@@ -82,7 +82,7 @@ Player :: updateView ()
     //to the player
     m_window->setView(m_view);      //Set the windows view to the camera
 }
-
+/*
 void
 Player :: setUpAnimation ()
 {
@@ -99,3 +99,4 @@ Player :: setUpAnimation ()
     m_walkAnim.addFrame( { standing,  time } );
     m_walkAnim.addFrame( { walk2,     time } );
 }
+*/

@@ -20,7 +20,7 @@ Look_At_Mouse :: logic ( const float dt )
     float dx = pos.x - mousePos.x;    //Returns distance between mouseX and playerX
     float dy = pos.y - mousePos.y;
 
-    m_sprite->setRotation( Math::getRot( dx, dy ) );
+    m_sprite->setRotation( Math::getRot( dx, dy ) ); //"getRot" Defined in Util/maths.h
 }
 
 } //Namespace Component

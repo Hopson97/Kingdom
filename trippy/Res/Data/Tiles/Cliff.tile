@@ -2,13 +2,13 @@ Viscosity
 0
 
 Friction
-0.95
+0
 
 Swimmable
 false
 
 Walkable
-true
+false
 
 Colour
-50 229 255
+255 255 255

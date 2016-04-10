@@ -7,7 +7,7 @@
 */
 
 #include "enemy_mob.h"
-#include "component.h"
+#include "ai_component.h"
 #include "player.h"
 
 #include <vector>
@@ -17,12 +17,12 @@
 namespace Component
 {
 
-class Aggressive_Targeting : public Component_Base
+class Aggressive_Targeting : public AI_Component
 {
     typedef std::vector<std::unique_ptr<Mob>> MobPtrVec;
 
     public:
-        Aggressive_Targeting ( Enemy_Mob* mob, Player* player,
+        Aggressive_Targeting ( Mob* mob, Player* player,
                               MobPtrVec* mobs, unsigned maxDist );
 
         void
@@ -40,7 +40,6 @@ class Aggressive_Targeting : public Component_Base
 
 
     private:
-        Enemy_Mob*  m_mob;              //The mob to be controlling
         MobPtrVec*  m_mobVec;           //The list of potential mobs to be attacking
         unsigned    m_maxDist;          //The max distance before it becomes non aggressive
 

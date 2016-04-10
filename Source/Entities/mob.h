@@ -40,7 +40,7 @@ class Mob : public Sf_Entity
         setMobState         ( const Mob_State state )   { m_mobState = state; }
 
         const Mob_State
-        getMobState         ( )                          { return m_mobState;
+        getMobState         ( )                          { return m_mobState; }
 
         void
         velocityForwards    ( const float dt );
@@ -53,6 +53,18 @@ class Mob : public Sf_Entity
 
         void
         velocityRight       ( const float dt );
+
+        void
+        setTarget                   ( Mob* mob );
+
+        const Mob*
+        getTarget                   () const;
+
+        const sf::Vector2i
+        getTargetTilePosition       ();
+
+        const bool
+        hasTarget                   () const;
 
 
     protected:
@@ -73,6 +85,8 @@ class Mob : public Sf_Entity
         Tile_Map*       m_tileMap;
         bool            m_isMoving  { false };
 
+        Mob*            m_target            { nullptr };
+
         void
         setPosAtSolidTile   ();
 
@@ -86,13 +100,14 @@ class Mob : public Sf_Entity
     private:
         std::vector< Comp > m_components;
 
-        const float     m_walkSpeed { 25 };
-
         sf::Vector2i    m_tileMapPos;
 
         bool            m_isLiving;
 
         Mob_State       m_mobState;
+
+    protected: //temp
+        /*const*/ float     m_walkSpeed { 25 };
 };
 
 #endif // MOB_H

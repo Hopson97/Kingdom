@@ -64,3 +64,15 @@ Game :: getTileInfo ( const Tile_Type name ) const
     return m_tileInfo.getTileInfo ( name );
 }
 
+State::Handler&
+Game :: states ()
+{
+    return m_states;
+}
+
+Window&
+Game :: getWindow ()
+{
+    return m_window;
+}
+

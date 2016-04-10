@@ -27,6 +27,7 @@ Tile :: draw ( sf::RenderWindow& window)
     }
 }
 
+//For variation, a random texture is chosen.
 const sf::Texture&
 Tile :: randomTexture ( const Game& game )
 {
@@ -59,5 +60,69 @@ Tile :: setInfo ( const Tile_Info& info)
     m_info = info;
     m_sprite.setColor( info.colour );
 }
+
+const bool
+Tile :: isWalkable      () const
+{
+    return m_info.isWalkable;
+}
+
+const bool
+Tile :: isSwimmable     () const
+{
+    return m_info.isSwimmable;
+}
+
+const sf::Vector2i&
+Tile :: getTileMapPos   () const
+{
+    return m_tilePos;
+}
+
+const double
+Tile :: getFriction     () const
+{
+    return m_info.friction;
+}
+
+const double
+Tile :: getViscosity    () const
+{
+    return m_info.viscosity;
+}
+
+const Ecosystem
+Tile :: getEcosystem    () const
+{
+    return m_ecosystem;
+}
+
+const unsigned
+Tile :: getTxrId                () const
+{
+    return m_txrId;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 } //namespace Tiles

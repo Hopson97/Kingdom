@@ -17,7 +17,7 @@ namespace Info
 {
     constexpr static
     int     SIZE        { 42 },     //The size of a single tile in pixels ( squared )
-            MAP_SIZE    { 100 };    //How size of the map in tiles ( squared )
+            MAP_SIZE    { 1500 };    //How size of the map in tiles ( squared )
 
     const unsigned TEXTURE_VARIANTS = 3;
 }
@@ -29,49 +29,49 @@ class Tile : public Sf_Entity
         Tile (  const Game& game, const sf::Vector2i& pos, const Ecosystem ecosystem );
 
         void
-        draw                ( sf::RenderWindow& window) override;
-
-        inline
-        const bool
-        isWalkable          ()              { return m_info.isWalkable; }
+        draw                    ( sf::RenderWindow& window) override;
 
         const bool
-        isSwimmable          ()             { return m_info.isSwimmable; }
+        isWalkable              () const;
 
-        const sf::Vector2i
-        getTileMapPos       () const        { return m_tilePos; }
+        const bool
+        isSwimmable             () const;
+
+        const sf::Vector2i&
+        getTileMapPos           () const;
 
         const double
-        getFriction         () const        { return m_info.friction; }
+        getFriction             () const;
 
         const double
-        getViscosity       () const         { return m_info.viscosity; }
+        getViscosity            () const;
 
         const Ecosystem
-        getEcosystem        () const        { return m_ecosystem; }
-
-        //Virtual members
-        virtual void
-        update              ( const float dt ) { }
+        getEcosystem            () const;
 
         virtual void
-        steppedOn           ( ) { }
+        update                  ( const float dt )
+        { }
+
+        virtual void
+        steppedOn               ()
+        { }
 
     protected:
         const sf::Texture&
-        randomTexture       (  const Game& game  );
+        randomTexture           (  const Game& game  );
 
         const sf::Texture&
-        getTexture          ( const Game& game, const unsigned id );
+        getTexture              ( const Game& game, const unsigned id );
 
         const unsigned
-        getTxrId            () const     { return m_txrId; }
+        getTxrId                () const;
 
         void
-        setInfo             ( const Tile_Info& info );
+        setInfo                 ( const Tile_Info& info );
 
     private:
-        Tile_Info     m_info;
+        Tile_Info           m_info;
 
         sf::Vector2i        m_tilePos;
         Ecosystem           m_ecosystem;

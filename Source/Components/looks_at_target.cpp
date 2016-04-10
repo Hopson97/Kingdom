@@ -23,6 +23,7 @@ Looks_At_Target :: logic   ( const float dt )
 void
 Looks_At_Target :: lookAtTarget ()
 {
+    //shorthand
     sf::Vector2f tPos = m_mob->getTarget()->getPosition();
     sf::Vector2f mPos = m_mob->getPosition();
 

@@ -75,16 +75,22 @@ Test :: sfDraw( const double dt )
 void
 Test :: addMobs ()
 {
-    if ( timer.getElapsedTime().asSeconds() > 1.0f )
+    //if ( timer.getElapsedTime().asSeconds() > 1.0f )
     {
-        if ( random::num( 1, 10) == 1)
+        //if ( random::num( 1, 10) == 1)
         {
             addZombie   ();
-            addShark    ();
 
         }
         timer.restart();
     }
+
+    if ( timer.getElapsedTime().asSeconds() > 5 )
+    {
+        std::cout << "mob: " << m_mobs.size() << std::endl;
+        timer.restart();
+    }
+
 }
 
 void

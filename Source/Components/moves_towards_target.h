@@ -1,30 +1,31 @@
 #ifndef MOVES_TOWARDS_TARGET_H
 #define MOVES_TOWARDS_TARGET_H
 
+/*
+    Moves the mob towards the target given there is one.
+*/
+
 #include "enemy_mob.h"
-#include "component.h"
+#include "ai_component.h"
 
 #include <vector>
 
 namespace Component
 {
 
-class Moves_Towards_Target : public Component_Base
+class Moves_Towards_Target : public AI_Component
 {
     public:
-        explicit
-        Moves_Towards_Target   ( Enemy_Mob* mob );
+        Moves_Towards_Target   ( Mob* mob, unsigned distBeforeStop );
 
         void
         logic   ( const float dt ) override;
 
     private:
-        void
-        move ( const float dt );
+        unsigned    m_distBeforeStop;   //How far from the target does this move before it stops.
 
 
-    private:
-        Enemy_Mob*  m_mob;              //The mob to be controlling
+
 };
 
 }

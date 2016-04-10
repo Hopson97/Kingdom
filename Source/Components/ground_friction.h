@@ -5,6 +5,10 @@
 #include "mob.h"
 #include "component.h"
 
+/*
+    Applies friction to mobs based on tiles friction values.
+*/
+
 namespace Component
 {
 

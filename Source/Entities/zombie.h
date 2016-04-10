@@ -12,9 +12,14 @@ class Zombie : public Enemy_Mob
     public:
         Zombie( Game* game, Tile_Map* tiles, Player* player, MobPtrVec* mobVec );
 
+        void
+        attack() override { }
+
     private:
         void
         uniqueLogic         ( const float dt ) override;
+
+
 };
 
 #endif // ZOMBIE_H

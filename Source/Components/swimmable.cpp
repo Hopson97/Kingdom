@@ -8,7 +8,7 @@ Swimmable :: Swimmable ( Tile_Map* map, Mob* mob, const bool canLand, Game& game
 ,   m_mob       ( mob )
 ,   m_canLand   ( canLand )
 ,   m_window    ( &game.getWindow().get() )
-,   m_splash    ( 777, sf::seconds( 1 ), sf::Color::White )
+,   m_splash    ( 100, sf::seconds( 1 ), sf::Color::White )
 { }
 
 void

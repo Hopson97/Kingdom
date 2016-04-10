@@ -6,8 +6,9 @@
 namespace Component
 {
 
-Moves_Towards_Target :: Moves_Towards_Target ( Enemy_Mob* mob)
-:   m_mob               ( mob )
+Moves_Towards_Target :: Moves_Towards_Target ( Mob* mob, unsigned distBeforeStop)
+:   AI_Component        ( mob )
+,   m_distBeforeStop    ( distBeforeStop)
 {
 }
 
@@ -16,14 +17,18 @@ Moves_Towards_Target :: logic   ( const float dt )
 {
     if ( m_mob->hasTarget() )
     {
-        move ( dt );
+        //If the distance is greater than the maximum distance before stopping.
+        if ( getDistanceTo( m_mob->getTargetTilePosition() ) > m_distBeforeStop )
+        {
+            m_mob->velocityForwards( dt );
+        }
+        else
+        {
+            m_mob->velocityBackwards( dt );
+        }
     }
 }
 
-void
-Moves_Towards_Target :: move ( const float dt )
-{
-    m_mob->velocityForwards( dt )
-}
+
 
 }

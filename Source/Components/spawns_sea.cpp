@@ -4,6 +4,12 @@
 
 #include <cmath>
 
+/*
+    Spawns the mob within a radius of the player.
+
+    De-spawns when outside "distToDespawn" radius.
+*/
+
 namespace Component
 {
 
@@ -20,12 +26,14 @@ Spawns_Sea :: Spawns_Sea( Mob* mob, Tile_Map* tiles, Player* player,
 void
 Spawns_Sea :: spawn ( const int maxDistFromPlayer )
 {
+    //Check for where the possible spawning checks starts from
     int x = m_player->getTileMapPosition().x - maxDistFromPlayer;
     if ( x <= 0 ) x = 1;
 
     int y = m_player->getTileMapPosition().y - maxDistFromPlayer;
     if ( y <= 0 ) y = 1;
 
+    //Check for where the possible spawning checks ends
     int xBound = x + maxDistFromPlayer * 2;
     int yBound = y + maxDistFromPlayer * 2;
 

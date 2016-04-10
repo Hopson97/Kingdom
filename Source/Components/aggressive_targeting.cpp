@@ -1,9 +1,10 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <istream>
-// *** END ***
 #include "Aggressive_Targeting.h"
 
-#include <iostream>
+/*
+    Targets anything that attacks it, but is aggressive towards the player.
+    Becomes non-aggressive after "m_maxDist" tiles away.
+*/
+
 #include <cmath>
 
 namespace Component
@@ -11,9 +12,9 @@ namespace Component
 
 typedef std::vector<std::unique_ptr<Mob>> MobPtrVec;
 
-Aggressive_Targeting :: Aggressive_Targeting ( Enemy_Mob* mob, Player* player,
+Aggressive_Targeting :: Aggressive_Targeting ( Mob* mob, Player* player,
     MobPtrVec* mobs, unsigned maxDist )
-:   m_mob               ( mob )
+:   AI_Component        ( mob )
 ,   m_mobVec            ( mobs )
 ,   m_maxDist           ( maxDist )
 ,   m_player            ( player )
@@ -30,7 +31,7 @@ Aggressive_Targeting :: logic   ( const float dt )
 void
 Aggressive_Targeting :: checkDistToPlayer ()
 {
-    if ( !m_mob->getTarget() )
+    if ( !m_mob->hasTarget() )
     {
         if ( getDistance( m_player->getTileMapPosition() ) <= m_maxDist )
         {
@@ -42,7 +43,7 @@ Aggressive_Targeting :: checkDistToPlayer ()
 void
 Aggressive_Targeting :: checkTarget ()
 {
-    if ( getDistance( m_mob->getTargetTilePosition() ) > m_maxDist && m_mob->getTarget() )
+    if ( getDistance( m_mob->getTargetTilePosition() ) > m_maxDist && m_mob->hasTarget() )
     {
         m_mob->setTarget ( nullptr );
     }
