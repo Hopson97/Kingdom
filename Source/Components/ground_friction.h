@@ -2,8 +2,8 @@
 #define GROUND_FRICTION_H
 
 #include "tilemap.h"
-#include "mob.h"
-#include "component.h"
+#include "Bases/mob.h"
+#include "Bases/component.h"
 
 /*
     Applies friction to mobs based on tiles friction values.

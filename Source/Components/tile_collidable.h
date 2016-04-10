@@ -1,9 +1,9 @@
 #ifndef TILE_COLLIDABLE_H
 #define TILE_COLLIDABLE_H
 
-#include "component.h"
+#include "Bases/component.h"
 #include "tilemap.h"
-#include "mob.h"
+#include "Bases/mob.h"
 
 /*
     Does not allow the mob to walk into tiles marked as "not walkable"

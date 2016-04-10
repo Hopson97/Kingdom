@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "mob.h"
+#include "Bases/mob.h"
 #include "game.h"
 
 class Player    :   public Mob

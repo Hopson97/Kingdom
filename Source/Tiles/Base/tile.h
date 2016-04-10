@@ -1,7 +1,7 @@
 #ifndef TILE_H
 #define TILE_H
 
-#include "sf_entity.h"
+#include "../Entities/Bases/sf_entity.h"
 #include "game.h"
 #include "ecosystems.h"
 #include "tile_info.h"

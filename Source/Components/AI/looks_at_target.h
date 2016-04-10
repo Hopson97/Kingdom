@@ -3,8 +3,8 @@
 
 
 
-#include "enemy_mob.h"
-#include "component.h"
+#include "Bases/enemy_mob.h"
+#include "Bases/component.h"
 
 #include <vector>
 

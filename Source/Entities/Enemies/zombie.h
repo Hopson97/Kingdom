@@ -1,7 +1,7 @@
 #ifndef ZOMBIE_H
 #define ZOMBIE_H
 
-#include "enemy_mob.h"
+#include "Bases/enemy_mob.h"
 
 
 typedef std::unique_ptr<Mob> MobPtr;

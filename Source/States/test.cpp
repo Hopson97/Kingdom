@@ -8,8 +8,8 @@
 #include "rand.h"
 #include "levelgen.h"
 
-#include "zombie.h"
-#include "shark.h"
+#include "Enemies/zombie.h"
+#include "Enemies/shark.h"
 
 #include <iostream>
 #include <thread>

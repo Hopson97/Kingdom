@@ -1,7 +1,7 @@
 #ifndef MOB_H
 #define MOB_H
 
-#include "component.h"
+#include "Bases/component.h"
 #include "sf_entity.h"
 #include "tilemap.h"
 

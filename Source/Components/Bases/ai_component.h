@@ -2,7 +2,7 @@
 #define AI_COMPONENT_H
 
 #include "component.h"
-#include "enemy_mob.h"
+#include "Bases/enemy_mob.h"
 
 namespace Component
 {

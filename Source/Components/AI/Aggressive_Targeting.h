@@ -6,8 +6,8 @@
     Becomes non-aggressive after "m_maxDist" tiles away.
 */
 
-#include "enemy_mob.h"
-#include "ai_component.h"
+#include "Bases/enemy_mob.h"
+#include "Bases/ai_component.h"
 #include "player.h"
 
 #include <vector>

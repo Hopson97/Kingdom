@@ -5,13 +5,13 @@
 
 #include "../Util/maths.h"
 
-#include "lookatmouse.h"
+#include "looks_at_mouse.h"
 #include "tile_collidable.h"
 #include "steps_on_tiles.h"
 #include "ground_friction.h"
 #include "swimmable.h"
 
-#include <iostream>
+
 
 Player :: Player ( Game* game, Tile_Map* tiles )
 :   Mob         ( game, game->getTexture ( TXR_ENT_PLAYER), tiles  )

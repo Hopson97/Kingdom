@@ -1,4 +1,4 @@
-#include "lookatmouse.h"
+#include "looks_at_mouse.h"
 
 #include "maths.h"
 

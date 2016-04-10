@@ -1,8 +1,8 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include "component.h"
-#include "mob.h"
+#include "Bases/component.h"
+#include "Bases/enemy_mob.h"
 #include "tilemap.h"
 #include "player.h"
 

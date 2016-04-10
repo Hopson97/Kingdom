@@ -5,8 +5,8 @@
     Moves the mob towards the target given there is one.
 */
 
-#include "enemy_mob.h"
-#include "ai_component.h"
+#include "Bases/enemy_mob.h"
+#include "Bases/ai_component.h"
 
 #include <vector>
 

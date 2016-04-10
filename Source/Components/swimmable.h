@@ -2,8 +2,8 @@
 #define SWIMMABLE_H
 
 #include "tilemap.h"
-#include "mob.h"
-#include "component.h"
+#include "Bases/enemy_mob.h"
+#include "Bases/component.h"
 #include "particle_system.h"
 
 namespace Component

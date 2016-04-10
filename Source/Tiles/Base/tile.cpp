@@ -6,7 +6,7 @@
 #include <iostream>
 
 #include "rand.h"
-#include "sf_entity.h"
+#include "Bases/sf_entity.h"
 namespace Tiles
 {
 

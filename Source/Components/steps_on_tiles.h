@@ -1,8 +1,8 @@
 #ifndef STEPS_ON_TILES_H
 #define STEPS_ON_TILES_H
 
-#include "mob.h"
-#include "component.h"
+#include "Bases/mob.h"
+#include "Bases/component.h"
 #include "tilemap.h"
 
 /*

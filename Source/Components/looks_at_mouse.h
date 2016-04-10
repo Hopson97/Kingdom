@@ -1,7 +1,7 @@
 #ifndef LOOKATMOUSE_H
 #define LOOKATMOUSE_H
 
-#include "component.h"
+#include "Bases/component.h"
 
 #include <SFML/Graphics.hpp>
 

@@ -4,7 +4,7 @@
 #include "game.h"
 #include "tilemap.h"
 #include "player.h"
-#include "zombie.h"
+#include "Enemies/zombie.h"
 
 #include "levelgen.h"
 

@@ -24,7 +24,6 @@
 int main()
 {
     srand(time(NULL));
-    std::cout << "vertex size: " << sizeof(Component::Swimmable) << std::endl;
 
     Game game;
     game.runLoop();
