@@ -3,7 +3,7 @@
 
 #include "Bases/mob.h"
 #include "Bases/component.h"
-#include "tilemap.h"
+#include "Other/tilemap.h"
 
 /*
     Every time the mob steps on a new tile, it calls the "steppedOn()" method for that tile

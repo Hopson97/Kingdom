@@ -1,8 +1,8 @@
 #ifndef ICE_H
 #define ICE_H
 
-#include "tile.h"
-#include "tilemap.h"
+#include "Base/tile.h"
+#include "Other/tilemap.h"
 
 namespace Tiles
 {

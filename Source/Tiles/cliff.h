@@ -1,7 +1,7 @@
 #ifndef CLIFF_H
 #define CLIFF_H
 
-#include "tile.h"
+#include "Base/tile.h"
 
 namespace Tiles
 {

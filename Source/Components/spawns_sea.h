@@ -3,7 +3,7 @@
 
 #include "Bases/component.h"
 #include "Bases/mob.h"
-#include "tilemap.h"
+#include "Other/tilemap.h"
 #include "player.h"
 
 namespace Component

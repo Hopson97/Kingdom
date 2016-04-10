@@ -1,7 +1,7 @@
 #ifndef SWIMMABLE_H
 #define SWIMMABLE_H
 
-#include "tilemap.h"
+#include "Other/tilemap.h"
 #include "Bases/enemy_mob.h"
 #include "Bases/component.h"
 #include "particle_system.h"

@@ -2,7 +2,7 @@
 #define TEST_H
 
 #include "game.h"
-#include "tilemap.h"
+#include "Other/tilemap.h"
 #include "player.h"
 #include "Enemies/zombie.h"
 

@@ -1,9 +1,6 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <istream>
-// *** END ***
 #include "test.h"
 
-#include "tile_types.h"
+#include "Base/tile_types.h"
 
 #include "rand.h"
 #include "levelgen.h"
@@ -11,7 +8,6 @@
 #include "Enemies/zombie.h"
 #include "Enemies/shark.h"
 
-#include <iostream>
 #include <thread>
 
 namespace State

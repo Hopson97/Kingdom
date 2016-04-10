@@ -2,8 +2,8 @@
 #define WATER_TILE_H
 
 #include "game.h"
-#include "tile_types.h"
-#include "tilemap.h"
+#include "Base/tile.h"
+#include "Other/tilemap.h"
 
 namespace Tiles
 {

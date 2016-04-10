@@ -2,7 +2,7 @@
 #define TILE_COLLIDABLE_H
 
 #include "Bases/component.h"
-#include "tilemap.h"
+#include "Other/tilemap.h"
 #include "Bases/mob.h"
 
 /*

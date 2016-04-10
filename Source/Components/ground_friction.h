@@ -1,7 +1,7 @@
 #ifndef GROUND_FRICTION_H
 #define GROUND_FRICTION_H
 
-#include "tilemap.h"
+#include "Other/tilemap.h"
 #include "Bases/mob.h"
 #include "Bases/component.h"
 

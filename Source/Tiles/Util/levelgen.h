@@ -1,8 +1,8 @@
 #ifndef LEVELGEN_H
 #define LEVELGEN_H
 
-#include "../tilemap.h"
-#include "../tile_types.h"
+#include "../Other/tilemap.h"
+#include "../Base/tile_types.h"
 #include "game.h"
 #include "rand.h"
 #include "ecosystems.h"
