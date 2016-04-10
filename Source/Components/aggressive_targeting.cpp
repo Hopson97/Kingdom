@@ -1,3 +1,6 @@
+// *** ADDED BY HEADER FIXUP ***
+#include <istream>
+// *** END ***
 #include "Aggressive_Targeting.h"
 
 #include <iostream>
@@ -5,6 +8,8 @@
 
 namespace Component
 {
+
+typedef std::vector<std::unique_ptr<Mob>> MobPtrVec;
 
 Aggressive_Targeting :: Aggressive_Targeting ( Enemy_Mob* mob, Player* player,
     MobPtrVec* mobs, unsigned maxDist )

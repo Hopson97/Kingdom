@@ -3,10 +3,6 @@
 
 #include "mob.h"
 #include "game.h"
-#include "../Tiles/tilemap.h"
-#include "../Util/rangenum.h"
-
-#include "../Util/animation.h"
 
 class Player    :   public Mob
 {
@@ -31,23 +27,7 @@ class Player    :   public Mob
         sf::View            m_view;
         sf::RenderWindow*   m_window;
 
-        Animation           m_walkAnim;
-
-
-
+        //Animation           m_walkAnim;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif // PLAYER_H

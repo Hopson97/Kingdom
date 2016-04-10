@@ -2,7 +2,7 @@
 #define SHARK_H
 
 #include "enemy_mob.h"
-#include "player.h"
+
 
 class Shark : public Enemy_Mob
 {

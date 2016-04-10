@@ -14,7 +14,7 @@ Looks_At_Target :: Looks_At_Target ( Enemy_Mob* mob)
 void
 Looks_At_Target :: logic   ( const float dt )
 {
-    if ( m_mob->getTarget() )
+    if ( m_mob->hasTarget() )
     {
         lookAtTarget();
     }

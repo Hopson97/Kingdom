@@ -40,16 +40,7 @@ class Mob : public Sf_Entity
         setMobState         ( const Mob_State state )   { m_mobState = state; }
 
         const Mob_State
-        getMobState         ( )                          { return m_mobState; }
-
-    protected:
-        Mob ( Game* game, const sf::Texture& texture, Tile_Map* tiles );
-
-        virtual void
-        uniqueLogic         ( const float dt ) = 0;
-
-        void
-        addComponent        ( Comp c );
+        getMobState         ( )                          { return m_mobState;
 
         void
         velocityForwards    ( const float dt );
@@ -62,6 +53,16 @@ class Mob : public Sf_Entity
 
         void
         velocityRight       ( const float dt );
+
+
+    protected:
+        Mob ( Game* game, const sf::Texture& texture, Tile_Map* tiles );
+
+        virtual void
+        uniqueLogic         ( const float dt ) = 0;
+
+        void
+        addComponent        ( Comp c );
 
         void
         updateTileMapPos    ();

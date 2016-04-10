@@ -6,7 +6,6 @@
     Becomes non-aggressive after "m_maxDist" tiles away.
 */
 
-#include "tilemap.h"
 #include "enemy_mob.h"
 #include "component.h"
 #include "player.h"
@@ -14,15 +13,14 @@
 #include <vector>
 #include <memory>
 
-typedef std::unique_ptr<Mob> MobPtr;
-typedef std::vector<MobPtr> MobPtrVec;
-
 
 namespace Component
 {
 
 class Aggressive_Targeting : public Component_Base
 {
+    typedef std::vector<std::unique_ptr<Mob>> MobPtrVec;
+
     public:
         Aggressive_Targeting ( Enemy_Mob* mob, Player* player,
                               MobPtrVec* mobs, unsigned maxDist );

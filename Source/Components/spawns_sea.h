@@ -1,7 +1,6 @@
 #ifndef SPAWNS_SEA_H
 #define SPAWNS_SEA_H
 
-
 #include "component.h"
 #include "mob.h"
 #include "tilemap.h"

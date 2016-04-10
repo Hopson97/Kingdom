@@ -2,7 +2,7 @@
 #define ZOMBIE_H
 
 #include "enemy_mob.h"
-#include "player.h"
+
 
 typedef std::unique_ptr<Mob> MobPtr;
 typedef std::vector<MobPtr> MobPtrVec;
