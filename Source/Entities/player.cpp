@@ -24,13 +24,13 @@ Player :: Player ( Game* game, Tile_Map* tiles )
                   ( this, m_tileMap ) );
 
     addComponent( std::make_unique<Component::Ground_Friction>
-                  ( m_tileMap, this ) );
+                  ( this, m_tileMap ) );
 
     addComponent( std::make_unique<Component::Swimmable>
-                  ( m_tileMap, this, true, *game ) );
+                  ( this, m_tileMap, true, *game ) );
 
     addComponent( std::make_unique<Component::Tile_Collidable>
-                  ( m_tileMap, this ) );
+                  ( this, m_tileMap ) );
 
     //setUpAnimation();
 

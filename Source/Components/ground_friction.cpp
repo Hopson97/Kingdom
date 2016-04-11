@@ -7,7 +7,7 @@
 namespace Component
 {
 
-Ground_Friction::Ground_Friction( Tile_Map* map, Mob* mob )
+Ground_Friction::Ground_Friction( Mob* mob, Tile_Map* map )
 :   m_tileMap   ( map )
 ,   m_mob       ( mob )
 {

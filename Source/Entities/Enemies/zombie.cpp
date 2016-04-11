@@ -26,14 +26,14 @@ Zombie :: Zombie( Game* game, Tile_Map* tiles, Player* player, MobPtrVec* mobVec
                 ( this, 3 ) );
 
     addComponent( std::make_unique<Component::Ground_Friction>
-                ( tiles, this ) );
+                ( this, tiles ) );
 
     addComponent( std::make_unique<Component::Steps_On_Tiles>
                 ( this, tiles ) );
 
 
     addComponent( std::make_unique<Component::Tile_Collidable>
-                ( tiles, this ) );
+                ( this, tiles ) );
 
     m_walkSpeed = 20;
 }

@@ -15,7 +15,7 @@ namespace Component
 class Ground_Friction : public Component_Base
 {
     public:
-        Ground_Friction( Tile_Map* map, Mob* mob );
+        Ground_Friction( Mob* mob, Tile_Map* map);
 
         void
         logic   ( const float dt ) override;

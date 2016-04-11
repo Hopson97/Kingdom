@@ -15,7 +15,7 @@ namespace Component
 class Tile_Collidable : public Component_Base
 {
     public:
-        Tile_Collidable ( Tile_Map* tiles, Mob* mob );
+        Tile_Collidable ( Mob* mob, Tile_Map* tiles );
 
         void
         logic ( const float dt ) override;

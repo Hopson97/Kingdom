@@ -12,7 +12,7 @@ namespace Component
 class Swimmable : public Component_Base
 {
     public:
-        Swimmable ( Tile_Map* map, Mob* mob, const bool canLand, Game& game );
+        Swimmable ( Mob* mob, Tile_Map* map, const bool canLand, Game& game );
 
         void
         logic   ( const float dt ) override;

@@ -3,7 +3,7 @@
 namespace Component
 {
 
-Swimmable :: Swimmable ( Tile_Map* map, Mob* mob, const bool canLand, Game& game )
+Swimmable :: Swimmable ( Mob* mob, Tile_Map* map, const bool canLand, Game& game )
 :   m_tileMap   ( map )
 ,   m_mob       ( mob )
 ,   m_canLand   ( canLand )
