@@ -29,7 +29,6 @@ class Spawns_Sea : public Component_Base
         spawn       ( const int maxDistFromPlayer );
 
     private:
-        Mob*        m_mob;
         Player*     m_player;
         Tile_Map*   m_tiles;
         Mob*        m_target;

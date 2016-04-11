@@ -9,10 +9,10 @@ namespace Component
 
 Spawns_Ground :: Spawns_Ground( Mob* mob, Tile_Map* tiles, Player* player,
                                         const int maxDistFromPlayer, const int distToDespawn )
-:   m_mob           ( mob )
-,   m_player        ( player )
-,   m_tiles         ( tiles )
-,   m_distToDespawn ( distToDespawn )
+:   Component_Base      ( mob )
+,   m_player            ( player )
+,   m_tiles             ( tiles )
+,   m_distToDespawn     ( distToDespawn )
 {
    spawn( maxDistFromPlayer );
 }

@@ -40,7 +40,6 @@ class Tile_Collidable : public Component_Base
         updatePrevTile  ();
 
         Tile_Map*       m_tileMap;
-        Mob*            m_mob;
 
         bool            m_velInverted       { false };
         bool            m_isInBadTile       { false };

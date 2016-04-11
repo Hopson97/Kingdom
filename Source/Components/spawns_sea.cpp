@@ -15,7 +15,7 @@ namespace Component
 
 Spawns_Sea :: Spawns_Sea( Mob* mob, Tile_Map* tiles, Player* player,
                                         const int maxDistFromPlayer, const int distToDespawn )
-:   m_mob           ( mob )
+:  Component_Base   ( mob )
 ,   m_player        ( player )
 ,   m_tiles         ( tiles )
 ,   m_distToDespawn ( distToDespawn )

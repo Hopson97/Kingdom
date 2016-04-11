@@ -21,7 +21,6 @@ class Steps_On_Tiles : public Component_Base
         logic ( const float dt ) override;
 
     private:
-        Mob*            m_mob;
         Tile_Map*       m_tileMap;
 
         sf::Vector2i    m_mobsCurrTilePos;

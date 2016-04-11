@@ -22,7 +22,6 @@ class Ground_Friction : public Component_Base
 
     private:
         Tile_Map*   m_tileMap;
-        Mob*        m_mob;
 };
 
 }

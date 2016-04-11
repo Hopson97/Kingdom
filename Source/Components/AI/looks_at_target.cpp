@@ -7,7 +7,7 @@ namespace Component
 {
 
 Looks_At_Target :: Looks_At_Target ( Enemy_Mob* mob)
-:   m_mob               ( mob )
+:   Component_Base  ( mob )
 {
 }
 

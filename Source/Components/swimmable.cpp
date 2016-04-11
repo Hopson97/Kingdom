@@ -4,11 +4,11 @@ namespace Component
 {
 
 Swimmable :: Swimmable ( Mob* mob, Tile_Map* map, const bool canLand, Game& game )
-:   m_tileMap   ( map )
-,   m_mob       ( mob )
-,   m_canLand   ( canLand )
-,   m_window    ( &game.getWindow().get() )
-,   m_splash    ( 100, sf::seconds( 1 ), sf::Color::White )
+:   Component_Base       ( mob )
+,   m_tileMap           ( map )
+,   m_canLand           ( canLand )
+,   m_window            ( &game.getWindow().get() )
+,   m_splash            ( 100, sf::seconds( 1 ), sf::Color::White )
 { }
 
 void

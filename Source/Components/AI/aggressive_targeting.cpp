@@ -14,7 +14,7 @@ typedef std::vector<std::unique_ptr<Mob>> MobPtrVec;
 
 Aggressive_Targeting :: Aggressive_Targeting ( Mob* mob, Player* player,
     MobPtrVec* mobs, unsigned maxDist )
-:   AI_Component        ( mob )
+:   Component_Base      ( mob )
 ,   m_mobVec            ( mobs )
 ,   m_maxDist           ( maxDist )
 ,   m_player            ( player )

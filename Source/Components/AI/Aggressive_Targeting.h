@@ -7,7 +7,7 @@
 */
 
 #include "Bases/enemy_mob.h"
-#include "Bases/ai_component.h"
+#include "Bases/component.h"
 #include "player.h"
 
 #include <vector>
@@ -17,7 +17,7 @@
 namespace Component
 {
 
-class Aggressive_Targeting : public AI_Component
+class Aggressive_Targeting : public Component_Base
 {
     typedef std::vector<std::unique_ptr<Mob>> MobPtrVec;
 

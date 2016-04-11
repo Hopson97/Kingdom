@@ -23,10 +23,6 @@ class Looks_At_Target : public Component_Base
     private:
         void
         lookAtTarget ();
-
-
-    private:
-        Enemy_Mob*  m_mob;              //The mob to be controlling
 };
 
 }

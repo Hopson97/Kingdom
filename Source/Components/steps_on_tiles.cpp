@@ -4,7 +4,7 @@ namespace Component
 {
 
 Steps_On_Tiles :: Steps_On_Tiles( Mob* mob, Tile_Map* tileMap )
-:   m_mob               ( mob )
+:   Component_Base       ( mob )
 ,   m_tileMap           ( tileMap )
 ,   m_mobsCurrTilePos   ( mob->getTileMapPosition() )
 {

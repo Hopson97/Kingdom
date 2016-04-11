@@ -9,8 +9,8 @@ namespace Component
 {
 
 Tile_Collidable :: Tile_Collidable( Mob* mob, Tile_Map* tiles )
-    :   m_tileMap           ( tiles )
-    ,   m_mob               ( mob )
+:   Component_Base       ( mob )
+,   m_tileMap           ( tiles )
 {
 
 }

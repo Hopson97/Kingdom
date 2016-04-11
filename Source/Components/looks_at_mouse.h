@@ -3,7 +3,7 @@
 
 #include "Bases/component.h"
 
-#include <SFML/Graphics.hpp>
+#include "Bases/mob.h"
 
 /*
     Makes a sprite always look at the mouse.
@@ -15,14 +15,13 @@ namespace Component
 class Look_At_Mouse : public Component_Base
 {
     public:
-        Look_At_Mouse( sf::RenderWindow* window, sf::Sprite* sprite );
+        Look_At_Mouse( Mob* mob, sf::RenderWindow* window );
 
         void
         logic ( const float dt ) override;
 
     private:
         sf::RenderWindow*   m_window;   //Window relative to the mouse position ( main window)
-        sf::Sprite*         m_sprite;   //The sprite that gets rotated
 };
 
 } //Namespace Component

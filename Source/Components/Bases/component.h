@@ -10,7 +10,8 @@ namespace Component
 class Component_Base
 {
     public:
-        Component_Base()
+        Component_Base( Mob* mob )
+        :   m_mob ( mob )
         {
 
         }
@@ -18,8 +19,8 @@ class Component_Base
         virtual void
         logic ( const float dt ) = 0;
 
-    private:
-        Mob* mob;
+    protected:
+        Mob* m_mob;
 };
 
 } //Namespace Component

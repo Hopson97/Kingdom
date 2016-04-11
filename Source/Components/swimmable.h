@@ -19,7 +19,6 @@ class Swimmable : public Component_Base
 
     private:
         Tile_Map*           m_tileMap;
-        Mob*                m_mob;
 
         const bool          m_canLand;
 

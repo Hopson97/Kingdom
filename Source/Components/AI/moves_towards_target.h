@@ -6,14 +6,14 @@
 */
 
 #include "Bases/enemy_mob.h"
-#include "Bases/ai_component.h"
+#include "Bases/component.h"
 
 #include <vector>
 
 namespace Component
 {
 
-class Moves_Towards_Target : public AI_Component
+class Moves_Towards_Target : public Component_Base
 {
     public:
         Moves_Towards_Target   ( Mob* mob, unsigned distBeforeStop );
