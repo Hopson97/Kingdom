@@ -18,7 +18,7 @@ Player :: Player ( Game* game, Tile_Map* tiles )
     m_view.setSize      ( Win_Info::WIDTH, Win_Info::HEIGHT );
 
     addComponent( std::make_unique<Component::Look_At_Mouse>
-                  ( &game->getWindow().get(), &m_sprite ) );
+                  ( this, &game->getWindow().get() ) );
 
     addComponent( std::make_unique<Component::Steps_On_Tiles>
                   ( this, m_tileMap ) );
