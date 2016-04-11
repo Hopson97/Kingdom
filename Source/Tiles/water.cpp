@@ -1,11 +1,7 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <istream>
-// *** END ***
 #include "water.h"
+#include "ice.h"
 
 #include "rand.h"
-
-#include <iostream>
 
 namespace Tiles
 {
@@ -19,8 +15,10 @@ Water :: Water ( Game& game, const sf::Vector2i& pos,  Tile_Map& tileMap, const 
 }
 
 void
-Water :: update ( const float dt )
+Water :: update ( const float dt, const std::vector<Light>& lights )
 {
+    Tile::update( dt, lights );
+
     if ( !inWindowBounds( m_game->getWindow().get() ) ) return;
 
     if ( m_txrClock.getElapsedTime().asSeconds() > (float)random::num( 5, 10 ) / 10.0f  )
@@ -39,7 +37,8 @@ Water :: update ( const float dt )
 void
 Water :: steppedOn ()
 {
-
+    m_tileMap->at( getTileMapPos() ) = std::make_unique<Tiles::Ice>
+                                    ( *m_game, getTileMapPos(), m_tileMap, getEcosystem() );
 }
 
 

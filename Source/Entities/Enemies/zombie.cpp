@@ -1,11 +1,4 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <istream>
-// *** END ***
 #include "zombie.h"
-
-#include <iostream>
-
-
 #include "../../Components/AI/aggressive_targeting.h"
 #include "../../Components/AI/looks_at_target.h"
 #include "../../Components/AI/moves_towards_target.h"
@@ -30,7 +23,7 @@ Zombie :: Zombie( Game* game, Tile_Map* tiles, Player* player, MobPtrVec* mobVec
                 ( this ) );
 
     addComponent( std::make_unique<Component::Moves_Towards_Target>
-                ( this, 5 ) );
+                ( this, 3 ) );
 
     addComponent( std::make_unique<Component::Ground_Friction>
                 ( tiles, this ) );
@@ -42,7 +35,7 @@ Zombie :: Zombie( Game* game, Tile_Map* tiles, Player* player, MobPtrVec* mobVec
     addComponent( std::make_unique<Component::Tile_Collidable>
                 ( tiles, this ) );
 
-    m_walkSpeed = 14;
+    m_walkSpeed = 20;
 }
 
 void

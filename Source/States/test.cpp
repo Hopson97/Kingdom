@@ -18,7 +18,7 @@ Test :: Test  ( Game* game )
 ,   generator       ( m_tileMap, getGame() )
 ,   m_player        ( game, &m_tileMap )
 {
-
+    m_lights.emplace_back( m_player.getTileMapPosition(), 5 );
 }
 
 void
@@ -32,10 +32,11 @@ Test :: update ( const double dt )
 {
     addMobs();
 
+    m_lights.at( 0 ).setTileLocation( m_player.getTileMapPosition() );
+
+    m_tileMap.update( dt,  m_player.getTileMapPosition(), m_lights );
+
     m_player.update( dt );
-
-    m_tileMap.update( dt,  m_player.getTileMapPosition() );
-
 
     for ( auto& mob : m_mobs ) mob->update ( dt );
 
@@ -83,7 +84,6 @@ Test :: addMobs ()
 
     if ( timer.getElapsedTime().asSeconds() > 5 )
     {
-        std::cout << "mob: " << m_mobs.size() << std::endl;
         timer.restart();
     }
 

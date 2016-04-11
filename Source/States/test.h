@@ -41,15 +41,17 @@ class Test : public State_Base
         addShark ();
 
     private:
-        Tile_Map m_tileMap;
+        Tile_Map            m_tileMap;
 
-        Level_Generator generator;
+        Level_Generator     generator;
 
-        Player m_player;
+        Player              m_player;
 
-        sf::Clock timer;
+        sf::Clock           timer;
 
         std::vector < std::unique_ptr<Mob> > m_mobs;
+
+        std::vector <Light> m_lights;
 
 };
 

@@ -1,9 +1,4 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <istream>
-// *** END ***
 #include "animation.h"
-
-#include <iostream>
 
 /*****************************************************************************************************************************************************************
 *   addFrame()  add a frame into the std::vector of type "Frame" (struct declared in animation.h)
@@ -27,14 +22,12 @@ Animation::currentFrame( const float dt )
         throw std::runtime_error ( "Animation not set up before used! ");
     }
     m_time += dt;
-    std::cout << "dt: " << dt << " mtime " << m_time << std::endl;
 
     if ( m_time > m_frames.at( m_currFrame ).timeToNextFrame )
     {
 
         m_time = 0;
         m_currFrame++;
-        std::cout << "next frame " << std::endl;
         if ( m_currFrame > ( m_frames.size() - 1 ) )
         {
             m_currFrame = 0;

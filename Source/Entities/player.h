@@ -2,7 +2,8 @@
 #define PLAYER_H
 
 #include "Bases/mob.h"
-#include "game.h"
+
+#include "../game.h"
 
 class Player    :   public Mob
 {

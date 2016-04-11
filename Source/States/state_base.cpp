@@ -1,11 +1,6 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <istream>
-// *** END ***
 #include "state_base.h"
 
 #include "../game.h"
-
-#include <iostream>
 
 /**
     The base class for all the games states, such as menus, roaming, battles etc

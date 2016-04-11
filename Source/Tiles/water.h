@@ -14,7 +14,7 @@ class Water : public Tile
         Water       ( Game& game, const sf::Vector2i& pos, Tile_Map& tileMap, const Ecosystem ecosystem );
 
         void
-        update      ( const float dt ) override;
+        update      ( const float dt, const std::vector<Light>& lights ) override;
 
         void
         steppedOn   () override;

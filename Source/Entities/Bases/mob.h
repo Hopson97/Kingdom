@@ -1,14 +1,14 @@
 #ifndef MOB_H
 #define MOB_H
 
-#include "Bases/component.h"
+#include "../../Components/Bases/component.h"
+#include "../../Tiles/Other/tilemap.h"
 #include "sf_entity.h"
-#include "Other/tilemap.h"
 
 #include <vector>
 #include <memory>
 
-#include "game.h"
+#include "../../game.h"
 
 enum Mob_State
 {

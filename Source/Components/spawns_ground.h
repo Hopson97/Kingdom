@@ -20,9 +20,6 @@ class Spawns_Ground : public Component_Base
 
     private:
         void
-        getTarget   ();
-
-        void
         checkDist   ();
 
         void

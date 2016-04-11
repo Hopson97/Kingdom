@@ -1,7 +1,5 @@
 #include "tilemap.h"
 
-#include <iostream>
-
 #define SELF (*this)
 
 typedef std::unique_ptr<Tiles::Tile> TilePtr;
@@ -49,9 +47,9 @@ Tile_Map :: getViscosityAt ( const sf::Vector2i& pos )
 
 
 void
-Tile_Map :: update      ( const float dt, const sf::Vector2i& playerTilePos )
+Tile_Map :: update ( const float dt, const sf::Vector2i& playerTilePos,
+                     const std::vector<Light>& lights )
 {
-
     const int tilesX = (Win_Info::WIDTH / Tiles::Info::SIZE) + 3;
     const int tilesY = (Win_Info::WIDTH / Tiles::Info::SIZE) + 3;
 
@@ -71,7 +69,7 @@ Tile_Map :: update      ( const float dt, const sf::Vector2i& playerTilePos )
     {
         for ( int x = xStart ; x < xEnd ; x++ )
         {
-            this->at( x, y )->update ( dt );
+            this->at( x, y )->update ( dt, lights );
         }
     }
 }

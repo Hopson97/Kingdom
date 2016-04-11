@@ -1,9 +1,4 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <istream>
-// *** END ***
 #include "textures.h"
-
-#include <iostream>
 
 Textures :: Textures()
 {
@@ -56,6 +51,4 @@ Textures :: loadTexture ( const Texture_Name name, const std::string& path )
     }
 
     m_textureMap[ name ].setSmooth( true );
-    std::cout << "Texture loaded at " << path << std::endl;
-
 }

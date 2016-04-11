@@ -1,9 +1,4 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <istream>
-// *** END ***
 #include "tile.h"
-
-#include <iostream>
 
 #include "rand.h"
 #include "Bases/sf_entity.h"
@@ -16,6 +11,24 @@ Tile :: Tile (  const Game& game, const sf::Vector2i& pos, const Ecosystem ecosy
 ,   m_ecosystem     ( ecosystem )
 {
     m_sprite.setPosition    ( pos.x * Info::SIZE, pos.y * Info::SIZE );
+}
+
+void
+Tile :: update ( const float dt, const std::vector<Light>& lights )
+{
+    m_light = { 0, 0, 0 };
+
+    for ( const Light& light : lights)
+    {
+        if ( m_light.r < 255 &&
+             m_light.g < 255 &&
+             m_light.b < 255 )
+        {
+            m_light += light.getLightFromIntensity ( m_tilePos );
+        }
+    }
+
+    m_sprite.setColor( m_info.colour * m_light );
 }
 
 void

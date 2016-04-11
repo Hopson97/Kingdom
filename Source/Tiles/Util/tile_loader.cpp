@@ -1,10 +1,6 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <istream>
-// *** END ***
 #include "tile_loader.h"
 
 #include <stdexcept>
-#include <iostream>
 
 const std::string Tile_Loader :: Viscosity = "Viscosity";
 const std::string Tile_Loader :: Friction  = "Friction";

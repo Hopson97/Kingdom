@@ -69,12 +69,6 @@ Spawns_Ground :: logic ( const float dt )
 }
 
 void
-Spawns_Ground :: getTarget ()
-{
-
-}
-
-void
 Spawns_Ground :: checkDist   ()
 {
     int dy = abs ( m_player->getTileMapPosition().y - m_mob->getTileMapPosition().y );

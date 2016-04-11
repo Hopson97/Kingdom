@@ -2,8 +2,9 @@
 #define TILES_M_H
 
 #include <map>
-#include "tile_loader.h"
-#include "tile_info.h"
+
+#include "../Tiles/Util/tile_loader.h"
+#include "../Tiles/Util/tile_info.h"
 
 enum Tile_Type
 {

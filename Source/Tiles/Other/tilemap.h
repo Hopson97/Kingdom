@@ -1,15 +1,10 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <istream>
-// *** END ***
 #ifndef TILEMAP_H
 #define TILEMAP_H
 
 #include <vector>
 #include <memory>
 
-#include <iostream>
-
-#include "Base/tile.h"
+#include "../Base/tile.h"
 
 class Tile_Map
 {
@@ -43,7 +38,7 @@ class Tile_Map
         addTile         ( TilePtr tile );
 
         void
-        update          ( const float dt, const sf::Vector2i& playerPos );
+        update          ( const float dt, const sf::Vector2i& playerPos, const std::vector<Light>& light );
 
         void
         draw            ( sf::RenderWindow& window, const sf::Vector2i& playerPos );

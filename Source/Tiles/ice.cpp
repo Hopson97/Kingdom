@@ -15,8 +15,10 @@ Ice :: Ice ( Game& game, const sf::Vector2i& pos, Tile_Map* tileMap, const Ecosy
 }
 
 void
-Ice :: update  ( const float dt )
+Ice :: update  ( const float dt,  const std::vector<Light>& lights )
 {
+    Tile::update( dt, lights );
+
     if ( m_meltTimer.getElapsedTime().asSeconds() > 5.0f && getEcosystem() != Ecosystem::Snowy )
     {
         if ( random::num( 1, 3) == 1 )

@@ -6,7 +6,8 @@
 #include "States/handler.h"
 #include "Managers/textures.h"
 #include "Managers/tiles_m.h"
-#include "fps_counter.h"
+
+#include "Util/fps_counter.h"
 
 class Game
 {

@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Util/window.h"
+#include "../../Util/window.h"
 
 
 class Sf_Entity

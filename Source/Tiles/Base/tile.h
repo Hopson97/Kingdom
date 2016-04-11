@@ -1,10 +1,18 @@
 #ifndef TILE_H
 #define TILE_H
 
-#include "../Entities/Bases/sf_entity.h"
-#include "game.h"
-#include "ecosystems.h"
-#include "tile_info.h"
+
+#include "../../Entities/Bases/sf_entity.h"
+
+#include "../../Light/light.h"
+
+#include "../../game.h"
+
+#include "../Util/ecosystems.h"
+#include "../Util/tile_info.h"
+
+
+
 
 /*
     Represents a single tile in the world.
@@ -17,7 +25,7 @@ namespace Info
 {
     constexpr static
     int     SIZE        { 42 },     //The size of a single tile in pixels ( squared )
-            MAP_SIZE    { 1500 };    //How size of the map in tiles ( squared )
+            MAP_SIZE    { 150 };    //How size of the map in tiles ( squared )
 
     const unsigned TEXTURE_VARIANTS = 3;
 }
@@ -50,8 +58,7 @@ class Tile : public Sf_Entity
         getEcosystem            () const;
 
         virtual void
-        update                  ( const float dt )
-        { }
+        update                  ( const float dt,  const std::vector<Light>& lights );
 
         virtual void
         steppedOn               ()
@@ -77,7 +84,7 @@ class Tile : public Sf_Entity
         Ecosystem           m_ecosystem;
         unsigned            m_txrId;
 
-
+        sf::Color           m_light { 0, 0, 0 };
 };
 
 } //namespace Tiles

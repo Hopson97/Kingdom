@@ -2,8 +2,6 @@
 
 #include "maths.h"
 
-#include <iostream>
-
 Mob :: Mob ( Game* game, const sf::Texture& texture, Tile_Map* tiles )
 :   Sf_Entity   ( texture )
 ,   m_game      ( game )

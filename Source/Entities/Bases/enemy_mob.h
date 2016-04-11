@@ -4,8 +4,8 @@
 /*
     The entities that attack the player, thus have more things.
 */
-#include "player.h"
-#include "mob.h"
+#include "../../Entities/player.h"
+#include "../../Entities/Bases/enemy_mob.h"
 
 
 class Enemy_Mob  :  public Mob
