@@ -38,6 +38,8 @@ class Sf_Entity
         const sf::Vector2f
         getVelocity         () const;
 
+        void
+        setColor            ( const sf::Color& col );
 
         virtual void
         draw                ( sf::RenderWindow& window );

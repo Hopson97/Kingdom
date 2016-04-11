@@ -6,7 +6,7 @@
 namespace Tiles
 {
 
-Water :: Water ( Game& game, const sf::Vector2i& pos,  Tile_Map& tileMap, const Ecosystem ecosystem  )
+Water :: Water ( Game& game, const sf::Vector2i& pos,  Tile_Map& tileMap, const Ecosystem ecosystem )
 :   Tile        ( game, pos, ecosystem )
 ,   m_game      ( &game )
 ,   m_tileMap   ( &tileMap )

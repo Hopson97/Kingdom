@@ -10,7 +10,7 @@ namespace Tiles
 class Ice : public Tile
 {
     public:
-        Ice( Game& game, const sf::Vector2i& pos, Tile_Map* tileMap, const Ecosystem ecosystem  );
+        Ice( Game& game, const sf::Vector2i& pos, Tile_Map* tileMap, const Ecosystem ecosystem );
 
         void
         update  ( const float dt, const std::vector<Light>& lights ) override;

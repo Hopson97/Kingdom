@@ -3,8 +3,8 @@
 #include "maths.h"
 
 Light :: Light ( const sf::Vector2i& tileLocation, const unsigned intensity )
-:   m_intensity     ( intensity )
-,   m_tileLocation  ( tileLocation )
+:   m_tileLocation  ( tileLocation )
+,   m_intensity     ( intensity )
 { }
 
 void
@@ -36,6 +36,7 @@ Light :: getLightFromIntensity   ( const sf::Vector2i& tileMapPos ) const
     }
 
     if ( dist == 0 ) dist = 1;
+    if ( dist > 255 ) return { 255, 255, 255 };
 
     sf::Uint8 light = 255 / dist;
 

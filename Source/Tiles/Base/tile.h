@@ -57,6 +57,9 @@ class Tile : public Sf_Entity
         const Ecosystem
         getEcosystem            () const;
 
+        const sf::Color&
+        getLight                () const;
+
         virtual void
         update                  ( const float dt,  const std::vector<Light>& lights );
 
@@ -84,7 +87,9 @@ class Tile : public Sf_Entity
         Ecosystem           m_ecosystem;
         unsigned            m_txrId;
 
-        sf::Color           m_light { 0, 0, 0 };
+        sf::Color           m_light         { 0, 0, 0 };
+
+        bool                m_hasUpdated    { false };
 };
 
 } //namespace Tiles

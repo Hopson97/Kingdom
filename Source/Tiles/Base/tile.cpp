@@ -111,31 +111,15 @@ Tile :: getEcosystem    () const
 }
 
 const unsigned
-Tile :: getTxrId                () const
+Tile :: getTxrId        () const
 {
     return m_txrId;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const sf::Color&
+Tile :: getLight        () const
+{
+    return m_light;
+}
 
 } //namespace Tiles

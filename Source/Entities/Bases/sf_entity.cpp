@@ -88,3 +88,9 @@ Sf_Entity :: getVelocity () const
 {
     return m_velocity;
 }
+
+void
+Sf_Entity :: setColor ( const sf::Color& col )
+{
+    m_sprite.setColor( col );
+}

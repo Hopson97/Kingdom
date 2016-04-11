@@ -18,7 +18,7 @@ Test :: Test  ( Game* game )
 ,   generator       ( m_tileMap, getGame() )
 ,   m_player        ( game, &m_tileMap )
 {
-    m_lights.emplace_back( m_player.getTileMapPosition(), 5 );
+    m_lights.emplace_back( m_player.getTileMapPosition(), 10 );
 }
 
 void
@@ -27,6 +27,7 @@ Test :: input ( const double dt )
     m_player.input ( dt );
 }
 
+//Always update lights, and then tiles and then entities
 void
 Test :: update ( const double dt )
 {
@@ -72,7 +73,7 @@ Test :: sfDraw( const double dt )
 void
 Test :: addMobs ()
 {
-    //if ( timer.getElapsedTime().asSeconds() > 1.0f )
+    if ( timer.getElapsedTime().asSeconds() > 0.3f )
     {
         //if ( random::num( 1, 10) == 1)
         {
