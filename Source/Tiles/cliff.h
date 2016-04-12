@@ -9,7 +9,8 @@ namespace Tiles
 class Cliff : public Tile
 {
     public:
-        Cliff( const Game& game, const sf::Vector2i& pos, const Ecosystem ecosystem );
+        Cliff( const Game& game, const sf::Vector2i& pos,
+               const Ecosystem ecosystem, const sf::Color& light = { 0, 0, 0 } );
 
     protected:
 

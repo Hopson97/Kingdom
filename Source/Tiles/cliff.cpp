@@ -3,8 +3,9 @@
 namespace Tiles
 {
 
-Cliff::Cliff( const Game& game, const sf::Vector2i& pos, const Ecosystem ecosystem )
-:   Tile        ( game, pos, ecosystem )
+Cliff::Cliff( const Game& game, const sf::Vector2i& pos,
+              const Ecosystem ecosystem, const sf::Color& light )
+:   Tile        ( game, pos, ecosystem, light  )
 {
     setInfo( game.getTileInfo( TILE_CLIFF ) );
 }

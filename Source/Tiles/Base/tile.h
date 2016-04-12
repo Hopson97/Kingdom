@@ -25,7 +25,7 @@ namespace Info
 {
     constexpr static
     int     SIZE        { 42 },     //The size of a single tile in pixels ( squared )
-            MAP_SIZE    { 150 };    //How size of the map in tiles ( squared )
+            MAP_SIZE    { 1300 };    //How size of the map in tiles ( squared )
 
     const unsigned TEXTURE_VARIANTS = 3;
 }
@@ -34,7 +34,8 @@ namespace Info
 class Tile : public Sf_Entity
 {
     public:
-        Tile (  const Game& game, const sf::Vector2i& pos, const Ecosystem ecosystem );
+        Tile (  const Game& game, const sf::Vector2i& pos,
+                const Ecosystem ecosystem, const sf::Color& light );
 
         void
         draw                    ( sf::RenderWindow& window) override;
@@ -79,6 +80,9 @@ class Tile : public Sf_Entity
 
         void
         setInfo                 ( const Tile_Info& info );
+
+        void
+        applyLight              ();
 
     private:
         Tile_Info           m_info;

@@ -5,10 +5,12 @@
 namespace Tiles
 {
 
-Tile :: Tile (  const Game& game, const sf::Vector2i& pos, const Ecosystem ecosystem )
+Tile :: Tile (  const Game& game, const sf::Vector2i& pos,
+                const Ecosystem ecosystem, const sf::Color& light )
 :   Sf_Entity       ( randomTexture( game ) )
 ,   m_tilePos       ( pos )
 ,   m_ecosystem     ( ecosystem )
+,   m_light         ( light )
 {
     m_sprite.setPosition    ( pos.x * Info::SIZE, pos.y * Info::SIZE );
 }
@@ -28,7 +30,7 @@ Tile :: update ( const float dt, const std::vector<Light>& lights )
         }
     }
 
-    m_sprite.setColor( m_info.colour * m_light );
+    applyLight();
 }
 
 void
@@ -65,6 +67,12 @@ Tile :: getTexture ( const Game& game, const unsigned id )
     default:
         throw std::runtime_error ( "Unable to get texture ");
     }
+}
+
+void
+Tile :: applyLight ()
+{
+    m_sprite.setColor( m_info.colour * m_light );
 }
 
 void

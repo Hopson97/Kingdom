@@ -21,9 +21,8 @@ class Light
         getLightFromIntensity   ( const sf::Vector2i& tileMapPos ) const;
 
     private:
-        unsigned        m_intensity;    //How far it reaches
-
         sf::Vector2i    m_tileLocation;
+        unsigned        m_intensity;    //How far it reaches
 };
 
 #endif // LIGHT_H

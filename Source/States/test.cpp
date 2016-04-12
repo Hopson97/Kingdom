@@ -9,6 +9,7 @@
 #include "Enemies/shark.h"
 
 #include <thread>
+#include <iostream>
 
 namespace State
 {
@@ -80,11 +81,12 @@ Test :: addMobs ()
             addZombie   ();
 
         }
-        timer.restart();
+        //timer.restart();
     }
 
     if ( timer.getElapsedTime().asSeconds() > 5 )
     {
+        std::cout << "Num mobs: " << m_mobs.size() << std::endl;
         timer.restart();
     }
 

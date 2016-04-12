@@ -6,12 +6,15 @@
 namespace Tiles
 {
 
-Ice :: Ice ( Game& game, const sf::Vector2i& pos, Tile_Map* tileMap, const Ecosystem ecosystem )
-:   Tile        ( game, pos, ecosystem )
+Ice :: Ice ( Game& game, const sf::Vector2i& pos, Tile_Map* tileMap,
+             const Ecosystem ecosystem, const sf::Color& light )
+:   Tile        ( game, pos, ecosystem, light  )
 ,   m_tileMap   ( tileMap )
 ,   m_game      ( &game )
 {
     setInfo( game.getTileInfo( TILE_ICE ) );
+
+    applyLight();
 }
 
 void
@@ -34,7 +37,13 @@ void
 Ice :: melt()
 {
     m_tileMap->at( getTileMapPos() ) = std::make_unique<Tiles::Water>
-                                    ( *m_game, sf::Vector2i { getTileMapPos().x, getTileMapPos().y }, *m_tileMap, getEcosystem() );
+                                    ( *m_game, sf::Vector2i { getTileMapPos().x, getTileMapPos().y }, *m_tileMap, getEcosystem(), getLight() );
+}
+
+void
+Ice :: steppedOn ()
+{
+    m_meltTimer.restart();
 }
 
 } //namespace tiles
