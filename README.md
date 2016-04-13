@@ -136,6 +136,7 @@ Tile :: updateLight ( const std::vector<Light>& lights )
     }
     applyLight(); //aka "M_sprite.setColor( m_info.colour * m_light );"
 }
+```
 
 This reduced the FPS by a lot, but to fix this I did a few optimisations.
 
