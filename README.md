@@ -136,13 +136,17 @@ Tile :: updateLight ( const std::vector<Light>& lights )
 }
 ```
 
-This reduced the FPS by a lot, but to fix this I did a few optimisations.
+Unfournatly, this caused the game's performance to suffer. Luckily, I made a few optimisations.
 
-One was to the lights a static bool to say "do the lights need to update?". This is only true under a few conditions, such as a light being added or removed, or a light moving position.
+One optimisations to add a static booleon into the light class that says whether or not there has been a "light update". If there has, then the light is recalculated. 
 
-Lights can only "move" if the position passed into the Light :: setTilePosition method is different from the position that the light is already at.
+The boolean is set to true if
 
-Mobs are lit up by adding the "Effected_By_Light" component to them, which simply checks the light value of the tile they are above and then apply the light colours to the mob.
+1. A light is moved.
+2. A light is added.
+3. A light is removed.
+
+Mobs are lit up by adding the "Effected_By_Light" component to them, which simply checks the light value of the tile below them, and then applies the light colours to the mob.
 
 The lights look like this:
 
