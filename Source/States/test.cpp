@@ -19,7 +19,15 @@ Test :: Test  ( Game* game )
 ,   generator       ( m_tileMap, getGame() )
 ,   m_player        ( game, &m_tileMap )
 {
-    m_lights.emplace_back( m_player.getTileMapPosition(), 10 );
+    m_lights.emplace_back( m_player.getTileMapPosition(), 5 );
+
+    for ( int i = 0 ; i < 100 ; i++ )
+    {
+        m_lights.emplace_back ( sf::Vector2i
+                              ( random::num( 1, Tiles::Info::MAP_SIZE),
+                                random::num( 1, Tiles::Info::MAP_SIZE) ), 9
+                              );
+    }
 }
 
 void
@@ -70,7 +78,7 @@ Test :: sfDraw( const double dt )
 
     getGame().getWindow().popGLStates();
 }
-
+sf::Clock mobPrint;
 void
 Test :: addMobs ()
 {
@@ -81,13 +89,13 @@ Test :: addMobs ()
             addZombie   ();
 
         }
-        //timer.restart();
+        timer.restart();
     }
 
-    if ( timer.getElapsedTime().asSeconds() > 5 )
+    if ( mobPrint.getElapsedTime().asSeconds() > 5 )
     {
         std::cout << "Num mobs: " << m_mobs.size() << std::endl;
-        timer.restart();
+        mobPrint.restart();
     }
 
 }

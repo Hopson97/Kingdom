@@ -38,13 +38,22 @@ class Tile_Map
         addTile         ( TilePtr tile );
 
         void
-        update          ( const float dt, const sf::Vector2i& playerPos, const std::vector<Light>& light );
+        update          ( const float dt, const sf::Vector2i& playerPos, std::vector<Light>& lights );
 
         void
         draw            ( sf::RenderWindow& window, const sf::Vector2i& playerPos );
 
         void
         changeTile      ( TilePtr tile );
+
+    private:
+        void
+        getScreenBounds(  int& xStart, int& yStart,
+                          int& xEnd,   int& yEnd,
+                          const sf::Vector2i& playerTilePos ) const;
+
+        const bool
+        lightUpdateNeeded( const std::vector<Light>& lights ) const;
 
     private:
         TileVec m_tiles { Tiles::Info::MAP_SIZE * Tiles::Info::MAP_SIZE };

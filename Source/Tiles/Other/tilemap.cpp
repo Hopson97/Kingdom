@@ -48,49 +48,44 @@ Tile_Map :: getViscosityAt ( const sf::Vector2i& pos )
 
 void
 Tile_Map :: update ( const float dt, const sf::Vector2i& playerTilePos,
-                     const std::vector<Light>& lights )
+                     std::vector<Light>& lights )
 {
-    const int tilesX = (Win_Info::WIDTH / Tiles::Info::SIZE) + 3;
-    const int tilesY = (Win_Info::WIDTH / Tiles::Info::SIZE) + 3;
-
-    int xStart = playerTilePos.x - tilesX;
-    int xEnd = playerTilePos.x + tilesX;
-
-    if ( xStart < 0 ) xStart = 0;
-    if ( xEnd > Tiles::Info::MAP_SIZE - 1 ) xEnd = Tiles::Info::MAP_SIZE - 1;
-
-    int yStart = playerTilePos.y - tilesY;
-    int yEnd = playerTilePos.y + tilesY;
-
-    if ( yStart < 0 ) yStart = 0;
-    if ( yEnd > Tiles::Info::MAP_SIZE - 1 ) yEnd = Tiles::Info::MAP_SIZE - 1;
+    int xStart, yStart, xEnd, yEnd;
+    getScreenBounds( xStart, yStart, xEnd, yEnd, playerTilePos );
 
     for ( int y = yStart ; y < yEnd ; y++ )
     {
         for ( int x = xStart ; x < xEnd ; x++ )
         {
-            this->at( x, y )->update ( dt, lights );
+            this->at( x, y )->update ( dt );
+
+            if ( lightUpdateNeeded( lights ) )
+            {
+                this->at( x, y)->updateLight ( lights );
+            }
         }
     }
+    if ( !lights.empty() )
+    {
+        lights.at( 0 ).turnOffLightUpdate( );
+    }
+}
+
+const bool
+Tile_Map :: lightUpdateNeeded( const std::vector<Light>& lights ) const
+{
+    if ( !lights.empty() )
+    {
+        return ( lights.at( 0 ).isLightUpdate() );
+    }
+    return false;
 }
 
 void
 Tile_Map :: draw ( sf::RenderWindow& window, const sf::Vector2i& playerTilePos )
 {
-    const int tilesX = (Win_Info::WIDTH / Tiles::Info::SIZE) + 3;
-    const int tilesY = (Win_Info::WIDTH / Tiles::Info::SIZE) + 3;
-
-    int xStart = playerTilePos.x - tilesX;
-    int xEnd = playerTilePos.x + tilesX;
-
-    if ( xStart < 0 ) xStart = 0;
-    if ( xEnd > Tiles::Info::MAP_SIZE - 1 ) xEnd = Tiles::Info::MAP_SIZE - 1;
-
-    int yStart = playerTilePos.y - tilesY;
-    int yEnd = playerTilePos.y + tilesY;
-
-    if ( yStart < 0 ) yStart = 0;
-    if ( yEnd > Tiles::Info::MAP_SIZE - 1 ) yEnd = Tiles::Info::MAP_SIZE - 1;
+    int xStart, yStart, xEnd, yEnd;
+    getScreenBounds( xStart, yStart, xEnd, yEnd, playerTilePos );
 
     for ( int y = yStart ; y < yEnd ; y++ )
     {
@@ -99,6 +94,27 @@ Tile_Map :: draw ( sf::RenderWindow& window, const sf::Vector2i& playerTilePos )
             this->at( x, y )->draw ( window );
         }
     }
+}
+
+void
+Tile_Map :: getScreenBounds(  int& xStart, int& yStart,
+                              int& xEnd,   int& yEnd,
+                              const sf::Vector2i& playerTilePos ) const
+{
+    constexpr static int tilesX = (Win_Info::WIDTH / Tiles::Info::SIZE);
+    constexpr static int tilesY = (Win_Info::WIDTH / Tiles::Info::SIZE);
+
+    xStart = playerTilePos.x - tilesX;
+    yStart = playerTilePos.y - tilesY;
+
+    if ( xStart < 0 ) xStart = 0;
+    if ( yStart < 0 ) yStart = 0;
+
+    xEnd = playerTilePos.x + tilesX;
+    yEnd = playerTilePos.y + tilesY;
+
+    if ( xEnd > Tiles::Info::MAP_SIZE - 1 ) xEnd = Tiles::Info::MAP_SIZE;
+    if ( yEnd > Tiles::Info::MAP_SIZE - 1 ) yEnd = Tiles::Info::MAP_SIZE;
 }
 
 void

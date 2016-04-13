@@ -18,10 +18,8 @@ Water :: Water ( Game& game, const sf::Vector2i& pos,  Tile_Map& tileMap,
 }
 
 void
-Water :: update ( const float dt, const std::vector<Light>& lights )
+Water :: update ( const float dt )
 {
-    Tile::update( dt, lights );
-
     if ( !inWindowBounds( m_game->getWindow().get() ) ) return;
 
     if ( m_txrClock.getElapsedTime().asSeconds() > (float)random::num( 5, 10 ) / 10.0f  )

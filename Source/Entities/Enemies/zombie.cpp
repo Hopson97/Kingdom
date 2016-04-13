@@ -26,8 +26,8 @@ Zombie :: Zombie( Game* game, Tile_Map* tiles, Player* player, MobPtrVec* mobVec
     addComponent( std::make_unique<Component::Moves_Towards_Target>
                 ( this, 3 ) );
 
-    //addComponent( std::make_unique<Component::Ground_Friction>
-    //            ( this, tiles ) );
+    addComponent( std::make_unique<Component::Ground_Friction>
+                ( this, tiles ) );
 
     addComponent( std::make_unique<Component::Steps_On_Tiles>
                 ( this, tiles ) );

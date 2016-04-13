@@ -15,15 +15,40 @@ Mob :: Mob ( Game* game, const sf::Texture& texture, Tile_Map* tiles )
 void
 Mob :: update ( const float dt  )
 {
+    //Check for the mob being OOB of the map
+    {
+        int mapSize = Tiles::Info::MAP_SIZE * Tiles::Info::SIZE;
 
+        int spriteWidth = m_sprite.getLocalBounds().width;
+        int spriteHeight = m_sprite.getLocalBounds().height;
+        sf::Vector2f spritePos = m_sprite.getPosition();
+
+
+        if ( spritePos.x >= mapSize - spriteWidth - 1 )
+        {
+            m_sprite.setPosition( mapSize - spriteWidth - 1, spritePos.y  );
+        }
+        if ( spritePos.x + 1 <= 1 )
+        {
+            m_sprite.setPosition( spriteWidth, spritePos.y );
+        }
+
+
+        if ( spritePos.y > mapSize - spriteHeight - 1 )
+        {
+            m_sprite.setPosition( spritePos.x, mapSize - spriteHeight - 1 );
+        }
+        if ( spritePos.y + 1 <= 1 )
+        {
+            m_sprite.setPosition( spritePos.x, 1 );
+        }
+    }
     checkVel();
     updateTileMapPos();
     uniqueLogic     ( dt );
     componentLogic  ( dt );
 
     m_sprite.move( getVelocity().x, getVelocity().y );
-
-
 }
 
 const sf::Vector2i&

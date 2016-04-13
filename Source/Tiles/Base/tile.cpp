@@ -16,8 +16,15 @@ Tile :: Tile (  const Game& game, const sf::Vector2i& pos,
 }
 
 void
-Tile :: update ( const float dt, const std::vector<Light>& lights )
+Tile :: update ( const float dt )
 {
+
+}
+
+void
+Tile :: updateLight ( const std::vector<Light>& lights )
+{
+    //Start the lights as being dark
     m_light = { 0, 0, 0 };
 
     for ( const Light& light : lights)
@@ -26,10 +33,10 @@ Tile :: update ( const float dt, const std::vector<Light>& lights )
              m_light.g < 255 &&
              m_light.b < 255 )
         {
+            //Increase the light of the tile based on distance from the light
             m_light += light.getLightFromIntensity ( m_tilePos );
         }
     }
-
     applyLight();
 }
 

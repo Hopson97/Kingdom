@@ -14,7 +14,7 @@ class Ice : public Tile
             const Ecosystem ecosystem, const sf::Color& light = { 0, 0, 0 } );
 
         void
-        update      ( const float dt, const std::vector<Light>& lights ) override;
+        update      ( const float dt ) override;
 
         void
         steppedOn   ();

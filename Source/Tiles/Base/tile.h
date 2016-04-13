@@ -25,7 +25,7 @@ namespace Info
 {
     constexpr static
     int     SIZE        { 42 },     //The size of a single tile in pixels ( squared )
-            MAP_SIZE    { 1300 };    //How size of the map in tiles ( squared )
+            MAP_SIZE    { 1350 };    //How size of the map in tiles ( squared )
 
     const unsigned TEXTURE_VARIANTS = 3;
 }
@@ -62,11 +62,14 @@ class Tile : public Sf_Entity
         getLight                () const;
 
         virtual void
-        update                  ( const float dt,  const std::vector<Light>& lights );
+        update                  ( const float dt );
 
         virtual void
         steppedOn               ()
         { }
+
+        void
+        updateLight             ( const std::vector<Light>& lights );
 
     protected:
         const sf::Texture&
