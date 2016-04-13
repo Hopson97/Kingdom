@@ -113,5 +113,46 @@ Tile_Map :: draw ( sf::RenderWindow& window, const sf::Vector2i& playerTilePos )
 
 ```
 
+# Lighting
+
+Lighting is as simple as each tile checking lights and multiplying colours together.
+
+```C++
+void
+Tile :: updateLight ( const std::vector<Light>& lights )
+{
+    //Start the lights as being dark
+    m_light = { 0, 0, 0 };
+
+    for ( const Light& light : lights)
+    {
+        if ( m_light.r < 255 &&
+             m_light.g < 255 &&
+             m_light.b < 255 )
+        {
+            //Increase the light of the tile based on distance from the light
+            m_light += light.getLightFromIntensity ( m_tilePos );
+        }
+    }
+    applyLight(); //aka "M_sprite.setColor( m_info.colour * m_light );"
+}
+```
+
+This reduced the FPS by a lot, but to fix this I did a few optimisations.
+
+One was to the lights a static bool to say "do the lights need to update?". This is only true under a few conditions, such as a light being added or removed, or a light moving position.
+
+Lights can only "move" if the position passed into the Light :: setTilePosition method is different from the position that the light is already at.
+
+Mobs are lit up by adding the "Effected_By_Light" component to them, which simply checks the light value of the tile they are above and then apply the light colours to the mob.
+
+The lights look like this:
+
+![alt text]( http://puu.sh/ofWE7/64267ddf22.jpg "Lots of lights")
+![alt text]( http://puu.sh/ofPv8/5885b2f347.jpg "Single light")
+
+Compared to no lights, it is a huge improvement:
+
+![alt text]( http://puu.sh/ocWKv/56b519a2bf.jpg "Single light")
 
 
