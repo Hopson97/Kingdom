@@ -19,7 +19,7 @@ It is then very easy to add logic to the Entities as you can simply do it in a h
 ```C++
 
 addComponent( std::make_unique<Component::Tile_Collidable>
-            ( m_tileMap, this ) );
+            ( this, m_tileMap ) );
 
 ```
 
