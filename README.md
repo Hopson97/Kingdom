@@ -151,4 +151,8 @@ The lights look like this:
 ![alt text]( http://puu.sh/ofWE7/64267ddf22.jpg "Lots of lights")
 ![alt text]( http://puu.sh/ofPv8/5885b2f347.jpg "Single light")
 
+Compared to no lights, it is a huge improvement:
+
+![alt text]( http://puu.sh/ocWKv/56b519a2bf.jpg "Single light")
+
 
