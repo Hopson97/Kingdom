@@ -14,8 +14,6 @@ All entities (exluding tiles) are based of a component system. This means that e
 
 Components are in the "Component" folder, and inherit from the "Component::Component_Base" class, and implement the logic method from the base.
 
-Components based on AI must inherit from the "Component::AI_Component" class, and do the same as above.
-
 It is then very easy to add logic to the Entities as you can simply do it in a header include and a couple lines of code in the Entities constructor. For example, to make an derived mob collide with tiles:
 
 ```C++
