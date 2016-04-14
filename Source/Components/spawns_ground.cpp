@@ -1,4 +1,4 @@
-#include "Spawns_Ground.h"
+#include "spawns_ground.h"
 
 #include "rand.h"
 
@@ -35,8 +35,8 @@ Spawns_Ground :: spawn ( const int maxDistFromPlayer )
     m_hasSpawned = false;
     for ( int i = 0; i < 10 ; i++ )
     {
-        int xPos = random::num( x, xBound );
-        int yPos = random::num( y, yBound );
+        int xPos = kingdom_random::num( x, xBound );
+        int yPos = kingdom_random::num( y, yBound );
 
         if ( m_tiles->at( xPos, yPos )->isWalkable() )
         {

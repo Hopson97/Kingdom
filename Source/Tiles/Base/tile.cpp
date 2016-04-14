@@ -53,7 +53,7 @@ Tile :: draw ( sf::RenderWindow& window)
 const sf::Texture&
 Tile :: randomTexture ( const Game& game )
 {
-    m_txrId = random::num( 1, 3 );
+    m_txrId = kingdom_random::num( 1, 3 );
 
     return getTexture( game, m_txrId );
 }

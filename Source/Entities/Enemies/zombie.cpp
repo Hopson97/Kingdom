@@ -1,5 +1,5 @@
 #include "zombie.h"
-#include "../../Components/AI/aggressive_targeting.h"
+#include "../../Components/AI/Aggressive_Targeting.h"
 #include "../../Components/AI/looks_at_target.h"
 #include "../../Components/AI/moves_towards_target.h"
 #include "ground_friction.h"
