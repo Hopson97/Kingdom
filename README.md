@@ -8,20 +8,30 @@ The tile collisions were somewhat awkward to do as unlike other tile games, the 
 
 ![alt text](http://puu.sh/o5LGX/145d3f5ef8.png "Water and grass")
 
+#Building
+Building can be done on linux with the makefile. In order to reduce compilation time, you should use multiple make jobs. This is done with the -jX argument, with X being the amount of processing cores you have. An example for 4 cores:
+
+```make -j4```
+
+#Prerequisites 
+In order to build the game you need the sfml library, sfml's dependancies and OpenGL headers.
+
+On ubuntu:
+
+```sudo apt-get install libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew1.5-dev libjpeg8-dev libsndfile1-dev libopenal-dev libsfml-dev libglu1-mesa-dev mesa-common-dev freeglut3-dev```
+
 #Entities 
 
 All entities (exluding tiles) are based of a component system. This means that entities must inherit from "Mob" (or Enemy_Mob). The "Mob" class has an std::vector of components, of which get cycled through every frame in the update method of the mob, after doing any unique logic of a derived mob class first.
 
 Components are in the "Component" folder, and inherit from the "Component::Component_Base" class, and implement the logic method from the base.
 
-Components based on AI must inherit from the "Component::AI_Component" class, and do the same as above.
-
 It is then very easy to add logic to the Entities as you can simply do it in a header include and a couple lines of code in the Entities constructor. For example, to make an derived mob collide with tiles:
 
 ```C++
 
 addComponent( std::make_unique<Component::Tile_Collidable>
-            ( m_tileMap, this ) );
+            ( this, m_tileMap ) );
 
 ```
 
@@ -138,13 +148,17 @@ Tile :: updateLight ( const std::vector<Light>& lights )
 }
 ```
 
-This reduced the FPS by a lot, but to fix this I did a few optimisations.
+Unfournatly, this caused the game's performance to suffer. Luckily, I made a few optimisations.
 
-One was to the lights a static bool to say "do the lights need to update?". This is only true under a few conditions, such as a light being added or removed, or a light moving position.
+One optimisations to add a static booleon into the light class that says whether or not there has been a "light update". If there has, then the light is recalculated. 
 
-Lights can only "move" if the position passed into the Light :: setTilePosition method is different from the position that the light is already at.
+The boolean is set to true if
 
-Mobs are lit up by adding the "Effected_By_Light" component to them, which simply checks the light value of the tile they are above and then apply the light colours to the mob.
+1. A light is moved.
+2. A light is added.
+3. A light is removed.
+
+Mobs are lit up by adding the "Effected_By_Light" component to them, which simply checks the light value of the tile below them, and then applies the light colours to the mob.
 
 The lights look like this:
 
@@ -154,5 +168,3 @@ The lights look like this:
 Compared to no lights, it is a huge improvement:
 
 ![alt text]( http://puu.sh/ocWKv/56b519a2bf.jpg "Single light")
-
-

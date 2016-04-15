@@ -22,12 +22,12 @@ Water :: update ( const float dt )
 {
     if ( !inWindowBounds( m_game->getWindow().get() ) ) return;
 
-    if ( m_txrClock.getElapsedTime().asSeconds() > (float)random::num( 5, 10 ) / 10.0f  )
+    if ( m_txrClock.getElapsedTime().asSeconds() > (float)kingdom_random::num( 5, 10 ) / 10.0f  )
     {
         unsigned newId = getTxrId();
         while ( newId == getTxrId() )
         {
-            newId = random::num( 1, 3 );
+            newId = kingdom_random::num( 1, 3 );
         }
 
         m_sprite.setTexture( getTexture ( *m_game, newId ) );

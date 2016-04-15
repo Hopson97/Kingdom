@@ -22,7 +22,7 @@ Ice :: update  ( const float dt )
 {
     if ( m_meltTimer.getElapsedTime().asSeconds() > 5.0f && getEcosystem() != Ecosystem::Snowy )
     {
-        if ( random::num( 1, 3) == 1 )
+        if ( kingdom_random::num( 1, 3) == 1 )
         {
             melt();
         }

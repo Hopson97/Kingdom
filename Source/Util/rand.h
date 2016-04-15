@@ -4,7 +4,7 @@
 	#include <ctime>
 	#include <cstdlib>
 
-	namespace random
+	namespace kingdom_random
 	{
 
 	int num(int low, int high);
