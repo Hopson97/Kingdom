@@ -78,6 +78,7 @@ Test :: sfDraw( const double dt )
 
     getGame().getWindow().popGLStates();
 }
+
 sf::Clock mobPrint;
 void
 Test :: addMobs ()
@@ -92,7 +93,7 @@ Test :: addMobs ()
         timer.restart();
     }
 
-    if ( mobPrint.getElapsedTime().asSeconds() > 5 )
+    if ( mobPrint.getElapsedTime().asSeconds() > 6 )
     {
         std::cout << "Num mobs: " << m_mobs.size() << std::endl;
         mobPrint.restart();
