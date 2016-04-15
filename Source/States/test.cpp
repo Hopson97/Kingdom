@@ -24,8 +24,8 @@ Test :: Test  ( Game* game )
     for ( int i = 0 ; i < 100 ; i++ )
     {
         m_lights.emplace_back ( sf::Vector2i
-                              ( random::num( 1, Tiles::Info::MAP_SIZE),
-                                random::num( 1, Tiles::Info::MAP_SIZE) ), 9
+                              ( kingdom_random::num( 1, Tiles::Info::MAP_SIZE),
+                                kingdom_random::num( 1, Tiles::Info::MAP_SIZE) ), 9
                               );
     }
 }

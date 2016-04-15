@@ -12,7 +12,7 @@ class Level_Generator
     typedef std::unique_ptr<Tiles::Tile> TilePtr;
 
     public:
-        Level_Generator     ( Tile_Map& tiles, Game& game, const int seed = random::num ( 0, 100000) );
+        Level_Generator     ( Tile_Map& tiles, Game& game, const int seed = kingdom_random::num ( 0, 100000) );
 
     private:
         void

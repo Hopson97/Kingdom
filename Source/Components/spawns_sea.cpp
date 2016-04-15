@@ -43,8 +43,8 @@ Spawns_Sea :: spawn ( const int maxDistFromPlayer )
     m_hasSpawned = false;
     for ( int i = 0; i < 10 ; i++ )
     {
-        int xPos = random::num( x, xBound );
-        int yPos = random::num( y, yBound );
+        int xPos = kingdom_random::num( x, xBound );
+        int yPos = kingdom_random::num( y, yBound );
 
         if ( m_tiles->at( xPos, yPos )->isSwimmable() )
         {

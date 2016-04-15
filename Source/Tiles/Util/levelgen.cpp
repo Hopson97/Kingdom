@@ -32,8 +32,8 @@ Level_Generator :: Level_Generator  ( Tile_Map& tiles, Game& game, const int see
     {
         for ( int i = 0 ; i < ISLAND_ATTEMPTS ; i++ )
         {
-            int x = random::num( 0, MAP_SIZE ),
-                y = random::num( 0, MAP_SIZE );
+            int x = kingdom_random::num( 0, MAP_SIZE ),
+                y = kingdom_random::num( 0, MAP_SIZE );
 
             createIsland( x, y);
         }
@@ -49,8 +49,8 @@ void
 Level_Generator :: createIsland( const int x, const int y )
 {
     //The general width and height of the island
-    int width   = random::num( 18, 40 ),
-        height  = random::num( 18, 40 );
+    int width   = kingdom_random::num( 18, 40 ),
+        height  = kingdom_random::num( 18, 40 );
 
     sf::IntRect isle( x, y, width, height );
 
