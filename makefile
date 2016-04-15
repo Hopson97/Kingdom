@@ -30,7 +30,7 @@ CXX=g++-5
 all: mkbindir Kingdom
 
 debug: OPTIMIZE = -Og -g 
-debug: bfcc
+debug: Kingdom
 
 mkbindir:
 	@mkdir -p bin/
