@@ -3,7 +3,7 @@ STD = -std=c++14
 OPTIMIZE = -O3
 INCLUDE = -ISource -ISource/Components -ISource/Entities -ISource/Light -ISource/Managers -ISource/States -ISource/Tiles -ISource/Util
 INCLUDE += -ISource/Tiles/Util
-LINKING = -D SFML_STATIC -lsfml-graphics -lsfml-window -lsfml-system -lGL
+LINKING = -lsfml-graphics -lsfml-window -lsfml-system -lGL
 
 NAME = Kingdom
 
@@ -30,7 +30,7 @@ CXX=g++-5
 all: mkbindir Kingdom
 
 debug: OPTIMIZE = -Og -g 
-debug: Kingdom
+debug: mkbindir Kingdom
 
 mkbindir:
 	@mkdir -p bin/
