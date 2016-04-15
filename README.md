@@ -8,6 +8,18 @@ The tile collisions were somewhat awkward to do as unlike other tile games, the 
 
 ![alt text](http://puu.sh/o5LGX/145d3f5ef8.png "Water and grass")
 
+#Building
+Building can be done on linux with the makefile. In order to reduce compilation time, you should use multiple make jobs. This is done with the -jX argument, with X being the amount of processing cores you have. An example for 4 cores:
+
+```make -j4```
+
+#Prerequisites 
+In order to build the game you need the sfml library, sfml's dependancies and OpenGL headers.
+
+On ubuntu:
+
+```sudo apt-get install libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew1.5-dev libjpeg8-dev libsndfile1-dev libopenal-dev libsfml-dev libglu1-mesa-dev mesa-common-dev freeglut3-dev```
+
 #Entities 
 
 All entities (exluding tiles) are based of a component system. This means that entities must inherit from "Mob" (or Enemy_Mob). The "Mob" class has an std::vector of components, of which get cycled through every frame in the update method of the mob, after doing any unique logic of a derived mob class first.
@@ -156,5 +168,3 @@ The lights look like this:
 Compared to no lights, it is a huge improvement:
 
 ![alt text]( http://puu.sh/ocWKv/56b519a2bf.jpg "Single light")
-
-
