@@ -21,3 +21,5 @@ LOC/
 Kingdom
 
 *.txt
+*.dll
+project/
