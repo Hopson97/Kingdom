@@ -1,15 +1,16 @@
 #include "tile_loader.h"
 
 #include <stdexcept>
+#include <iostream>
 
-const std::string Tile_Loader :: Viscosity = "Viscosity";
-const std::string Tile_Loader :: Friction  = "Friction";
-const std::string Tile_Loader :: Swimmable = "Swimmable";
-const std::string Tile_Loader :: Walkable  = "Walkable";
-const std::string Tile_Loader :: Colour    = "Colour";
+const std::string Viscosity = "Viscosity";
+const std::string Friction  = "Friction";
+const std::string Swimmable = "Swimmable";
+const std::string Walkable  = "Walkable";
+const std::string Colour    = "Colour";
 
-void
-Tile_Loader :: loadTile    ( Tile_Info* tile, const std::string filePath )
+
+void Tile_Loader :: loadTile ( Tile_Info* tile, const std::string filePath )
 {
     m_tileTraitsLoaded = 0;
     m_tile = tile;
@@ -31,8 +32,8 @@ Tile_Loader :: loadTile    ( Tile_Info* tile, const std::string filePath )
     m_tile = nullptr;
 }
 
-void
-Tile_Loader :: readFile    ( std::ifstream& inFile )
+
+void Tile_Loader :: readFile ( std::ifstream& inFile )
 {
     std::string   line;
 
@@ -48,22 +49,20 @@ Tile_Loader :: readFile    ( std::ifstream& inFile )
     }
 }
 
-const bool
-Tile_Loader :: wordFound ( std::string toFind, std::string line )
+
+bool Tile_Loader :: wordFound ( const std::string& toFind, const std::string& line ) const
 {
     return line.find ( toFind ) != std::string::npos;
 }
 
-void
-Tile_Loader :: loadDouble   ( std::ifstream& inFile, double& toLoad )
+void Tile_Loader :: loadDouble ( std::ifstream& inFile, double& toLoad )
 {
     inFile >> toLoad;
 
     m_tileTraitsLoaded++;
 }
 
-void
-Tile_Loader :: loadBoolean ( std::ifstream& inFile, bool& toLoad )
+void Tile_Loader :: loadBoolean ( std::ifstream& inFile, bool& toLoad )
 {
     std::string line;
 
@@ -76,9 +75,9 @@ Tile_Loader :: loadBoolean ( std::ifstream& inFile, bool& toLoad )
     m_tileTraitsLoaded++;
 }
 
-void
-Tile_Loader :: loadColour  ( std::ifstream& inFile)
+void Tile_Loader :: loadColour  ( std::ifstream& inFile)
 {
+    std::cout << "Loading colour" << std::endl;
     if ( m_tileTraitsLoaded < m_tileTraitsTotal - 1 )
     {
         throw std::runtime_error ( "Colour must be defined at the end of the file!" );

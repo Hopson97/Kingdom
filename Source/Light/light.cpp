@@ -1,6 +1,6 @@
 #include "light.h"
 
-#include "maths.h"
+#include "../Util/maths.h"
 
 bool Light :: m_lightUpdateNeeded = true;
 
@@ -11,8 +11,7 @@ Light :: Light ( const sf::Vector2i& tileLocation, const unsigned intensity )
     m_lightUpdateNeeded = true;
 }
 
-void
-Light :: setTileLocation ( const sf::Vector2i& tileLocation )
+void Light :: setTileLocation ( const sf::Vector2i& tileLocation )
 {
     if ( tileLocation != m_tileLocation )
     {
@@ -21,32 +20,27 @@ Light :: setTileLocation ( const sf::Vector2i& tileLocation )
     }
 }
 
-const unsigned
-Light :: getIntensity   () const
+unsigned Light :: getIntensity   () const
 {
     return m_intensity;
 }
 
-const sf::Vector2i
-Light :: getLocation    () const
+const sf::Vector2i Light :: getLocation    () const
 {
     return m_tileLocation;
 }
 
-const bool
-Light :: isLightUpdate  () const
+bool Light :: isLightUpdate  () const
 {
     return m_lightUpdateNeeded;
 }
 
-void
-Light :: turnOffLightUpdate ()
+void Light :: turnOffLightUpdate ()
 {
     m_lightUpdateNeeded = false;
 }
 
-const sf::Color
-Light :: getLightFromIntensity   ( const sf::Vector2i& tileMapPos ) const
+const sf::Color Light :: getLightFromIntensity ( const sf::Vector2i& tileMapPos ) const
 {
     auto dist = Math::getDistance<unsigned>( m_tileLocation, tileMapPos );
 

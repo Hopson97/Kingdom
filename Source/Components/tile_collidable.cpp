@@ -15,8 +15,7 @@ Tile_Collidable :: Tile_Collidable( Mob* mob, Tile_Map* tiles )
 
 }
 
-void
-Tile_Collidable :: logic ( const float dt )
+void Tile_Collidable :: logic ( const float dt )
 {
     if ( m_isInBadTile)
     {
@@ -38,8 +37,7 @@ Tile_Collidable :: logic ( const float dt )
     updatePrevTile();
 }
 
-void
-Tile_Collidable :: tileCollisionsXGround ()
+void Tile_Collidable :: tileCollisionsXGround ()
 {
     auto walkable = [&]  ( int x, int y )
     {
@@ -74,8 +72,7 @@ Tile_Collidable :: tileCollisionsXGround ()
     m_isInBadTile = false;
 }
 
-void
-Tile_Collidable :: tileCollisionsYGround ()
+void Tile_Collidable :: tileCollisionsYGround ()
 {
     auto walkable = [&]  ( int x, int y )
     {
@@ -111,8 +108,7 @@ Tile_Collidable :: tileCollisionsYGround ()
     m_isInBadTile = false;
 }
 
-void
-Tile_Collidable :: tileCollisionsXWater ()
+void Tile_Collidable :: tileCollisionsXWater ()
 {
     auto swimmable = [&]  ( int x, int y )
     {
@@ -147,8 +143,7 @@ Tile_Collidable :: tileCollisionsXWater ()
     m_isInBadTile = false;
 }
 
-void
-Tile_Collidable :: tileCollisionsYWater ()
+void Tile_Collidable :: tileCollisionsYWater ()
 {
     auto swimmable = [&]  ( int x, int y )
     {
@@ -184,8 +179,7 @@ Tile_Collidable :: tileCollisionsYWater ()
     m_isInBadTile = false;
 }
 
-void
-Tile_Collidable :: invertVelocity  ()
+void Tile_Collidable :: invertVelocity  ()
 {
 
     if ( !m_velInverted )
@@ -196,8 +190,7 @@ Tile_Collidable :: invertVelocity  ()
     m_isInBadTile = true;
 }
 
-void
-Tile_Collidable :: updatePrevTile  ()
+void Tile_Collidable :: updatePrevTile  ()
 {
     if ( !m_isInBadTile )
     {

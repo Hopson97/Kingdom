@@ -11,8 +11,7 @@ Tiles_M :: Tiles_M( )
     m_tileLoader.loadTile( &m_tiles[ TILE_CLIFF ], tilePath + "Cliff" + extention );
 }
 
-const Tile_Info&
-Tiles_M :: getTileInfo ( const Tile_Type tileType ) const
+const Tile_Info& Tiles_M :: getTileInfo ( const Tile_Type tileType ) const
 {
     return m_tiles.at ( tileType );
 }

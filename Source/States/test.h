@@ -1,12 +1,12 @@
 #ifndef TEST_H
 #define TEST_H
 
-#include "game.h"
-#include "Other/tilemap.h"
-#include "player.h"
-#include "Enemies/zombie.h"
+#include "../game.h"
+#include "../Tiles/Other/tilemap.h"
+#include "../Entities/player.h"
+#include "../Entities/Enemies/zombie.h"
 
-#include "levelgen.h"
+#include "../Tiles/Util/levelgen.h"
 
 namespace State
 {
@@ -18,27 +18,20 @@ class Test : public State_Base
 
         ~Test   () {}
 
-        void
-        input   ( const double dt ) override;
+        void input   ( const double dt ) override;
 
-        void
-        update  ( const double dt ) override;
+        void update  ( const double dt ) override;
 
-        void
-        glDraw  ( const double dt ) override;
+        void glDraw  ( const double dt ) override;
 
-        void
-        sfDraw  ( const double dt ) override;
+        void sfDraw  ( const double dt ) override;
 
     private:
-        void
-        addMobs ();
+        void addMobs ();
 
-        void
-        addZombie ();
+        void addZombie ();
 
-        void
-        addShark ();
+        void addShark ();
 
     private:
         Tile_Map            m_tileMap;

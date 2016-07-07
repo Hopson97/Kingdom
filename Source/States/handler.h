@@ -20,23 +20,17 @@ class Handler
     public:
         ~Handler();
 
-        void
-        changeState     ( StatePtr state);
+        void changeState	( StatePtr state);
 
-        void
-        pushState       ( StatePtr state );
+        void pushState		( StatePtr state );
 
-        void
-        popState        ();
+        void popState		();
 
-        State_Base*
-        peekState       ();
+        State_Base* peekState	();
 
-        const unsigned
-        size            () const  { return states.size(); }
+        const unsigned size		() const  { return states.size(); }
 
-        const bool
-        empty           () const { return states.empty(); }
+        const bool empty		() const { return states.empty(); }
 
     private:
         std::stack<StatePtr> states;

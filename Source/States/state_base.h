@@ -18,21 +18,16 @@ class State_Base
         virtual
         ~State_Base ();
 
-        virtual void
-        input       ( const double dt ) = 0;
+        virtual void input       ( const double dt ) = 0;
 
-        virtual void
-        update      ( const double dt ) = 0;
+        virtual void update      ( const double dt ) = 0;
 
-        virtual void
-        glDraw        ( const double dt ) = 0;
+        virtual void glDraw        ( const double dt ) = 0;
 
-        virtual void
-        sfDraw        ( const double dt ) = 0;
+        virtual void sfDraw        ( const double dt ) = 0;
 
     protected:
-        Game&
-        getGame() const;
+        Game&  getGame() const;
 
     private:
         Game* mGame;

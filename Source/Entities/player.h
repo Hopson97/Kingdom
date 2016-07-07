@@ -10,18 +10,14 @@ class Player    :   public Mob
     public:
         Player              ( Game* game, Tile_Map* tiles );
 
-        void
-        input               ( const float dt );
+        void input               ( const float dt );
 
     private:
-        void
-        uniqueLogic         ( const float dt ) override;
+        void uniqueLogic         ( const float dt ) override;
 
-        void
-        updateView          ();
+        void updateView          ();
 
-        void
-        setUpAnimation      ();
+        void setUpAnimation      ();
 
 
     private:

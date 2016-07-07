@@ -2,8 +2,7 @@
 
 #include <iostream>
 
-void
-FPS_Counter :: update ()
+void FPS_Counter :: update ()
 {
     float fpsThisFrame = getFPS( fpsClock.restart() );
     frameTimes      += fpsThisFrame;
@@ -19,8 +18,7 @@ FPS_Counter :: update ()
     }
 }
 
-float
-FPS_Counter :: getFPS(const sf::Time& time)
+float FPS_Counter :: getFPS(const sf::Time& time)
 {
     return (1000000.0f / time.asMicroseconds());
 }

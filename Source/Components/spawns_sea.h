@@ -2,9 +2,12 @@
 #define SPAWNS_SEA_H
 
 #include "Bases/component.h"
-#include "Bases/mob.h"
-#include "Other/tilemap.h"
-#include "player.h"
+
+#include "../Entities/Bases/mob.h"
+#include "../Entities/player.h"
+
+#include "../Tiles/Other/tilemap.h"
+
 
 namespace Component
 {
@@ -15,20 +18,16 @@ class Spawns_Sea : public Component_Base
         Spawns_Sea ( Mob* mob, Tile_Map* tiles, Player* player,
                     const int maxDistFromPlayer, const int distToDespawn  );
 
-        void
-        logic ( const float dt ) override;
+        void logic ( const float dt ) override;
 
     private:
-        void
-        getTarget   ();
+        void getTarget   ();
 
-        void
-        checkDist   ();
+        void checkDist   ();
 
-        void
-        spawn       ( const int maxDistFromPlayer );
+        void spawn       ( const int maxDistFromPlayer );
 
-    private:
+		
         Player*     m_player;
         Tile_Map*   m_tiles;
         Mob*        m_target;

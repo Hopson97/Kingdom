@@ -6,9 +6,9 @@
     Becomes non-aggressive after "m_maxDist" tiles away.
 */
 
-#include "Bases/enemy_mob.h"
-#include "Bases/component.h"
-#include "player.h"
+#include "../../Entities/Bases/enemy_mob.h"
+#include "../../Entities/player.h"
+#include "../Bases/component.h"
 
 #include <vector>
 #include <memory>
@@ -25,18 +25,14 @@ class Aggressive_Targeting : public Component_Base
         Aggressive_Targeting ( Mob* mob, Player* player,
                               MobPtrVec* mobs, unsigned maxDist );
 
-        void
-        logic   ( const float dt ) override;
+        void logic	( const float dt ) override;
 
     private:
-        void
-        checkDistToPlayer   ();
+        void checkDistToPlayer   	();
 
-        void
-        checkTarget         ();
+        void checkTarget         	();
 
-        const unsigned
-        getDistance         ( const sf::Vector2i& otherPos ) const;
+        const unsigned getDistance	( const sf::Vector2i& otherPos ) const;
 
 
     private:

@@ -1,7 +1,8 @@
 #include "looks_at_target.h"
 
 #include <cmath>
-#include "maths.h"
+
+#include "../../Util/maths.h"
 
 namespace Component
 {
@@ -11,8 +12,7 @@ Looks_At_Target :: Looks_At_Target ( Enemy_Mob* mob)
 {
 }
 
-void
-Looks_At_Target :: logic   ( const float dt )
+void Looks_At_Target :: logic   ( const float dt )
 {
     if ( m_mob->hasTarget() )
     {
@@ -20,8 +20,7 @@ Looks_At_Target :: logic   ( const float dt )
     }
 }
 
-void
-Looks_At_Target :: lookAtTarget ()
+void Looks_At_Target :: lookAtTarget ()
 {
     //shorthand
     sf::Vector2f tPos = m_mob->getTarget()->getPosition();

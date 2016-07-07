@@ -1,7 +1,7 @@
 #include "moves_towards_target.h"
 
 #include <cmath>
-#include "maths.h"
+#include "../../Util/maths.h"
 
 namespace Component
 {
@@ -12,8 +12,7 @@ Moves_Towards_Target :: Moves_Towards_Target ( Mob* mob, unsigned distBeforeStop
 {
 }
 
-void
-Moves_Towards_Target :: logic   ( const float dt )
+void Moves_Towards_Target :: logic   ( const float dt )
 {
     if ( m_mob->hasTarget() )
     {

@@ -14,8 +14,7 @@ Animation::addFrame(const Frame& frame)
 *   currentFrame()  returns the current frame of which the animation is on.
 *   param1  :   delta time of which to base the animation timings on
 ***************************************************************************************************************************************************************/
-const sf::IntRect&
-Animation::currentFrame( const float dt )
+const sf::IntRect& Animation::currentFrame( const float dt )
 {
     if ( m_frames.empty() )
     {
@@ -39,8 +38,7 @@ Animation::currentFrame( const float dt )
 /*****************************************************************************************************************************************************************
 *   getCurrentFrameNumber() returns whatever frame the current animation is on
 ***************************************************************************************************************************************************************/
-const unsigned
-Animation::getCurrentFrameNumber() const
+unsigned Animation::getCurrentFrameNumber() const
 {
     return m_currFrame;
 }

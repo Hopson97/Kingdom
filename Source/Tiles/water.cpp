@@ -1,7 +1,7 @@
 #include "water.h"
 #include "ice.h"
 
-#include "rand.h"
+#include "../Util/rand.h"
 
 namespace Tiles
 {
@@ -17,8 +17,7 @@ Water :: Water ( Game& game, const sf::Vector2i& pos,  Tile_Map& tileMap,
     applyLight();
 }
 
-void
-Water :: update ( const float dt )
+void Water :: update ( const float dt )
 {
     if ( !inWindowBounds( m_game->getWindow().get() ) ) return;
 
@@ -35,8 +34,7 @@ Water :: update ( const float dt )
     }
 }
 
-void
-Water :: steppedOn ()
+void Water :: steppedOn ()
 {
     m_tileMap->at( getTileMapPos() ) = std::make_unique<Tiles::Ice>
                                     ( *m_game, getTileMapPos(), m_tileMap, getEcosystem(), getLight() );

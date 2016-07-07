@@ -9,54 +9,33 @@ Window :: Window()
                       "Window",
                       sf::Style::Default,
                       sf::ContextSettings(24) );
-
     m_window.setFramerateLimit ( 120 );
-
     m_window.setPosition( { 0, 0 } );
-
-    //GLEW set up
-    //glewExperimental = GL_TRUE;
-    //glewInit();
-
-    //OpenGL set up
-    glViewport  (0, 0, Win_Info::WIDTH, Win_Info::HEIGHT);
-    //glEnable    (GL_DEPTH_TEST);
-    //glEnable    (GL_CULL_FACE);
-    //glCullFace  (GL_BACK);
-
 
 }
 
-sf::RenderWindow&
-Window :: get()
+sf::RenderWindow& Window :: get()
 {
     return m_window;
 }
 
-void
-Window :: clear ( RGBA colour )
+void Window :: clear ( )
 {
-    colour.check(); //Check if the RGB values are in the 0.0 <= x <= 1.0 range
-
-    glClearColor( colour.r, colour.g, colour.b, colour.a );
-    glClear ( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    m_window.clear();
 }
 
-void
-Window :: update ()
+void Window :: update ()
 {
     m_window.display();
     winEvents();
 }
 
-const bool
-Window :: isOpen ()
+bool Window :: isOpen ()
 {
     return m_window.isOpen();
 }
 
-void
-Window :: winEvents ()
+void Window :: winEvents ()
 {
     sf::Event e;
 
@@ -73,21 +52,18 @@ Window :: winEvents ()
     }
 }
 
-void
-Window :: close ()
+void Window :: close ()
 {
     m_window.close();
 }
 
-void
-Window :: pushGLStates ()
+void Window :: pushGLStates ()
 {
     //m_window.pushGLStates();
     //m_window.resetGLStates();
 }
 
-void
-Window :: popGLStates ()
+void Window :: popGLStates ()
 {
     //m_window.popGLStates();
 }

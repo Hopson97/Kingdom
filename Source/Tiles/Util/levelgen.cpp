@@ -1,6 +1,6 @@
 #include "levelgen.h"
 
-#include "rand.h"
+#include "../../Util/rand.h"
 
 
 /*
@@ -45,8 +45,7 @@ Level_Generator :: Level_Generator  ( Tile_Map& tiles, Game& game, const int see
     m_ecosystemMap.clear();
 }
 
-void
-Level_Generator :: createIsland( const int x, const int y )
+void Level_Generator :: createIsland( const int x, const int y )
 {
     //The general width and height of the island
     int width   = kingdom_random::num( 18, 40 ),
@@ -74,15 +73,13 @@ Level_Generator :: createIsland( const int x, const int y )
     }
 }
 
-TilePtr
-Level_Generator :: addGrassTile ( const int x, const int y )
+TilePtr Level_Generator :: addGrassTile ( const int x, const int y )
 {
     return std::make_unique<Tiles::Grass>
             ( *m_game, sf::Vector2i ( x, y ), m_currEcosystem );
 }
 
-TilePtr
-Level_Generator :: addWaterTile    ( const int x, const int y )
+TilePtr Level_Generator :: addWaterTile    ( const int x, const int y )
 {
     return std::make_unique<Tiles::Water>
             ( *m_game, sf::Vector2i ( x, y ), *m_tileMap, m_currEcosystem );

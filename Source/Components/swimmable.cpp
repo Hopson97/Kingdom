@@ -11,8 +11,7 @@ Swimmable :: Swimmable ( Mob* mob, Tile_Map* map, const bool canLand, Game& game
 ,   m_splash            ( 100, sf::seconds( 1 ), sf::Color::White )
 { }
 
-void
-Swimmable :: logic   ( const float dt )
+void Swimmable :: logic   ( const float dt )
 {
     sf::Vector2i pos = m_mob->getTileMapPosition();
 

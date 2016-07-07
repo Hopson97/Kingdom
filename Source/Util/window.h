@@ -9,60 +9,27 @@ namespace Win_Info
     constexpr int WIDTH  = 1280;
 }
 
-struct RGBA
-{
-    float   r,
-            g,
-            b,
-            a;
-    void check ()
-    {
-        checkF( r );
-        checkF( g );
-        checkF( b );
-        checkF( a );
-    }
-
-    private:
-        void checkF ( float& f )
-        {
-            if ( f < 0.0f || f > 1.0f )
-            {
-                f = 0.0f;
-            }
-        }
-
-};
-
 class Window
 {
     public:
-        Window();
+        Window	();
 
-        sf::RenderWindow&
-        get                 ();
+        sf::RenderWindow& get	();
 
-        void
-        clear               ( RGBA colour = { 0.0f, 0.0f, 0.0f, 1.0f } );
+        void clear	();
 
-        void
-        update              ();
+        void update	();
 
-        const bool
-        isOpen              ();
+        bool isOpen	();
 
-        void
-        close               ();
+        void close	();
 
-        void
-        pushGLStates        ();
+        void pushGLStates	();
 
-        void
-        popGLStates         ();
+        void popGLStates	();
 
     private:
-        void
-        winEvents           ();
+        void winEvents		();
 
 
     private:

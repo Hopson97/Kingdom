@@ -19,8 +19,7 @@ class Tiles_M
     public:
         Tiles_M();
 
-        const Tile_Info&
-        getTileInfo ( const Tile_Type tileType ) const;
+        const Tile_Info& getTileInfo ( const Tile_Type tileType ) const;
 
     private:
         Tile_Loader    m_tileLoader;

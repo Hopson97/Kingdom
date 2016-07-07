@@ -1,8 +1,6 @@
 #include "game.h"
 #include <iostream>
 
-#include "swimmable.h"
-
 /*
     To do:
         *   Player movement feels odd. The player is too slow on grass and too fast on ice.

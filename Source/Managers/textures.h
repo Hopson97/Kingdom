@@ -22,24 +22,16 @@ class Textures
     public:
         Textures();
 
-        const sf::Texture&
-        getTexture          ( const Texture_Name name ) const;
+        const sf::Texture& getTexture          ( const Texture_Name name ) const;
 
     private:
-        void
-        loadTileTextures    ();
+        void loadTileTextures    ();
 
-        void
-        loadEntityTextures  ();
+        void loadEntityTextures  ();
 
-        void
-        loadTreeTextures    ();
+        void loadTreeTextures    ();
 
-
-
-
-        void
-        loadTexture         ( const Texture_Name name, const std::string& path );
+        void loadTexture         ( const Texture_Name name, const std::string& path );
 
 
 

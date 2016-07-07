@@ -2,11 +2,11 @@
 
 #include "../Util/maths.h"
 
-#include "looks_at_mouse.h"
-#include "tile_collidable.h"
-#include "steps_on_tiles.h"
-#include "ground_friction.h"
-#include "swimmable.h"
+#include "../Components/looks_at_mouse.h"
+#include "../Components/tile_collidable.h"
+#include "../Components/steps_on_tiles.h"
+#include "../Components/ground_friction.h"
+#include "../Components/swimmable.h"
 
 
 
@@ -37,8 +37,7 @@ Player :: Player ( Game* game, Tile_Map* tiles )
     setPosAtSolidTile   ( );
 }
 
-void
-Player :: input   ( const float dt )
+void Player :: input   ( const float dt )
 {
     m_isMoving = false;
 
@@ -66,14 +65,12 @@ Player :: input   ( const float dt )
     }
 }
 
-void
-Player :: uniqueLogic  ( const float dt )
+void Player :: uniqueLogic  ( const float dt )
 {
     updateView();
 }
 
-void
-Player :: updateView ()
+void Player :: updateView ()
 {
     m_view.setCenter( m_sprite.getPosition() );   //Centres camera
     //to the player

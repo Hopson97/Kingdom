@@ -2,8 +2,10 @@
 #define TILE_COLLIDABLE_H
 
 #include "Bases/component.h"
-#include "Other/tilemap.h"
-#include "Bases/mob.h"
+
+#include "../Tiles/Other/tilemap.h"
+
+#include "../Entities/Bases/mob.h"
 
 /*
     Does not allow the mob to walk into tiles marked as "not walkable"
@@ -17,27 +19,20 @@ class Tile_Collidable : public Component_Base
     public:
         Tile_Collidable ( Mob* mob, Tile_Map* tiles );
 
-        void
-        logic ( const float dt ) override;
+        void logic ( const float dt ) override;
 
     private:
-        void
-        tileCollisionsXGround ();
+        void tileCollisionsXGround 	();
 
-        void
-        tileCollisionsYGround ();
+        void tileCollisionsYGround 	();
 
-        void
-        tileCollisionsXWater ();
+        void tileCollisionsXWater 	();
 
-        void
-        tileCollisionsYWater ();
+        void tileCollisionsYWater 	();
 
-        void
-        invertVelocity  ();
+        void invertVelocity  		();
 
-        void
-        updatePrevTile  ();
+        void updatePrevTile  		();
 
         Tile_Map*       m_tileMap;
 

@@ -1,7 +1,7 @@
 #ifndef GRASS_TILE_H
 #define GRASS_TILE_H
 
-#include "game.h"
+#include "../game.h"
 #include "Base/tile.h"
 
 namespace Tiles

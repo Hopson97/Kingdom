@@ -7,8 +7,7 @@ Textures :: Textures()
     loadTreeTextures    ();
 }
 
-void
-Textures :: loadTileTextures()
+void Textures :: loadTileTextures()
 {
     const std::string tilePath = "Res/Tiles/";
 
@@ -17,8 +16,7 @@ Textures :: loadTileTextures()
     loadTexture ( TXR_TILE3, tilePath + "Tile3.png" );
 }
 
-void
-Textures :: loadEntityTextures  ()
+void Textures :: loadEntityTextures  ()
 {
     const std::string entityPath = "Res/Entities/";
 
@@ -27,23 +25,20 @@ Textures :: loadEntityTextures  ()
     loadTexture( TXR_ENT_WHALE,  entityPath + "Whale.png" );
 }
 
-void
-Textures :: loadTreeTextures  ()
+void Textures :: loadTreeTextures  ()
 {
     const std::string effectPath = "Res/Trees/";
 
     //loadTexture( TXR_TREE_REG, effectPath + "Tree1.png");
 }
 
-const sf::Texture&
-Textures :: getTexture( const Texture_Name name ) const
+const sf::Texture& Textures :: getTexture( const Texture_Name name ) const
 {
     return m_textureMap.at( name );
 }
 
 
-void
-Textures :: loadTexture ( const Texture_Name name, const std::string& path )
+void Textures :: loadTexture ( const Texture_Name name, const std::string& path )
 {
     if ( !m_textureMap[ name ].loadFromFile( path ) )
     {

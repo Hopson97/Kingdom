@@ -24,60 +24,43 @@ class Mob : public Sf_Entity
 
 
     public:
-        const sf::Vector2i&
-        getTileMapPosition  ();
+        const sf::Vector2i& getTileMapPosition  ();
 
-        void
-        update              ( const float dt );
+        void update			( const float dt );
 
-        const bool
-        isAlive             ( )                         { return m_isLiving; }
+        bool isAlive		( )                         { return m_isLiving; }
 
-        void
-        setAlive            ( const bool alive )        { m_isLiving = alive; }
+        void setAlive		( const bool alive )        { m_isLiving = alive; }
 
-        void
-        setMobState         ( const Mob_State state )   { m_mobState = state; }
+        void setMobState	( const Mob_State state )   { m_mobState = state; }
 
-        const Mob_State
-        getMobState         ( )                          { return m_mobState; }
+        Mob_State getMobState	()						{ return m_mobState; }
 
-        void
-        velocityForwards    ( const float dt );
+        void velocityForwards	( const float dt );
 
-        void
-        velocityBackwards   ( const float dt );
+        void velocityBackwards	( const float dt );
 
-        void
-        velocityLeft        ( const float dt );
+        void velocityLeft		( const float dt );
 
-        void
-        velocityRight       ( const float dt );
+        void velocityRight		( const float dt );
 
-        void
-        setTarget                   ( Mob* mob );
+        void setTarget			( Mob* mob );
 
-        const Mob*
-        getTarget                   () const;
+        const Mob* getTarget	() const;
 
-        const sf::Vector2i
-        getTargetTilePosition       ();
+        const sf::Vector2i getTargetTilePosition       ();
 
-        const bool
-        hasTarget                   () const;
+        bool hasTarget                   () const;
 
 
     protected:
         Mob ( Game* game, const sf::Texture& texture, Tile_Map* tiles );
 
-        virtual void
-        uniqueLogic         ( const float dt ) = 0;
+        virtual void uniqueLogic	( const float dt ) = 0;
 
-        void
-        addComponent        ( Comp c );
+        void addComponent			( Comp c );
 
-        void
-        updateTileMapPos    ();
+        void updateTileMapPos    	();
 
 
     protected:
@@ -85,17 +68,14 @@ class Mob : public Sf_Entity
         Tile_Map*       m_tileMap;
         bool            m_isMoving  { false };
 
-        Mob*            m_target            { nullptr };
+        Mob*            m_target	{ nullptr };
 
-        void
-        setPosAtSolidTile   ();
+        void setPosAtSolidTile	();
 
     private:
-        void
-        componentLogic      ( const float dt );
+        void componentLogic		( const float dt );
 
-        void
-        checkVel            ( );
+        void checkVel			();
 
     private:
         std::vector< Comp > m_components;

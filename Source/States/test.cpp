@@ -1,12 +1,13 @@
 #include "test.h"
 
-#include "Base/tile_types.h"
+#include "../Tiles/Base/tile_types.h"
 
-#include "rand.h"
-#include "levelgen.h"
+#include "../Util/rand.h"
 
-#include "Enemies/zombie.h"
-#include "Enemies/shark.h"
+#include "../Tiles/Util/levelgen.h"
+
+#include "../Entities/Enemies/zombie.h"
+#include "../Entities/Enemies/shark.h"
 
 #include <thread>
 #include <iostream>
@@ -30,15 +31,13 @@ Test :: Test  ( Game* game )
     }
 }
 
-void
-Test :: input ( const double dt )
+void Test :: input ( const double dt )
 {
     m_player.input ( dt );
 }
 
 //Always update lights, and then tiles and then entities
-void
-Test :: update ( const double dt )
+void Test :: update ( const double dt )
 {
     addMobs();
 
@@ -60,14 +59,12 @@ Test :: update ( const double dt )
     }
 }
 
-void
-Test :: glDraw ( const double dt )
+void Test :: glDraw ( const double dt )
 {
 
 }
 
-void
-Test :: sfDraw( const double dt )
+void Test :: sfDraw( const double dt )
 {
     getGame().getWindow().pushGLStates();
 
@@ -80,8 +77,8 @@ Test :: sfDraw( const double dt )
 }
 
 sf::Clock mobPrint;
-void
-Test :: addMobs ()
+
+void Test :: addMobs ()
 {
     if ( timer.getElapsedTime().asSeconds() > 0.3f )
     {
@@ -101,14 +98,12 @@ Test :: addMobs ()
 
 }
 
-void
-Test :: addZombie ()
+void Test :: addZombie ()
 {
     m_mobs.emplace_back( std::make_unique<Zombie>( &getGame(), &m_tileMap, &m_player, &m_mobs ));
 }
 
-void
-Test :: addShark ()
+void Test :: addShark ()
 {
     m_mobs.emplace_back( std::make_unique<Shark>( &getGame(), &m_tileMap, &m_player ));
 }

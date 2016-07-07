@@ -2,9 +2,11 @@
 #define ENEMY_H
 
 #include "Bases/component.h"
-#include "Bases/enemy_mob.h"
-#include "Other/tilemap.h"
-#include "player.h"
+
+#include "../Entities/Bases/enemy_mob.h"
+#include "../Entities/player.h"
+
+#include "../Tiles/Other/tilemap.h"
 
 namespace Component
 {
@@ -12,20 +14,17 @@ namespace Component
 class Spawns_Ground : public Component_Base
 {
     public:
-        Spawns_Ground ( Mob* mob, Tile_Map* tiles, Player* player,
+        Spawns_Ground 	( Mob* mob, Tile_Map* tiles, Player* player,
                             const int maxDistFromPlayer, const int distToDespawn  );
 
-        void
-        logic ( const float dt ) override;
+        void logic 		( const float dt ) override;
 
     private:
-        void
-        checkDist   ();
+        void checkDist	();
 
-        void
-        spawn       ( const int maxDistFromPlayer );
+        void spawn		( const int maxDistFromPlayer );
 
-    private:
+
         Player*     m_player;
         Tile_Map*   m_tiles;
         Mob*        m_target;

@@ -34,58 +34,43 @@ namespace Info
 class Tile : public Sf_Entity
 {
     public:
-        Tile (  const Game& game, const sf::Vector2i& pos,
-                const Ecosystem ecosystem, const sf::Color& light );
+        Tile 		(  const Game& game, const sf::Vector2i& pos,
+					   const Ecosystem ecosystem, const sf::Color& light );
 
-        void
-        draw                    ( sf::RenderWindow& window) override;
+        void draw	( sf::RenderWindow& window) override;
 
-        const bool
-        isWalkable              () const;
+        bool isWalkable              () const;
 
-        const bool
-        isSwimmable             () const;
+        bool isSwimmable             () const;
 
-        const sf::Vector2i&
-        getTileMapPos           () const;
+        const sf::Vector2i& getTileMapPos	() const;
 
-        const double
-        getFriction             () const;
+        double getFriction		() const;
 
-        const double
-        getViscosity            () const;
+        double getViscosity		() const;
 
-        const Ecosystem
-        getEcosystem            () const;
+        Ecosystem getEcosystem		() const;
 
-        const sf::Color&
-        getLight                () const;
+        const sf::Color& getLight	() const;
 
-        virtual void
-        update                  ( const float dt );
+        virtual void update		( const float dt );
 
-        virtual void
-        steppedOn               ()
-        { }
+        virtual void steppedOn	() { }
 
-        void
-        updateLight             ( const std::vector<Light>& lights );
+        void updateLight		( const std::vector<Light>& lights );
 
     protected:
-        const sf::Texture&
-        randomTexture           (  const Game& game  );
+        const sf::Texture& randomTexture	(  const Game& game  );
 
-        const sf::Texture&
-        getTexture              ( const Game& game, const unsigned id );
+        const sf::Texture& getTexture		( const Game& game, const unsigned id );
 
-        const unsigned
-        getTxrId                () const;
+        unsigned getTxrId	() const;
 
-        void
-        setInfo                 ( const Tile_Info& info );
+        void setInfo		( const Tile_Info& info );
 
-        void
-        applyLight              ();
+        void applyLight		();
+
+        void setColour      ( const sf::Color& color );
 
     private:
         Tile_Info           m_info;

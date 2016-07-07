@@ -1,6 +1,6 @@
 #include "looks_at_mouse.h"
 
-#include "maths.h"
+#include "../Util/maths.h"
 
 namespace Component
 {
@@ -11,8 +11,7 @@ Look_At_Mouse :: Look_At_Mouse ( Mob* mob, sf::RenderWindow* window )
 {
 }
 
-void
-Look_At_Mouse :: logic ( const float dt )
+void Look_At_Mouse :: logic ( const float dt )
 {
     sf::Vector2f pos = m_mob->getPosition();    //Get sprite position
     sf::Vector2f mousePos = m_window->mapPixelToCoords ( sf::Mouse::getPosition( *m_window ) );  //Get mouse

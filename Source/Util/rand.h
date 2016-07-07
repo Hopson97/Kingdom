@@ -1,14 +1,14 @@
-	#ifndef RANDOM_H_INCLUDED
-	#define RANDOM_H_INCLUDED
+#ifndef RANDOM_H_INCLUDED
+#define RANDOM_H_INCLUDED
 
-	#include <ctime>
-	#include <cstdlib>
+#include <ctime>
+#include <cstdlib>
 
-	namespace kingdom_random
-	{
+namespace kingdom_random
+{
 
-	int num(int low, int high);
+int num(int low, int high);
 
-	}
+}
 
-	#endif // RANDOM_H_INCLUDED
+#endif // RANDOM_H_INCLUDED

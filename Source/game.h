@@ -12,24 +12,17 @@
 class Game
 {
     public:
-        Game                        ();
+        Game			();
 
-        void
-        runLoop                     ();
+        void runLoop	();
 
-        const  sf::Texture&
-        getTexture                  ( const Texture_Name name ) const;
+        const  sf::Texture& getTexture	( const Texture_Name name ) const;
 
-        const  Tile_Info&
-        getTileInfo                 ( const Tile_Type name ) const;
+        const  Tile_Info& getTileInfo	( const Tile_Type name ) const;
 
-        State::Handler&
-        states                      ();
+        State::Handler& states	();
 
-        Window&
-        getWindow                   ();
-
-
+        Window& getWindow		();
 
     private:
         Window m_window;

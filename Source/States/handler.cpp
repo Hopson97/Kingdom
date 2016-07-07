@@ -17,22 +17,19 @@ Handler :: ~Handler ()
     }
 }
 
-void
-Handler :: changeState ( StatePtr state)
+void Handler :: changeState ( StatePtr state)
 {
     popState();
     states.push ( std::move ( state ) );
 }
 
 
-void
-Handler :: pushState ( StatePtr state )
+void Handler :: pushState ( StatePtr state )
 {
     states.push ( std::move ( state ) );
 }
 
-void
-Handler :: popState ()
+void Handler :: popState ()
 {
     if( !states.empty() )
     {
@@ -40,8 +37,7 @@ Handler :: popState ()
     }
 }
 
-State_Base*
-Handler :: peekState ()
+State_Base* Handler :: peekState ()
 {
     return states.top().get();
 }

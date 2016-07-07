@@ -3,8 +3,8 @@
 
 
 
-#include "Bases/enemy_mob.h"
-#include "Bases/component.h"
+#include "../../Entities/Bases/enemy_mob.h"
+#include "../Bases/component.h"
 
 #include <vector>
 
@@ -14,15 +14,12 @@ namespace Component
 class Looks_At_Target : public Component_Base
 {
     public:
-        explicit
-        Looks_At_Target   ( Enemy_Mob* mob );
+        explicit Looks_At_Target	( Enemy_Mob* mob );
 
-        void
-        logic   ( const float dt ) override;
+        void logic   				( const float dt ) override;
 
     private:
-        void
-        lookAtTarget ();
+        void lookAtTarget 			();
 };
 
 }

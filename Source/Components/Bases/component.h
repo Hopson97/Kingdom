@@ -16,8 +16,7 @@ class Component_Base
 
         }
 
-        virtual void
-        logic ( const float dt ) = 0;
+        virtual void logic ( const float dt ) = 0;
 
     protected:
         Mob* m_mob;

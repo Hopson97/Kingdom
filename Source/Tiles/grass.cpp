@@ -8,6 +8,7 @@ Grass :: Grass ( const Game& game, const sf::Vector2i& pos,
 :   Tile        ( game, pos, ecosystem, light  )
 {
     setInfo( game.getTileInfo( TILE_GRASS ) );
+    setColor( sf::Color::Green );
 }
 
 

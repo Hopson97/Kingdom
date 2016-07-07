@@ -1,8 +1,9 @@
 #ifndef GROUND_FRICTION_H
 #define GROUND_FRICTION_H
 
-#include "Other/tilemap.h"
-#include "Bases/mob.h"
+#include "../Tiles/Other/tilemap.h"
+#include "../Entities/Bases/mob.h"
+
 #include "Bases/component.h"
 
 /*
@@ -17,8 +18,7 @@ class Ground_Friction : public Component_Base
     public:
         Ground_Friction( Mob* mob, Tile_Map* map);
 
-        void
-        logic   ( const float dt ) override;
+        void logic   ( const float dt ) override;
 
     private:
         Tile_Map*   m_tileMap;

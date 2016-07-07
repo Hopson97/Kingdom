@@ -13,8 +13,7 @@ State_Base :: State_Base ( Game* game)
 :   mGame   ( game )
 { }
 
-Game&
-State_Base :: getGame() const
+Game& State_Base :: getGame() const
 {
     return *mGame;
 }

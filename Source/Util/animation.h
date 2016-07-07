@@ -13,14 +13,11 @@ struct Frame
 class Animation
 {
     public:
-        void
-        addFrame                (const Frame& frame);
+        void addFrame	(const Frame& frame);
 
-        const sf::IntRect&
-        currentFrame            (const float dt); //, sf::Sprite& sprite);
+        const sf::IntRect& currentFrame	(const float dt); //, sf::Sprite& sprite);
 
-        const unsigned
-        getCurrentFrameNumber   () const;
+        unsigned getCurrentFrameNumber	() const;
 
     private:
         std::vector<Frame> m_frames;

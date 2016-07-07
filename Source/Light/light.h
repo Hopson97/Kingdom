@@ -8,23 +8,17 @@ class Light
     public:
         Light                   ( const sf::Vector2i& tileLocation, const unsigned intensity );
 
-        void
-        setTileLocation         ( const sf::Vector2i& tileLocation );
+        void setTileLocation	( const sf::Vector2i& tileLocation );
 
-        const unsigned
-        getIntensity            () const;
+        unsigned getIntensity	() const;
 
-        const sf::Vector2i
-        getLocation             () const;
+        const sf::Vector2i getLocation	() const;
 
-        const bool
-        isLightUpdate           () const;
+        bool isLightUpdate           	() const;
 
-        void
-        turnOffLightUpdate      ();
+        void turnOffLightUpdate      	();
 
-        const sf::Color
-        getLightFromIntensity   ( const sf::Vector2i& tileMapPos ) const;
+        const sf::Color getLightFromIntensity   ( const sf::Vector2i& tileMapPos ) const;
 
     private:
         sf::Vector2i    m_tileLocation;

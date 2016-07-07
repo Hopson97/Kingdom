@@ -13,8 +13,7 @@ struct Ranged_Num
                 throw std::runtime_error ( "The 'high' is less than 'low', invalid.");
         }
 
-        void
-        operator =( const T other )
+        void operator =( const T other )
         {
             if ( other > m_highVal ) m_currVal = m_highVal;
             else if ( other < m_lowVal )  m_currVal = m_lowVal;
@@ -22,8 +21,7 @@ struct Ranged_Num
 
         }
 
-        const T
-        getVal  () { return m_currVal; }
+        const T getVal  () { return m_currVal; }
 
     private:
         T m_lowVal;

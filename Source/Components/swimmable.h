@@ -1,10 +1,13 @@
 #ifndef SWIMMABLE_H
 #define SWIMMABLE_H
 
-#include "Other/tilemap.h"
-#include "Bases/enemy_mob.h"
+#include "../Tiles/Other/tilemap.h"
+
+#include "../Entities/Bases/enemy_mob.h"
+
+#include "../Util/particle_system.h"
+
 #include "Bases/component.h"
-#include "particle_system.h"
 
 namespace Component
 {

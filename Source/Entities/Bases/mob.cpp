@@ -1,6 +1,6 @@
 #include "mob.h"
 
-#include "maths.h"
+#include "../../Util/maths.h"
 
 Mob :: Mob ( Game* game, const sf::Texture& texture, Tile_Map* tiles )
 :   Sf_Entity   ( texture )
@@ -12,8 +12,7 @@ Mob :: Mob ( Game* game, const sf::Texture& texture, Tile_Map* tiles )
     m_mobState = Mob_State::MOB_STATE_GROUND;
 }
 
-void
-Mob :: update ( const float dt  )
+void Mob :: update ( const float dt  )
 {
     //Check for the mob being OOB of the map
     {
@@ -51,21 +50,21 @@ Mob :: update ( const float dt  )
     m_sprite.move( getVelocity().x, getVelocity().y );
 }
 
-const sf::Vector2i&
-Mob :: getTileMapPosition  ()
+
+const sf::Vector2i& Mob :: getTileMapPosition  ()
 {
     updateTileMapPos();
     return m_tileMapPos;
 }
 
-void
-Mob :: addComponent    (  Comp c  )
+
+void Mob :: addComponent (  Comp c  )
 {
     m_components.push_back( std::move ( c )  );
 }
 
-void
-Mob :: componentLogic ( const float dt )
+
+void Mob :: componentLogic ( const float dt )
 {
     for ( auto& component : m_components )
     {
@@ -73,8 +72,8 @@ Mob :: componentLogic ( const float dt )
     }
 }
 
-void
-Mob :: velocityForwards    ( const float dt )
+
+void Mob :: velocityForwards ( const float dt )
 {
     const double rot = Math::toRads ( m_sprite.getRotation() );
 
@@ -84,8 +83,8 @@ Mob :: velocityForwards    ( const float dt )
     m_isMoving = true;
 }
 
-void
-Mob :: velocityBackwards   ( const float dt )
+
+void Mob :: velocityBackwards ( const float dt )
 {
     const double rot = Math::toRads ( m_sprite.getRotation() );
 
@@ -95,8 +94,8 @@ Mob :: velocityBackwards   ( const float dt )
     m_isMoving = true;
 }
 
-void
-Mob :: velocityLeft        ( const float dt )
+
+void Mob :: velocityLeft ( const float dt )
 {
     const double rot = Math::toRads ( m_sprite.getRotation() + 90 );
 
@@ -106,8 +105,8 @@ Mob :: velocityLeft        ( const float dt )
     m_isMoving = true;
 }
 
-void
-Mob :: velocityRight       ( const float dt )
+
+void Mob :: velocityRight       ( const float dt )
 {
     const double rot = Math::toRads ( m_sprite.getRotation() + 90 );
 
@@ -117,8 +116,8 @@ Mob :: velocityRight       ( const float dt )
     m_isMoving = true;
 }
 
-void
-Mob :: updateTileMapPos ()
+
+void Mob :: updateTileMapPos ()
 {
     sf::Vector2i pos;
     pos.x = m_sprite.getPosition().x;
@@ -130,9 +129,9 @@ Mob :: updateTileMapPos ()
     m_tileMapPos = sf::Vector2i ( x, y );
 }
 
+
 //Makes sure the mob can go to a complete stop and applies friction
-void
-Mob :: checkVel ( )
+void Mob :: checkVel ()
 {
     const float bound = 0.01;
 
@@ -140,8 +139,8 @@ Mob :: checkVel ( )
     if ( getVelocity().y < bound &&  getVelocity().y > -bound ) setVelocity( { getVelocity().x, 0 } );
 }
 
-void
-Mob :: setPosAtSolidTile ()
+
+void Mob :: setPosAtSolidTile ()
 {
     for ( int y = 0 ; y < Tiles::Info::MAP_SIZE ; y ++ )
     {
@@ -155,27 +154,26 @@ Mob :: setPosAtSolidTile ()
     }
 }
 
-void
-Mob :: setTarget   ( Mob* mob )
+
+void Mob :: setTarget   ( Mob* mob )
 {
     m_target = mob;
 }
 
 
-const Mob*
-Mob :: getTarget    () const
+const Mob* Mob :: getTarget    () const
 {
     return ( m_target ) ? m_target : nullptr;
 }
 
-const sf::Vector2i
-Mob :: getTargetTilePosition    ()
+
+const sf::Vector2i Mob :: getTargetTilePosition ()
 {
     return ( m_target ) ? m_target->getTileMapPosition() : sf::Vector2i( 0, 0 );
 }
 
-const bool
-Mob :: hasTarget () const
+
+bool Mob :: hasTarget () const
 {
     return ( m_target ) ? true : false;
 }

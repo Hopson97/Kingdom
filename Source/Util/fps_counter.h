@@ -6,12 +6,10 @@
 class FPS_Counter
 {
     public:
-        void
-        update ();
+        void update ();
 
     private:
-        float
-        getFPS( const sf::Time& time );
+        float getFPS( const sf::Time& time );
 
     private:
         sf::Clock fpsClock;

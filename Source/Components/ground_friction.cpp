@@ -13,8 +13,7 @@ Ground_Friction::Ground_Friction( Mob* mob, Tile_Map* map )
 {
 }
 
-void
-Ground_Friction :: logic   ( const float dt )
+void Ground_Friction :: logic ( const float dt )
 {
     //Shorthand
     sf::Vector2i pos = m_mob->getTileMapPosition();

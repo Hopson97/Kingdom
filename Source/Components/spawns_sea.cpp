@@ -1,6 +1,6 @@
 #include "spawns_sea.h"
 
-#include "rand.h"
+#include "../Util/rand.h"
 
 #include <cmath>
 
@@ -23,8 +23,7 @@ Spawns_Sea :: Spawns_Sea( Mob* mob, Tile_Map* tiles, Player* player,
    spawn( maxDistFromPlayer );
 }
 
-void
-Spawns_Sea :: spawn ( const int maxDistFromPlayer )
+void Spawns_Sea :: spawn ( const int maxDistFromPlayer )
 {
     //Check for where the possible spawning checks starts from
     int x = m_player->getTileMapPosition().x - maxDistFromPlayer;
@@ -68,22 +67,19 @@ Spawns_Sea :: spawn ( const int maxDistFromPlayer )
 
 
 
-void
-Spawns_Sea :: logic ( const float dt )
+void Spawns_Sea :: logic ( const float dt )
 {
     checkDist();
 
 
 }
 
-void
-Spawns_Sea :: getTarget ()
+void Spawns_Sea :: getTarget ()
 {
 
 }
 
-void
-Spawns_Sea :: checkDist   ()
+void Spawns_Sea :: checkDist   ()
 {
     int dy = abs ( m_player->getTileMapPosition().y - m_mob->getTileMapPosition().y );
     int dx = abs ( m_player->getTileMapPosition().x - m_mob->getTileMapPosition().x );

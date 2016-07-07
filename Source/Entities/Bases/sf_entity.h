@@ -9,49 +9,36 @@
 class Sf_Entity
 {
     public:
-        Sf_Entity           ( const sf::Texture& t );
+        Sf_Entity			( const sf::Texture& t );
 
-        void
-        setRotation         ( const double rot );
+        void setRotation	( const double rot );
 
-        float
-        getRotation         () const;
+        float getRotation	() const;
 
-        const sf::Vector2f&
-        getOrigin           () const;
+        const sf::Vector2f& getOrigin	() const;
 
-        void
-        setPosition         ( const sf::Vector2f& pos );
+        void setPosition         		( const sf::Vector2f& pos );
 
-        const sf::Vector2f&
-        getPosition         () const;
+        const sf::Vector2f& getPosition	() const;
 
-        const sf::Vector2u
-        getSpriteSize       () const;
+        const sf::Vector2u getSpriteSize	() const;
 
-        void
-        setVelocity         ( const sf::Vector2f& velocity );
+        void setVelocity         ( const sf::Vector2f& velocity );
 
-        void
-        changeVelocity      ( const sf::Vector2f& velocity );
+        void changeVelocity      ( const sf::Vector2f& velocity );
 
-        const sf::Vector2f
-        getVelocity         () const;
+        const sf::Vector2f getVelocity	() const;
 
-        void
-        setColor            ( const sf::Color& col );
+        void setColor		( const sf::Color& col );
 
-        virtual void
-        draw                ( sf::RenderWindow& window );
+        virtual void draw	( sf::RenderWindow& window );
 
     protected:
         sf::Sprite m_sprite;
 
-        void
-        centerSpriteOrigin  ();
+        void centerSpriteOrigin	();
 
-        const bool
-        inWindowBounds          ( const sf::RenderWindow& window ) const;
+        bool inWindowBounds		( const sf::RenderWindow& window ) const;
 
     private:
         sf::Vector2f m_velocity; // Left / up velocity

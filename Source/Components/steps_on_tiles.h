@@ -1,9 +1,11 @@
 #ifndef STEPS_ON_TILES_H
 #define STEPS_ON_TILES_H
 
-#include "Bases/mob.h"
+#include "../Tiles/Other/tilemap.h"
+
+#include "../Entities/Bases/mob.h"
+
 #include "Bases/component.h"
-#include "Other/tilemap.h"
 
 /*
     Every time the mob steps on a new tile, it calls the "steppedOn()" method for that tile

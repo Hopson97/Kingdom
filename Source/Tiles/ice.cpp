@@ -1,6 +1,6 @@
 #include "ice.h"
 
-#include "rand.h"
+#include "../Util/rand.h"
 #include "water.h"
 
 namespace Tiles
@@ -17,8 +17,7 @@ Ice :: Ice ( Game& game, const sf::Vector2i& pos, Tile_Map* tileMap,
     applyLight();
 }
 
-void
-Ice :: update  ( const float dt )
+void Ice :: update  ( const float dt )
 {
     if ( m_meltTimer.getElapsedTime().asSeconds() > 5.0f && getEcosystem() != Ecosystem::Snowy )
     {
@@ -30,15 +29,13 @@ Ice :: update  ( const float dt )
     }
 }
 
-void
-Ice :: melt()
+void Ice :: melt()
 {
     m_tileMap->at( getTileMapPos() ) = std::make_unique<Tiles::Water>
                                     ( *m_game, sf::Vector2i { getTileMapPos().x, getTileMapPos().y }, *m_tileMap, getEcosystem(), getLight() );
 }
 
-void
-Ice :: steppedOn ()
+void Ice :: steppedOn ()
 {
     m_meltTimer.restart();
 }

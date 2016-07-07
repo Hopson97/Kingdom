@@ -21,19 +21,15 @@ class Particle_System : public sf::Drawable, public sf::Transformable
 
 public:
 
-    Particle_System     (  unsigned count, const sf::Time lifetime,  const sf::Color colour  );
+    Particle_System	( unsigned count, const sf::Time lifetime,  const sf::Color colour );
 
-    void
-    setEmitter          ( const sf::Vector2f& position );
+    void setEmitter	( const sf::Vector2f& position );
 
-    void
-    update              (sf::Time elapsed);
+    void update		( sf::Time elapsed );
 
-    void
-    draw                (sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const override;
+    void draw		( sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default ) const override;
 
-    void
-    setUpdate           ( const bool update );
+    void setUpdate	( const bool update );
 
 
 

@@ -1,7 +1,8 @@
 #include "tile.h"
 
-#include "rand.h"
-#include "Bases/sf_entity.h"
+#include "../../Util/rand.h"
+#include "../../Entities/Bases/sf_entity.h"
+
 namespace Tiles
 {
 
@@ -15,14 +16,12 @@ Tile :: Tile (  const Game& game, const sf::Vector2i& pos,
     m_sprite.setPosition    ( pos.x * Info::SIZE, pos.y * Info::SIZE );
 }
 
-void
-Tile :: update ( const float dt )
+void Tile :: update ( const float dt )
 {
 
 }
 
-void
-Tile :: updateLight ( const std::vector<Light>& lights )
+void Tile :: updateLight ( const std::vector<Light>& lights )
 {
     //Start the lights as being dark
     m_light = { 0, 0, 0 };
@@ -40,8 +39,7 @@ Tile :: updateLight ( const std::vector<Light>& lights )
     applyLight();
 }
 
-void
-Tile :: draw ( sf::RenderWindow& window)
+void Tile :: draw ( sf::RenderWindow& window)
 {
     if ( inWindowBounds( window ) )
     {
@@ -58,8 +56,7 @@ Tile :: randomTexture ( const Game& game )
     return getTexture( game, m_txrId );
 }
 
-const sf::Texture&
-Tile :: getTexture ( const Game& game, const unsigned id )
+const sf::Texture& Tile :: getTexture ( const Game& game, const unsigned id )
 {
     m_txrId = id;
 
@@ -76,63 +73,58 @@ Tile :: getTexture ( const Game& game, const unsigned id )
     }
 }
 
-void
-Tile :: applyLight ()
+void Tile :: applyLight ()
 {
     m_sprite.setColor( m_info.colour * m_light );
 }
 
-void
-Tile :: setInfo ( const Tile_Info& info)
+void Tile :: setInfo ( const Tile_Info& info)
 {
     m_info = info;
     m_sprite.setColor( info.colour );
 }
 
-const bool
-Tile :: isWalkable      () const
+void Tile :: setColour ( const sf::Color& color )
+{
+    m_sprite.setColor( color );
+}
+
+bool Tile :: isWalkable () const
 {
     return m_info.isWalkable;
 }
 
-const bool
-Tile :: isSwimmable     () const
+bool Tile :: isSwimmable () const
 {
     return m_info.isSwimmable;
 }
 
-const sf::Vector2i&
-Tile :: getTileMapPos   () const
+const sf::Vector2i& Tile :: getTileMapPos () const
 {
     return m_tilePos;
 }
 
-const double
-Tile :: getFriction     () const
+double Tile :: getFriction () const
 {
     return m_info.friction;
 }
 
-const double
-Tile :: getViscosity    () const
+double Tile :: getViscosity () const
 {
     return m_info.viscosity;
 }
 
-const Ecosystem
-Tile :: getEcosystem    () const
+Ecosystem Tile :: getEcosystem () const
 {
     return m_ecosystem;
 }
 
-const unsigned
-Tile :: getTxrId        () const
+unsigned Tile :: getTxrId () const
 {
     return m_txrId;
 }
 
-const sf::Color&
-Tile :: getLight        () const
+const sf::Color& Tile :: getLight () const
 {
     return m_light;
 }

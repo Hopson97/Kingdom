@@ -1,6 +1,6 @@
 #include "spawns_ground.h"
 
-#include "rand.h"
+#include "../Util/rand.h"
 
 #include <cmath>
 
@@ -17,8 +17,7 @@ Spawns_Ground :: Spawns_Ground( Mob* mob, Tile_Map* tiles, Player* player,
    spawn( maxDistFromPlayer );
 }
 
-void
-Spawns_Ground :: spawn ( const int maxDistFromPlayer )
+void Spawns_Ground :: spawn ( const int maxDistFromPlayer )
 {
     int x = m_player->getTileMapPosition().x - maxDistFromPlayer;
     if ( x <= 0 ) x = 1;
@@ -60,16 +59,14 @@ Spawns_Ground :: spawn ( const int maxDistFromPlayer )
 
 
 
-void
-Spawns_Ground :: logic ( const float dt )
+void Spawns_Ground :: logic ( const float dt )
 {
     checkDist();
 
 
 }
 
-void
-Spawns_Ground :: checkDist   ()
+void Spawns_Ground :: checkDist   ()
 {
     int dy = abs ( m_player->getTileMapPosition().y - m_mob->getTileMapPosition().y );
     int dx = abs ( m_player->getTileMapPosition().x - m_mob->getTileMapPosition().x );

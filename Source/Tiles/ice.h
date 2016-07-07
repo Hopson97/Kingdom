@@ -13,15 +13,12 @@ class Ice : public Tile
         Ice( Game& game, const sf::Vector2i& pos, Tile_Map* tileMap,
             const Ecosystem ecosystem, const sf::Color& light = { 0, 0, 0 } );
 
-        void
-        update      ( const float dt ) override;
+        void update		( const float dt ) override;
 
-        void
-        steppedOn   ();
+        void steppedOn	();
 
     private:
-        void
-        melt();
+        void melt		();
 
     private:
         Tile_Map*   m_tileMap;

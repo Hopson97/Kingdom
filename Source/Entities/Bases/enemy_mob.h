@@ -12,8 +12,7 @@ class Enemy_Mob  :  public Mob
 {
 public:
 
-        virtual void
-        uniqueLogic( const float dt ) = 0;
+        virtual void uniqueLogic( const float dt ) = 0;
 
     protected:
         Enemy_Mob(  Game* game, const sf::Texture& texture, Tile_Map* tiles, Player* player  );

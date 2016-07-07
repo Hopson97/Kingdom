@@ -8,14 +8,12 @@ Particle_System :: Particle_System ( const unsigned count, const sf::Time lifeti
 ,   m_colour        ( colour )
 { }
 
-void
-Particle_System :: setEmitter ( const sf::Vector2f& position )
+void Particle_System :: setEmitter ( const sf::Vector2f& position )
 {
     m_emitter = position;
 }
 
-void
-Particle_System :: update( const sf::Time elapsed )
+void Particle_System :: update( const sf::Time elapsed )
 {
     for (std::size_t i = 0; i < m_particles.size(); ++i)
     {
@@ -38,8 +36,7 @@ Particle_System :: update( const sf::Time elapsed )
 
 
 
-void
-Particle_System :: draw( sf::RenderTarget& target, sf::RenderStates states ) const
+void Particle_System :: draw( sf::RenderTarget& target, sf::RenderStates states ) const
 {
     // apply the transform
     states.transform *= getTransform();
@@ -51,8 +48,7 @@ Particle_System :: draw( sf::RenderTarget& target, sf::RenderStates states ) con
     target.draw(m_vertices, states);
 }
 
-void
-Particle_System :: resetParticle( const unsigned index )
+void Particle_System :: resetParticle( const unsigned index )
 {
     // give a random velocity and lifetime to the particle
     float angle = (std::rand() % 360) * 3.14f / 180.f;
@@ -68,8 +64,7 @@ Particle_System :: resetParticle( const unsigned index )
 
 }
 
-void
-Particle_System :: setUpdate           ( const bool update )
+void Particle_System :: setUpdate           ( const bool update )
 {
     m_update = update;
 }

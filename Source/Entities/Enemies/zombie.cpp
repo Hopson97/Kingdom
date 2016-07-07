@@ -2,12 +2,12 @@
 #include "../../Components/AI/Aggressive_Targeting.h"
 #include "../../Components/AI/looks_at_target.h"
 #include "../../Components/AI/moves_towards_target.h"
-#include "ground_friction.h"
-#include "tile_collidable.h"
-#include "swimmable.h"
-#include "steps_on_tiles.h"
-#include "spawns_ground.h"
-#include "effected_by_light.h"
+#include "../../Components/ground_friction.h"
+#include "../../Components/tile_collidable.h"
+#include "../../Components/swimmable.h"
+#include "../../Components/steps_on_tiles.h"
+#include "../../Components/spawns_ground.h"
+#include "../../Components/effected_by_light.h"
 
 Zombie :: Zombie( Game* game, Tile_Map* tiles, Player* player, MobPtrVec* mobVec  )
 :   Enemy_Mob   ( game, game->getTexture(TXR_ENT_ZOMBIE ), tiles, player )
@@ -42,8 +42,7 @@ Zombie :: Zombie( Game* game, Tile_Map* tiles, Player* player, MobPtrVec* mobVec
     m_walkSpeed = 20;
 }
 
-void
-Zombie :: uniqueLogic         ( const float dt )
+void Zombie :: uniqueLogic         ( const float dt )
 {
 
 }

@@ -21,15 +21,13 @@ Aggressive_Targeting :: Aggressive_Targeting ( Mob* mob, Player* player,
 {
 }
 
-void
-Aggressive_Targeting :: logic   ( const float dt )
+void Aggressive_Targeting :: logic   ( const float dt )
 {
     checkDistToPlayer   ();
     checkTarget         ();
 }
 
-void
-Aggressive_Targeting :: checkDistToPlayer ()
+void Aggressive_Targeting :: checkDistToPlayer ()
 {
     if ( !m_mob->hasTarget() )
     {
@@ -40,8 +38,7 @@ Aggressive_Targeting :: checkDistToPlayer ()
     }
 }
 
-void
-Aggressive_Targeting :: checkTarget ()
+void Aggressive_Targeting :: checkTarget ()
 {
     if ( getDistance( m_mob->getTargetTilePosition() ) > m_maxDist && m_mob->hasTarget() )
     {
@@ -49,8 +46,7 @@ Aggressive_Targeting :: checkTarget ()
     }
 }
 
-const unsigned
-Aggressive_Targeting :: getDistance ( const sf::Vector2i& otherPos ) const
+const unsigned Aggressive_Targeting :: getDistance ( const sf::Vector2i& otherPos ) const
 {
     int dy = abs ( otherPos.y - m_mob->getTileMapPosition().y );
     int dx = abs ( otherPos.x - m_mob->getTileMapPosition().x );

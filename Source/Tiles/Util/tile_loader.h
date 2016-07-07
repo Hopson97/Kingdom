@@ -13,29 +13,17 @@ class Tile_Loader
         loadTile    ( Tile_Info* tile, const std::string filePath );
 
     private:
-        void
-        readFile    ( std::ifstream& inFile );
+        void readFile    ( std::ifstream& inFile );
 
-        const bool
-        wordFound   ( std::string toFind, std::string line );
+        bool wordFound   ( const std::string& toFind, const std::string& line ) const;
 
-        void
-        loadDouble  ( std::ifstream& inFile, double& toLoad );
+        void loadDouble  ( std::ifstream& inFile, double& toLoad );
 
-        void
-        loadBoolean ( std::ifstream& inFile, bool& toLoad );
+        void loadBoolean ( std::ifstream& inFile, bool& toLoad );
 
-        void
-        loadColour  ( std::ifstream& inFile );
+        void loadColour  ( std::ifstream& inFile );
 
     private:
-        //All of these are for the sake of having no spelling mistakes
-        const static std::string Viscosity;
-        const static std::string Friction;
-        const static std::string Swimmable;
-        const static std::string Walkable;
-        const static std::string Colour;
-
         Tile_Info*      m_tile;
 
         unsigned        m_tileTraitsLoaded  { 0 };
