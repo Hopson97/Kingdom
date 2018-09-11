@@ -1,7 +1,5 @@
 #include "window.h"
 
-#include <GL/glew.h>
-
 Window :: Window()
 {
     //General window stuff

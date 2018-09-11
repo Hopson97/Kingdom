@@ -7,6 +7,8 @@
 #include "../../Util/rand.h"
 #include "ecosystems.h"
 
+#include <cmath>
+
 class Level_Generator
 {
     typedef std::unique_ptr<Tiles::Tile> TilePtr;
@@ -49,8 +51,8 @@ class Level_Generator
 
         Ecosystem	m_currEcosystem;
 
-        const int	EDGE_BOUNDS_X   { (int)ceil( Win_Info::WIDTH  / Tiles::Info::SIZE ) },
-					EDGE_BOUNDS_Y   { (int)ceil( Win_Info::HEIGHT / Tiles::Info::SIZE ) },
+        const int	EDGE_BOUNDS_X   { (int)std::ceil( Win_Info::WIDTH  / Tiles::Info::SIZE ) },
+					EDGE_BOUNDS_Y   { (int)std::ceil( Win_Info::HEIGHT / Tiles::Info::SIZE ) },
 					MAP_SIZE            { Tiles::Info::MAP_SIZE };
 
         std::vector<sf::IntRect>    m_islands;
