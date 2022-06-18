@@ -2,7 +2,7 @@
 
 Created using C++ and SFML, this is a game where the world is viewed from a top down perspective.
 
-The earliest screenshot of the game is this, showing grass tiles and random water tiles. It was created during the testing of tile collisons.
+The earliest screenshot of the game is this, showing grass tiles and random water tiles. It was created during the testing of tile collisions.
 
 The tile collisions were somewhat awkward to do as unlike other tile games, the player is not restricted to be in the square, meaning they can go in any direction they like and move anywhere in a square.
 
@@ -14,7 +14,7 @@ Building can be done on linux with the makefile. In order to reduce compilation 
 ```make -j4```
 
 # Prerequisites 
-In order to build the game you need the sfml library, sfml's dependancies and OpenGL headers.
+In order to build the game you need the sfml library, sfml's dependencies and OpenGL headers.
 
 On ubuntu:
 
@@ -22,7 +22,7 @@ On ubuntu:
 
 # Entities 
 
-All entities (exluding tiles) are based of a component system. This means that entities must inherit from "Mob" (or Enemy_Mob). The "Mob" class has an std::vector of components, of which get cycled through every frame in the update method of the mob, after doing any unique logic of a derived mob class first.
+All entities (excluding tiles) are based of a component system. This means that entities must inherit from "Mob" (or Enemy_Mob). The "Mob" class has an std::vector of components, of which get cycled through every frame in the update method of the mob, after doing any unique logic of a derived mob class first.
 
 Components are in the "Component" folder, and inherit from the "Component::Component_Base" class, and implement the logic method from the base.
 
@@ -37,7 +37,7 @@ addComponent( std::make_unique<Component::Tile_Collidable>
 
 # Tiles
 
-Tiles are bit odd, as I decided to only have 3 varients of tile textures and then colour them in the code. That texture looks like this: 
+Tiles are bit odd, as I decided to only have 3 variants of tile textures and then colour them in the code. That texture looks like this: 
 
 ![alt text](http://puu.sh/o5LKn/7db0b89aa2.png "Tile texture")
 
@@ -81,7 +81,7 @@ Thanks to the "Component::Steps_On_Tiles" class and the "steppedOn()" method of 
 
 Much room for improvement.
 
-As of now, the whole map is filled with water and then randomly place islands are "genertated". Here is a couple of zoomed out views of that:
+As of now, the whole map is filled with water and then randomly place islands are "generated". Here is a couple of zoomed out views of that:
 
 
 ![alt text](http://puu.sh/o9If7/d010bdb301.png "Level Gen 1")
@@ -150,7 +150,7 @@ Tile :: updateLight ( const std::vector<Light>& lights )
 
 Unfournatly, this caused the game's performance to suffer. Luckily, I made a few optimisations.
 
-One optimisations to add a static booleon into the light class that says whether or not there has been a "light update". If there has, then the light is recalculated. 
+One optimisations to add a static boolean into the light class that says whether or not there has been a "light update". If there has, then the light is recalculated. 
 
 The boolean is set to true if
 
@@ -168,3 +168,4 @@ The lights look like this:
 Compared to no lights, it is a huge improvement:
 
 ![alt text]( http://puu.sh/ocWKv/56b519a2bf.jpg "Single light")
+
